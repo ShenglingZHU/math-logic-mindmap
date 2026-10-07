@@ -1,0 +1,995 @@
+{
+  "slug": "two-variable-am-gm",
+  "theorem": {
+    "title": "Two-variable arithmetic-geometric mean inequality",
+    "statement_latex": "\\forall a,b\\in[0,\\infty),\\quad\\frac{a+b}{2}\\ge\\sqrt{ab}",
+    "assumptions": [
+      "$a,b$ are nonnegative real numbers."
+    ],
+    "proof_standard": "strict",
+    "status": "proved"
+  },
+  "context": {
+    "领域": "Elementary inequalities over the real numbers.",
+    "背景": "The theorem compares the arithmetic and geometric means of two nonnegative real numbers.",
+    "角色 / 重要性": "The two-variable arithmetic-geometric mean inequality is a fundamental comparison between two means and a building block for elementary inequalities.",
+    "作用": "It bounds the geometric mean by the arithmetic mean and supports estimates and optimization for nonnegative quantities; equality occurs when the inputs coincide.",
+    "证明思路/策略": "Follow the symbolic square-nonnegativity route described by Joseph Fields in https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Gentle_Introduction_to_the_Art_of_Mathematics_(Fields)/03:_Proof_Techniques_I/3.02:_More_Direct_Proofs . Apply the square rule to $a-b$, retain the squared comparison as the distinct stage result, then verify nonnegative sides before using square-root monotonicity. The principal-root simplifications are one-use consequences of A1 and the definition of the nonnegative square root, so they stay in the combination note.",
+    "证明工具": "Nonnegativity of real squares, elementary expansion, monotonicity of the principal square root, and its defining uniqueness."
+  },
+  "symbols": [
+    {
+      "symbol_latex": "a",
+      "definition_role": "First input",
+      "range_unit": "Nonnegative real",
+      "interpretation": "First number being compared"
+    },
+    {
+      "symbol_latex": "b",
+      "definition_role": "Second input",
+      "range_unit": "Nonnegative real",
+      "interpretation": "Second number being compared"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "A1",
+      "type": "ASSUMPTION",
+      "title": "Nonnegative inputs",
+      "short_role": "Assume $a,b\\ge0$.",
+      "formula_latex": "a,b\\in[0,\\infty)",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Domain",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "a,b\\in[0,\\infty)",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "First input",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "First number being compared"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Second input",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "Second number being compared"
+                }
+              ]
+            },
+            {
+              "kind": "prose",
+              "text": "Both inputs are nonnegative real numbers."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "States the domain",
+        "motivation": "The domain makes the square roots and comparison meaningful."
+      }
+    },
+    {
+      "id": "K1",
+      "type": "KNOWN_RESULT",
+      "title": "Square nonnegativity",
+      "short_role": "Every real square is nonnegative.",
+      "formula_latex": "\\forall t\\in\\mathbb R,\\quad t^2\\ge0",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Real square rule",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\forall t\\in\\mathbb R,\\quad t^2\\ge0",
+              "symbols": [
+                {
+                  "symbol_latex": "t",
+                  "definition_role": "Universally quantified real",
+                  "range_unit": "Real",
+                  "interpretation": "Argument of the square"
+                }
+              ]
+            },
+            {
+              "kind": "prose",
+              "text": "For any real $t$, its square is nonnegative."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "Supplies square positivity",
+        "motivation": "Square nonnegativity supplies the algebraic starting point for the squared bound."
+      },
+      "external": true
+    },
+    {
+      "id": "C1",
+      "type": "COMBINE",
+      "title": "Derive the squared bound",
+      "short_role": "Combine the domain with square positivity.",
+      "formula_latex": "(a+b)^2\\ge 4ab",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Purpose",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "The squared comparison isolates the algebraic core before taking square roots."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "Derives the squared bound",
+        "motivation": "Square positivity turns a difference into the pivotal bound."
+      },
+      "combine_inputs": [
+        "K1",
+        "A1"
+      ],
+      "combine_output_latex": "(a+b)^2\\ge 4ab",
+      "combine_reason": "premise_synthesis",
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "\\forall t\\in\\mathbb R,\\quad t^2\\ge0",
+          "symbols": [
+            {
+              "symbol_latex": "t",
+              "definition_role": "Universally quantified real",
+              "range_unit": "Real",
+              "interpretation": "Argument of the square"
+            }
+          ],
+          "id": "c1_start"
+        },
+        {
+          "kind": "formula",
+          "latex": "a,b\\in[0,\\infty)",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c1_domain"
+        },
+        {
+          "kind": "formula",
+          "latex": "0\\le(a-b)^2",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c1_square"
+        },
+        {
+          "kind": "formula",
+          "latex": "0\\le(a+b)^2-4ab",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c1_expanded"
+        },
+        {
+          "kind": "formula",
+          "latex": "(a+b)^2\\ge 4ab",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c1_result"
+        },
+        {
+          "kind": "prose",
+          "text": "At the A1 input step, $a,b\\in[0,\\infty)$ implies $a,b\\in\\mathbb R$ and therefore $t:=a-b\\in\\mathbb R$. K1 then yields $0\\le(a-b)^2$. Expanding $(a-b)^2=(a+b)^2-4ab$ and adding $4ab$ to both sides gives the result. This squared comparison actually holds for any real $a,b$; their nonnegativity is essential in C2.",
+          "id": "c1_explanation"
+        }
+      ],
+      "input_review": [
+        {
+          "node": "K1",
+          "formula_ref": "core",
+          "contribution": "Supplies nonnegativity of every real square."
+        },
+        {
+          "node": "A1",
+          "formula_ref": "core",
+          "contribution": "Ensures that the substitution $t:=a-b$ is real."
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "K1",
+          "formula_ref": "core",
+          "step_id": "c1_start",
+          "mode": "start"
+        },
+        {
+          "node": "A1",
+          "formula_ref": "core",
+          "step_id": "c1_domain",
+          "mode": "condition"
+        }
+      ],
+      "start_input": "K1",
+      "combine_motivation": "A square reveals the difference between the two squared sides.",
+      "combine_method": "A1 gives $a,b\\in\\mathbb R$, so $t:=a-b\\in\\mathbb R$. Apply K1 with this substitution, expand, and add $4ab$ to both sides.",
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c1_start",
+            "split_at": 31
+          },
+          {
+            "kind": "apply",
+            "step_id": "c1_domain",
+            "next_step": "c1_square",
+            "name": "Real-domain check",
+            "source": {
+              "node": "A1",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c1_square",
+            "split_at": 1
+          },
+          {
+            "kind": "expression",
+            "step_id": "c1_expanded",
+            "split_at": 1
+          },
+          {
+            "kind": "expression",
+            "step_id": "c1_result",
+            "split_at": 7
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "t",
+            "definition_role": "Universally quantified real",
+            "range_unit": "Real",
+            "interpretation": "Argument of the square"
+          },
+          {
+            "symbol_latex": "a",
+            "definition_role": "First input",
+            "range_unit": "Nonnegative real",
+            "interpretation": "First number being compared"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Second input",
+            "range_unit": "Nonnegative real",
+            "interpretation": "Second number being compared"
+          }
+        ],
+        "explanations": [
+          "c1_explanation"
+        ]
+      },
+      "output_handoff": {
+        "explanation": "The completed calculation establishes the squared comparison.",
+        "downstream_use": "R1 states the comparison independently for the square-root stage."
+      },
+      "conditions": [
+        "$a,b\\in[0,\\infty)$",
+        "$t:=a-b\\in\\mathbb R$"
+      ],
+      "condition_checks": [
+        "A1 gives $a,b\\in[0,\\infty)\\subset\\mathbb R$.",
+        "With $t:=a-b$, the real-number domain from A1 gives $t\\in\\mathbb R$, so K1 applies."
+      ]
+    },
+    {
+      "id": "R1",
+      "type": "BOUND",
+      "title": "Squared comparison",
+      "short_role": "The squared arithmetic sum bounds the product.",
+      "formula_latex": "(a+b)^2\\ge 4ab",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Established bound",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "(a+b)^2\\ge 4ab",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "First input",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "First number being compared"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Second input",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "Second number being compared"
+                }
+              ]
+            },
+            {
+              "kind": "prose",
+              "text": "C1 proves this comparison. It is the input to the nonnegative square-root step."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "Records the squared bound",
+        "motivation": "This stage result is needed before checking whether square roots can be taken."
+      },
+      "result": true
+    },
+    {
+      "id": "K2",
+      "type": "KNOWN_RESULT",
+      "title": "Square-root monotonicity",
+      "short_role": "Square roots preserve order on nonnegative reals.",
+      "formula_latex": "\\begin{aligned}&\\forall u,v\\in[0,\\infty),\\\\&\\quad u\\le v\\\\&\\qquad\\Rightarrow\\sqrt u\\le\\sqrt v\\end{aligned}",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Order rule",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\begin{aligned}&\\forall u,v\\in[0,\\infty),\\\\&\\quad u\\le v\\\\&\\qquad\\Rightarrow\\sqrt u\\le\\sqrt v\\end{aligned}",
+              "symbols": [
+                {
+                  "symbol_latex": "u",
+                  "definition_role": "Lower argument",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "Lower input to the square-root function"
+                },
+                {
+                  "symbol_latex": "v",
+                  "definition_role": "Upper argument",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "Upper input to the square-root function"
+                }
+              ]
+            },
+            {
+              "kind": "prose",
+              "text": "The rule applies only after both arguments have been checked as nonnegative."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "Supplies monotonicity",
+        "motivation": "Once both sides are nonnegative, taking principal square roots preserves the order."
+      },
+      "external": true
+    },
+    {
+      "id": "C2",
+      "type": "COMBINE",
+      "title": "Take square roots",
+      "short_role": "Join the bound, domain, and monotonicity.",
+      "formula_latex": "\\frac{a+b}{2}\\ge\\sqrt{ab}",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Purpose",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "The squared bound becomes the comparison of the two means after checking the domain."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "Derives the target inequality",
+        "motivation": "Nonnegative side conditions make the square-root step valid."
+      },
+      "combine_inputs": [
+        "R1",
+        "A1",
+        "K2"
+      ],
+      "combine_output_latex": "\\frac{a+b}{2}\\ge\\sqrt{ab}",
+      "combine_reason": "theorem_application",
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "(a+b)^2\\ge 4ab",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c2_start"
+        },
+        {
+          "kind": "formula",
+          "latex": "a,b\\in[0,\\infty)",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c2_domain"
+        },
+        {
+          "kind": "formula",
+          "latex": "0\\le 4ab\\le(a+b)^2",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c2_nonnegative"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\begin{aligned}&\\forall u,v\\in[0,\\infty),\\\\&\\quad u\\le v\\\\&\\qquad\\Rightarrow\\sqrt u\\le\\sqrt v\\end{aligned}",
+          "symbols": [
+            {
+              "symbol_latex": "u",
+              "definition_role": "Lower argument",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Lower input to the square-root function"
+            },
+            {
+              "symbol_latex": "v",
+              "definition_role": "Upper argument",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Upper input to the square-root function"
+            }
+          ],
+          "id": "c2_monotonicity"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\sqrt{4ab}\\le\\sqrt{(a+b)^2}",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c2_square_roots"
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\sqrt{ab}\\le a+b",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c2_simplified"
+        },
+        {
+          "kind": "formula",
+          "id": "c2_aux_nonnegative",
+          "latex": "2\\sqrt{ab}\\ge0",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "c2_aux_square",
+          "latex": "(2\\sqrt{ab})^2=4ab",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "c2_aux_sum",
+          "latex": "a+b\\ge0",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "c2_aux_result",
+          "latex": "\\begin{aligned}&\\sqrt{4ab}=2\\sqrt{ab}\\\\&\\sqrt{(a+b)^2}=a+b\\end{aligned}",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "latex": "\\frac{a+b}{2}\\ge\\sqrt{ab}",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "First input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "First number being compared"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Second input",
+              "range_unit": "Nonnegative real",
+              "interpretation": "Second number being compared"
+            }
+          ],
+          "id": "c2_result"
+        },
+        {
+          "kind": "prose",
+          "id": "c2_explanation",
+          "text": "A1 gives $ab\\ge0$, $4ab\\ge0$, and $a+b\\ge0$; with R1 this gives $0\\le4ab\\le(a+b)^2$. K2 applies with $u:=4ab$ and $v:=(a+b)^2$. At the auxiliary box, A1 again supplies the nonnegative conditions. The principal square root is the unique nonnegative number with the specified square. Since $2\\sqrt{ab}\\ge0$ and $(2\\sqrt{ab})^2=4ab$, its uniqueness gives $\\sqrt{4ab}=2\\sqrt{ab}$. Since $a+b\\ge0$, the same definition gives $\\sqrt{(a+b)^2}=a+b$. Substitute both identities into the main inequality. The final adjacent line divides by the positive number $2$, preserving the inequality direction."
+        }
+      ],
+      "input_review": [
+        {
+          "node": "R1",
+          "formula_ref": "core",
+          "contribution": "Provides the inequality to which square roots are applied."
+        },
+        {
+          "node": "A1",
+          "formula_ref": "core",
+          "contribution": "Makes both arguments nonnegative and fixes the principal-root simplifications."
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "contribution": "Preserves the order when the two nonnegative sides are square-rooted."
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R1",
+          "formula_ref": "core",
+          "step_id": "c2_start",
+          "mode": "start"
+        },
+        {
+          "node": "A1",
+          "formula_ref": "core",
+          "step_id": "c2_domain",
+          "mode": "condition"
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "step_id": "c2_monotonicity",
+          "mode": "basis"
+        }
+      ],
+      "start_input": "R1",
+      "combine_motivation": "The squared comparison is useful only after the nonnegative sides are identified.",
+      "combine_method": "Verify the domain, apply square-root monotonicity, simplify principal roots, and divide by $2$.",
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c2_start",
+            "split_at": 7
+          },
+          {
+            "kind": "apply",
+            "step_id": "c2_domain",
+            "next_step": "c2_nonnegative",
+            "name": "Nonnegative inputs",
+            "source": {
+              "node": "A1",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2_nonnegative",
+            "split_at": 1
+          },
+          {
+            "kind": "apply",
+            "step_id": "c2_monotonicity",
+            "next_step": "c2_square_roots",
+            "name": "Square-root monotonicity",
+            "source": {
+              "node": "K2",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2_square_roots",
+            "split_at": 10
+          },
+          {
+            "kind": "apply",
+            "step_id": "c2_aux_result",
+            "next_step": "c2_simplified",
+            "name": "Principal-root identities",
+            "auxiliary_ref": "c2_root_identities"
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2_simplified",
+            "split_at": 10
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2_result",
+            "split_at": 13
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "a",
+            "definition_role": "First input",
+            "range_unit": "Nonnegative real",
+            "interpretation": "First number being compared"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Second input",
+            "range_unit": "Nonnegative real",
+            "interpretation": "Second number being compared"
+          },
+          {
+            "symbol_latex": "u",
+            "definition_role": "Lower argument",
+            "range_unit": "Nonnegative real",
+            "interpretation": "Lower input to the square-root function"
+          },
+          {
+            "symbol_latex": "v",
+            "definition_role": "Upper argument",
+            "range_unit": "Nonnegative real",
+            "interpretation": "Upper input to the square-root function"
+          }
+        ],
+        "explanations": [
+          "c2_explanation"
+        ],
+        "auxiliaries": [
+          {
+            "id": "c2_root_identities",
+            "steps": [
+              "c2_aux_nonnegative",
+              "c2_aux_square",
+              "c2_aux_sum",
+              "c2_aux_result"
+            ],
+            "result_ref": "c2_aux_result"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "The last line is the requested arithmetic-geometric mean inequality.",
+        "downstream_use": "T1 states the final theorem without repeating this derivation."
+      },
+      "conditions": [
+        "$4ab\\ge0$",
+        "$(a+b)^2\\ge0$",
+        "$a+b\\ge0$"
+      ],
+      "condition_checks": [
+        "A1 gives $a,b\\ge0$, hence $4ab\\ge0$.",
+        "A1 gives $4ab\\ge0$, and R1 gives $(a+b)^2\\ge4ab\\ge0$.",
+        "A1 gives $a+b\\ge0$, so its principal square root equals $a+b$."
+      ]
+    },
+    {
+      "id": "T1",
+      "type": "TARGET",
+      "title": "Arithmetic-geometric mean",
+      "short_role": "The arithmetic mean is at least the geometric mean.",
+      "formula_latex": "\\frac{a+b}{2}\\ge\\sqrt{ab}",
+      "strict": true,
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Conclusion",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\frac{a+b}{2}\\ge\\sqrt{ab}",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "First input",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "First number being compared"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Second input",
+                  "range_unit": "Nonnegative real",
+                  "interpretation": "Second number being compared"
+                }
+              ]
+            },
+            {
+              "kind": "prose",
+              "text": "The inequality holds for every nonnegative real pair."
+            }
+          ]
+        },
+        {
+          "heading": "Equality case",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "In C1, adding $4ab$ preserves equality. A real square is zero exactly when its base is zero, so equality in R1 is equivalent to $(a-b)^2=0$, hence $a=b$. In C2 both compared quantities are nonnegative; the principal square root is injective there, so taking square roots preserves equality in both directions. A1 justifies the root identities in C2, and dividing by positive $2$ also preserves equality. Thus the target is an equality exactly when $a=b$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "States the final theorem",
+        "motivation": "The result compares two standard means under the stated domain."
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "E1",
+      "source": "A1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    },
+    {
+      "id": "E2",
+      "source": "K1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    },
+    {
+      "id": "E3",
+      "source": "C1",
+      "target": "R1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    },
+    {
+      "id": "E4",
+      "source": "A1",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    },
+    {
+      "id": "E5",
+      "source": "R1",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    },
+    {
+      "id": "E6",
+      "source": "K2",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    },
+    {
+      "id": "E7",
+      "source": "C2",
+      "target": "T1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW"
+    }
+  ],
+  "target_id": "T1",
+  "scopes": [],
+  "proof_flow": [
+    {
+      "id": "S1",
+      "title": "Inputs and square positivity",
+      "summary": "Fix $a,b\\ge0$ and identify the square-positivity fact used first.",
+      "nodes": [
+        "A1",
+        "K1"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "The squared bound",
+      "summary": "Apply square positivity to $a-b$ and record $(a+b)^2\\ge4ab$.",
+      "nodes": [
+        "C1",
+        "R1"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "Taking square roots",
+      "summary": "Check nonnegative sides, invoke square-root monotonicity, and conclude the mean inequality.",
+      "nodes": [
+        "K2",
+        "C2",
+        "T1"
+      ]
+    }
+  ],
+  "presentation": {
+    "mode": "human-first",
+    "language": "en",
+    "spine": [
+      "A1",
+      "C1",
+      "R1",
+      "C2",
+      "T1"
+    ],
+    "branches": [],
+    "support": [
+      "K1",
+      "K2"
+    ],
+    "examples": [],
+    "granularity_reviews": [
+      {
+        "finding_id": "operation-result-operation-C1",
+        "decision": "retain",
+        "reason": "Stage milestone: R1 states the squared comparison independently so readers can inspect the algebraic bound before the separate square-root theorem and its nonnegative side conditions are applied in C2."
+      }
+    ]
+  }
+}

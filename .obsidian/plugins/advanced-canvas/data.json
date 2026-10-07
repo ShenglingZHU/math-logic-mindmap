@@ -1,0 +1,7 @@
+{
+  "nodeStylingFeatureEnabled": true,
+  "edgesStylingFeatureEnabled": true,
+  "autoFileNodeEdgesFeatureEnabled": false,
+  "autoResizeNodeFeatureEnabled": false,
+  "autoResizeNodeEnabledByDefault": false
+}

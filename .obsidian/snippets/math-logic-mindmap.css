@@ -1,0 +1,131 @@
+/* Math Logic Mindmap. Enable in Obsidian Appearance -> CSS snippets.
+   Requires Advanced Canvas styleAttributes.proofRole for card-scoped selectors.
+   No global content clipping, rasterization or blur.
+*/
+.canvas-node[data-proof-role] .markdown-rendered {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.canvas-node[data-proof-role] .markdown-rendered h3 {
+  font-size: 18px;
+  margin-block: 12px;
+}
+.canvas-node[data-proof-role]:not([data-proof-role="COMBINE"]):not([data-proof-role="TRANSFORM"]) .markdown-rendered table:first-of-type {
+  width: 100%;
+  table-layout: fixed;
+  margin: 0 0 12px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.canvas-node[data-proof-role]:not([data-proof-role="COMBINE"]):not([data-proof-role="TRANSFORM"]) .markdown-rendered table:first-of-type th {
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+  padding: 2px 0 8px;
+}
+.canvas-node[data-proof-role]:not([data-proof-role="COMBINE"]) .markdown-rendered table:first-of-type th:first-child { width: 25%; text-align: left; }
+.canvas-node[data-proof-role]:not([data-proof-role="COMBINE"]) .markdown-rendered table:first-of-type th:last-child { text-align: right; }
+.canvas-node[data-proof-role="COMBINE"] .markdown-rendered,
+.canvas-node[data-proof-role="CASE"] .markdown-rendered { text-align: center; font-size: 14px; line-height: 1.3; }
+.canvas-node[data-proof-role="COMBINE"] .markdown-rendered p,
+.canvas-node[data-proof-role="CASE"] .markdown-rendered p { margin-block: 8px; }
+.canvas-node[data-proof-role="TRANSFORM"] .canvas-node-container {
+  border-color: transparent !important;
+  background: transparent !important;
+}
+.canvas-node[data-proof-role="TRANSFORM"] .canvas-node-content {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  border: 0 !important;
+  background: transparent !important;
+}
+.canvas-node[data-proof-role="TRANSFORM"] .canvas-node-content::before,
+.canvas-node[data-proof-role="TRANSFORM"] .canvas-node-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: -2;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-top: 180px solid #687383;
+}
+.canvas-node[data-proof-role="TRANSFORM"] .canvas-node-content::after {
+  top: 4px;
+  left: 4px;
+  z-index: -1;
+  border-left-width: 116px;
+  border-right-width: 116px;
+  border-top-width: 172px;
+  border-top-color: #D9DEE7;
+}
+.canvas-node[data-proof-role="TRANSFORM"] .markdown-rendered {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 240px;
+  height: 180px;
+  padding: 20px 58px 70px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.canvas-node[data-proof-role="TRANSFORM"] .markdown-rendered p { margin-block: 3px; }
+.canvas-node[data-proof-role="INTUITION"] .canvas-node-container {
+  border-style: dashed;
+  background: transparent !important;
+}
+.theme-light .canvas-node[data-proof-color-role="combine"][data-proof-palette-default="true"] .canvas-node-content { background-color: #fff7d6; color: #30280b; }
+.theme-dark .canvas-node[data-proof-color-role="combine"][data-proof-palette-default="true"] .canvas-node-content { background-color: #40381f; color: #fff0bc; }
+.theme-light .canvas-node[data-proof-color-role="transform"][data-proof-palette-default="true"] .canvas-node-content::after { border-top-color: #D9DEE7; }
+.theme-dark .canvas-node[data-proof-color-role="transform"][data-proof-palette-default="true"] .canvas-node-content::before { border-top-color: #9BA7B8; }
+.theme-dark .canvas-node[data-proof-color-role="transform"][data-proof-palette-default="true"] .canvas-node-content::after { border-top-color: #303A49; }
+.theme-light .canvas-node[data-proof-role="TRANSFORM"] .markdown-rendered { color: #253041; }
+.theme-dark .canvas-node[data-proof-role="TRANSFORM"] .markdown-rendered { color: #E9EEF6; }
+.theme-light .canvas-node[data-proof-color-role="result"][data-proof-palette-default="true"] .canvas-node-content { background-color: #e5f4e2 !important; color: #183317; }
+.theme-dark .canvas-node[data-proof-color-role="result"][data-proof-palette-default="true"] .canvas-node-content { background-color: #263d28 !important; color: #dcf2d9; }
+.theme-light .canvas-node[data-proof-color-role="external"][data-proof-palette-default="true"] .canvas-node-content { background-color: #f0eafa; }
+.theme-dark .canvas-node[data-proof-color-role="external"][data-proof-palette-default="true"] .canvas-node-content { background-color: #332a43; }
+.theme-light .canvas-node[data-proof-color-role="target"][data-proof-palette-default="true"] .canvas-node-content { background-color: #fae9e9; }
+.theme-dark .canvas-node[data-proof-color-role="target"][data-proof-palette-default="true"] .canvas-node-content { background-color: #42292c; }
+.theme-light .canvas-node[data-proof-color-role="given"][data-proof-palette-default="true"] .canvas-node-content { background-color: #e8f3fb; }
+.theme-dark .canvas-node[data-proof-color-role="given"][data-proof-palette-default="true"] .canvas-node-content { background-color: #233745; }
+.canvas-node[data-proof-color-role="combine"] { --proof-color-mix-light: 20%; --proof-color-mix-dark: 15%; }
+.canvas-node[data-proof-color-role="transform"] { --proof-color-mix-light: 100%; --proof-color-mix-dark: 15%; }
+.canvas-node[data-proof-color-role="result"] { --proof-color-mix-light: 53%; --proof-color-mix-dark: 8%; }
+.canvas-node[data-proof-color-role="external"] { --proof-color-mix-light: 19%; --proof-color-mix-dark: 15%; }
+.canvas-node[data-proof-color-role="target"] { --proof-color-mix-light: 21%; --proof-color-mix-dark: 14%; }
+.canvas-node[data-proof-color-role="given"] { --proof-color-mix-light: 17%; --proof-color-mix-dark: 15%; }
+.theme-light .canvas-node[data-proof-palette-default="false"]:not([data-proof-color-role="transform"]) .canvas-node-content {
+  background-color: color-mix(in srgb, var(--canvas-color) var(--proof-color-mix-light), var(--background-primary)) !important;
+  color: var(--text-normal);
+}
+.theme-dark .canvas-node[data-proof-palette-default="false"]:not([data-proof-color-role="transform"]) .canvas-node-content {
+  background-color: color-mix(in srgb, var(--canvas-color) var(--proof-color-mix-dark), var(--background-primary)) !important;
+  color: var(--text-normal);
+}
+.canvas-node[data-proof-color-role="transform"][data-proof-palette-default="false"] .canvas-node-content::before {
+  border-top-color: var(--canvas-color);
+}
+.theme-light .canvas-node[data-proof-color-role="transform"][data-proof-palette-default="false"] .canvas-node-content::after {
+  border-top-color: color-mix(in srgb, var(--canvas-color) var(--proof-color-mix-light), var(--background-primary));
+}
+.theme-dark .canvas-node[data-proof-color-role="transform"][data-proof-palette-default="false"] .canvas-node-content::after {
+  border-top-color: color-mix(in srgb, var(--canvas-color) var(--proof-color-mix-dark), var(--background-primary));
+}
+.math-proof-note { --file-line-width: 1000px; font-size: 16px; line-height: 1.65; }
+.math-proof-note .markdown-rendered, .math-proof-note.markdown-rendered { font-size: 16px; line-height: 1.65; }
+.math-proof-note table { width: 100%; max-width: 100%; table-layout: fixed; border-collapse: collapse; }
+.math-proof-note :is(th, td) { font-size: 15px; line-height: 1.55; padding: 8px; white-space: normal; overflow-wrap: anywhere; vertical-align: top; }
+.math-proof-note :is(th, td):first-child { width: 14%; }
+.math-proof-note :is(th, td):nth-child(2) { width: 29%; }
+.math-proof-note :is(th, td):nth-child(3) { width: 25%; }
+.math-proof-note :is(th, td):nth-child(4) { width: 32%; }
+.math-proof-note h2 { font-size: 21px; }
+/* Widths are a baseline, not evidence of fit: unusually wide symbols require review.
+   Do not hide overflow or reduce typography to force an equation/table into place. */

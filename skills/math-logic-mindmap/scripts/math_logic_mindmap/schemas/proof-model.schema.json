@@ -1,0 +1,1852 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Math Logic Mindmap Model",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "theorem": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Markdown title; wrap mathematical expressions in $...$."
+        },
+        "statement_latex": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Raw TeX theorem statement without $ delimiters."
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "Markdown prose; wrap every mathematical expression in $...$."
+          },
+          "minItems": 1
+        },
+        "proof_standard": {
+          "enum": [
+            "strict",
+            "derivation",
+            "heuristic",
+            "counterexample"
+          ]
+        },
+        "status": {
+          "enum": [
+            "proved",
+            "refuted",
+            "needs_assumption",
+            "partial"
+          ]
+        },
+        "counterexample": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S",
+          "description": "Markdown prose; wrap every mathematical expression in $...$."
+        },
+        "missing_assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "Markdown prose; wrap every mathematical expression in $...$."
+          }
+        },
+        "open_obligations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "Markdown prose; wrap every mathematical expression in $...$."
+          }
+        }
+      },
+      "required": [
+        "title",
+        "statement_latex",
+        "assumptions",
+        "proof_standard",
+        "status"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "领域": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "背景": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "角色 / 重要性": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "作用": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "证明思路/策略": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "证明工具": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "领域",
+        "背景",
+        "角色 / 重要性",
+        "作用",
+        "证明思路/策略",
+        "证明工具"
+      ]
+    },
+    "symbols": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "symbol_latex": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "definition_role": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "range_unit": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "interpretation": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "binding_ref": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "symbol_latex",
+          "definition_role",
+          "range_unit",
+          "interpretation"
+        ]
+      },
+      "minItems": 0
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "type": {
+            "enum": [
+              "ASSUMPTION",
+              "DEFINITION",
+              "KNOWN_RESULT",
+              "CONSTRUCTION",
+              "LOCAL_INTRODUCTION",
+              "CASE",
+              "HYPOTHESIS_LOCAL",
+              "DERIVATION",
+              "LEMMA",
+              "COMBINE",
+              "TRANSFORM",
+              "CONTRADICTION",
+              "BOUND",
+              "EXISTENCE_WITNESS",
+              "TARGET",
+              "INTUITION"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "maxLength": 36,
+            "description": "Short natural-language title used in wikilink aliases; do not include $ delimiters or mathematical source. Put mathematical detail in short_role, conditions, or prose."
+          },
+          "short_role": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "maxLength": 72
+          },
+          "formula_latex": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 240
+          },
+          "card_formula_display": {
+            "enum": [
+              "full",
+              "summary"
+            ]
+          },
+          "strict": {
+            "type": "boolean"
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "uses_symbols": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "bindings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "symbol_latex",
+                "domain_latex",
+                "depends_on"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "symbol_latex": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "domain_latex": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "definition_latex": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "depends_on": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "uniqueItems": true
+                },
+                "well_defined": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "domain_check": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "introduction_mode": {
+            "enum": [
+              "arbitrary",
+              "witness",
+              "fixed"
+            ]
+          },
+          "available_fact": {
+            "type": "string",
+            "minLength": 1
+          },
+          "case_mode": {
+            "enum": [
+              "finite",
+              "indexed"
+            ]
+          },
+          "case_input_review": {
+            "type": "string",
+            "minLength": 1
+          },
+          "case_branches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "edge_id",
+                "condition_latex",
+                "goal_latex"
+              ],
+              "properties": {
+                "edge_id": {
+                  "type": "string"
+                },
+                "condition_latex": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "goal_latex": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "branch_condition_latex": {
+            "type": "string",
+            "minLength": 1
+          },
+          "split_reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exhaustiveness": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mutual_exclusivity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "paired_case": {
+            "type": "string",
+            "minLength": 1
+          },
+          "case_closures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "branch_edge",
+                "generalizes",
+                "discharges",
+                "rule"
+              ],
+              "properties": {
+                "branch_edge": {
+                  "type": "string"
+                },
+                "generalizes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "discharges": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rule": {
+                  "const": "case_reconciliation"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "scope_closures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "scope",
+                "generalizes",
+                "discharges",
+                "rule"
+              ],
+              "properties": {
+                "scope": {
+                  "type": "string"
+                },
+                "generalizes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "discharges": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "rule": {
+                  "const": "case_reconciliation"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "induction_obligations": {
+            "type": "object",
+            "required": [
+              "base",
+              "step",
+              "principle"
+            ],
+            "properties": {
+              "base": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "step": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "principle": {
+                "type": "string"
+              },
+              "vacuous_base": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "condition_checks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "heading": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "blocks": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "kind": {
+                            "const": "prose"
+                          },
+                          "text": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "text"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "kind": {
+                            "const": "formula"
+                          },
+                          "latex": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "symbols": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "symbol_latex": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "pattern": "\\S"
+                                },
+                                "definition_role": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "pattern": "\\S"
+                                },
+                                "range_unit": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "pattern": "\\S"
+                                },
+                                "interpretation": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "pattern": "\\S"
+                                },
+                                "binding_ref": {
+                                  "type": "string",
+                                  "minLength": 1
+                                }
+                              },
+                              "required": [
+                                "symbol_latex",
+                                "definition_role",
+                                "range_unit",
+                                "interpretation"
+                              ]
+                            },
+                            "minItems": 1
+                          },
+                          "id": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "latex",
+                          "symbols"
+                        ]
+                      }
+                    ]
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "heading",
+                "blocks"
+              ]
+            },
+            "minItems": 1
+          },
+          "derivation": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "const": "prose"
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "text"
+                  ]
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "const": "formula"
+                    },
+                    "latex": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "symbols": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "symbol_latex": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "definition_role": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "range_unit": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "interpretation": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "binding_ref": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "required": [
+                          "symbol_latex",
+                          "definition_role",
+                          "range_unit",
+                          "interpretation"
+                        ]
+                      },
+                      "minItems": 1
+                    },
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "latex",
+                    "symbols"
+                  ]
+                }
+              ]
+            },
+            "minItems": 1
+          },
+          "combine_inputs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 2
+          },
+          "combine_output_latex": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "transform_input": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "transform_output_latex": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "external": {
+            "type": "boolean"
+          },
+          "result": {
+            "type": "boolean"
+          },
+          "navigation": {
+            "type": "object",
+            "properties": {
+              "stage": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "motivation": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "stage",
+              "role",
+              "motivation"
+            ],
+            "additionalProperties": false
+          },
+          "reading_ref": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "input_context": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "edge_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "contribution": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "edge_id",
+                "contribution"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "input_review": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "formula_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "contribution": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "node",
+                "formula_ref",
+                "contribution"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "input_usage": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "node": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "formula_ref": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "step_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "mode": {
+                  "enum": [
+                    "start",
+                    "basis",
+                    "condition"
+                  ]
+                }
+              },
+              "required": [
+                "node",
+                "formula_ref",
+                "step_id",
+                "mode"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "start_input": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "combine_motivation": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "combine_method": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "transform_motivation": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "transform_method": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "output_handoff": {
+            "type": "object",
+            "properties": {
+              "explanation": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "downstream_use": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            },
+            "required": [
+              "explanation",
+              "downstream_use"
+            ],
+            "additionalProperties": false
+          },
+          "derivation_chain": {
+            "type": "object",
+            "properties": {
+              "rows": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "expression"
+                        },
+                        "step_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "split_at": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "continuation": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "step_id",
+                        "split_at"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "kind": {
+                          "const": "apply"
+                        },
+                        "step_id": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "next_step": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "name": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "source": {
+                          "type": "object",
+                          "properties": {
+                            "node": {
+                              "type": "string",
+                              "minLength": 1,
+                              "pattern": "\\S"
+                            },
+                            "formula_ref": {
+                              "type": "string",
+                              "minLength": 1,
+                              "pattern": "\\S"
+                            }
+                          },
+                          "required": [
+                            "node",
+                            "formula_ref"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "auxiliary_ref": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "external": {
+                          "const": true
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "step_id",
+                        "next_step",
+                        "name"
+                      ],
+                      "additionalProperties": false,
+                      "oneOf": [
+                        {
+                          "required": [
+                            "source"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "auxiliary_ref"
+                          ]
+                        },
+                        {
+                          "required": [
+                            "external"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "minItems": 3
+              },
+              "symbols": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "symbol_latex": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "definition_role": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "range_unit": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "interpretation": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "binding_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "required": [
+                    "symbol_latex",
+                    "definition_role",
+                    "range_unit",
+                    "interpretation"
+                  ]
+                },
+                "minItems": 1
+              },
+              "explanations": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 0
+              },
+              "auxiliaries": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "steps": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 1
+                    },
+                    "result_ref": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "steps",
+                    "result_ref"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "rows",
+              "symbols"
+            ],
+            "additionalProperties": false
+          },
+          "combine_reason": {
+            "enum": [
+              "premise_synthesis",
+              "theorem_application",
+              "branch_merge",
+              "case_reconciliation",
+              "independent_results",
+              "induction"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "title",
+          "short_role",
+          "sections"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "CASE"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "case_mode",
+                "case_branches",
+                "case_input_review",
+                "split_reason",
+                "exhaustiveness"
+              ]
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "LOCAL_INTRODUCTION"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "introduction_mode",
+                "bindings"
+              ]
+            }
+          },
+          {
+            "if": {
+              "required": [
+                "paired_case"
+              ]
+            },
+            "then": {
+              "required": [
+                "case_closures"
+              ]
+            }
+          }
+        ]
+      },
+      "minItems": 1
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "target": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "relation": {
+            "enum": [
+              "REQUIRED_FOR",
+              "APPLIES_THEOREM",
+              "VERIFIES_CONDITION",
+              "CASE_BRANCH",
+              "OPENS_SCOPE",
+              "FEEDS_CASE",
+              "FEEDS_COMBINE",
+              "COMBINE_PRODUCES",
+              "FEEDS_TRANSFORM",
+              "TRANSFORM_PRODUCES",
+              "DISCHARGES",
+              "ESTABLISHES_TARGET"
+            ]
+          },
+          "detail_mode": {
+            "enum": [
+              "EDGE_DETAIL",
+              "STRUCTURAL_ONLY"
+            ]
+          },
+          "display_mode": {
+            "enum": [
+              "FLOW",
+              "REFERENCE"
+            ]
+          },
+          "label_text": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "label_latex": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "detail": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "source_contribution": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "transition_steps": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "minItems": 1
+                  },
+                  "target_gain": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "conditions": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "condition_checks": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    }
+                  },
+                  "role_in_proof": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "sections": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "heading": {
+                          "type": "string",
+                          "minLength": 1,
+                          "pattern": "\\S"
+                        },
+                        "blocks": {
+                          "type": "array",
+                          "items": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "kind": {
+                                    "const": "prose"
+                                  },
+                                  "text": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "pattern": "\\S"
+                                  },
+                                  "id": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "pattern": "\\S"
+                                  }
+                                },
+                                "required": [
+                                  "kind",
+                                  "text"
+                                ]
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "kind": {
+                                    "const": "formula"
+                                  },
+                                  "latex": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "pattern": "\\S"
+                                  },
+                                  "symbols": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "symbol_latex": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "pattern": "\\S"
+                                        },
+                                        "definition_role": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "pattern": "\\S"
+                                        },
+                                        "range_unit": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "pattern": "\\S"
+                                        },
+                                        "interpretation": {
+                                          "type": "string",
+                                          "minLength": 1,
+                                          "pattern": "\\S"
+                                        },
+                                        "binding_ref": {
+                                          "type": "string",
+                                          "minLength": 1
+                                        }
+                                      },
+                                      "required": [
+                                        "symbol_latex",
+                                        "definition_role",
+                                        "range_unit",
+                                        "interpretation"
+                                      ]
+                                    },
+                                    "minItems": 1
+                                  },
+                                  "id": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "pattern": "\\S"
+                                  }
+                                },
+                                "required": [
+                                  "kind",
+                                  "latex",
+                                  "symbols"
+                                ]
+                              }
+                            ]
+                          },
+                          "minItems": 1
+                        }
+                      },
+                      "required": [
+                        "heading",
+                        "blocks"
+                      ]
+                    },
+                    "minItems": 0
+                  }
+                },
+                "required": [
+                  "summary",
+                  "source_contribution",
+                  "transition_steps",
+                  "target_gain",
+                  "conditions",
+                  "condition_checks",
+                  "role_in_proof"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "discharges": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 0
+          },
+          "uses_symbols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "closes_scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "case_condition_latex": {
+            "type": "string",
+            "minLength": 1
+          },
+          "discharge_rule": {
+            "enum": [
+              "negation_introduction",
+              "reductio",
+              "conditional_proof",
+              "universal_generalization",
+              "induction_generalization",
+              "existential_elimination"
+            ]
+          },
+          "generalizes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "introduces_exists": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "target",
+          "relation",
+          "detail_mode",
+          "display_mode"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "detail_mode": {
+                  "const": "EDGE_DETAIL"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "label_text",
+                "detail"
+              ],
+              "properties": {
+                "label_text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "detail": {
+                  "type": "object",
+                  "properties": {
+                    "summary": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "source_contribution": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "transition_steps": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "minItems": 1
+                    },
+                    "target_gain": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "conditions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      }
+                    },
+                    "condition_checks": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      }
+                    },
+                    "role_in_proof": {
+                      "type": "string",
+                      "minLength": 1,
+                      "pattern": "\\S"
+                    },
+                    "sections": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "heading": {
+                            "type": "string",
+                            "minLength": 1,
+                            "pattern": "\\S"
+                          },
+                          "blocks": {
+                            "type": "array",
+                            "items": {
+                              "oneOf": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "const": "prose"
+                                    },
+                                    "text": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "pattern": "\\S"
+                                    },
+                                    "id": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "pattern": "\\S"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "text"
+                                  ]
+                                },
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "kind": {
+                                      "const": "formula"
+                                    },
+                                    "latex": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "pattern": "\\S"
+                                    },
+                                    "symbols": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "symbol_latex": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "pattern": "\\S"
+                                          },
+                                          "definition_role": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "pattern": "\\S"
+                                          },
+                                          "range_unit": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "pattern": "\\S"
+                                          },
+                                          "interpretation": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "pattern": "\\S"
+                                          },
+                                          "binding_ref": {
+                                            "type": "string",
+                                            "minLength": 1
+                                          }
+                                        },
+                                        "required": [
+                                          "symbol_latex",
+                                          "definition_role",
+                                          "range_unit",
+                                          "interpretation"
+                                        ]
+                                      },
+                                      "minItems": 1
+                                    },
+                                    "id": {
+                                      "type": "string",
+                                      "minLength": 1,
+                                      "pattern": "\\S"
+                                    }
+                                  },
+                                  "required": [
+                                    "kind",
+                                    "latex",
+                                    "symbols"
+                                  ]
+                                }
+                              ]
+                            },
+                            "minItems": 1
+                          }
+                        },
+                        "required": [
+                          "heading",
+                          "blocks"
+                        ]
+                      },
+                      "minItems": 0
+                    }
+                  },
+                  "required": [
+                    "summary",
+                    "source_contribution",
+                    "transition_steps",
+                    "target_gain",
+                    "conditions",
+                    "condition_checks",
+                    "role_in_proof"
+                  ]
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "label_text": {
+                  "type": "null"
+                },
+                "label_latex": {
+                  "type": "null"
+                },
+                "detail": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 0
+    },
+    "target_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "Short natural-language Canvas group title; do not include $ delimiters or mathematical source."
+          },
+          "kind": {
+            "enum": [
+              "local",
+              "induction"
+            ]
+          },
+          "parent_scope": {
+            "type": "string",
+            "minLength": 1
+          },
+          "opened_by": {
+            "type": "string",
+            "minLength": 1
+          },
+          "opening_edge": {
+            "type": "string",
+            "minLength": 1
+          },
+          "closed_by": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "opened_by",
+          "closed_by"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "proof_flow": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S",
+            "description": "Short natural-language stage title used in navigation anchors; do not include $ delimiters or mathematical source. Put mathematical detail in summary."
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "summary",
+          "nodes"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "presentation": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "const": "human-first"
+        },
+        "language": {
+          "enum": [
+            "zh-CN",
+            "en",
+            "fr"
+          ]
+        },
+        "spine": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "branches": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "from",
+              "to",
+              "nodes"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "from": {
+                "type": "string"
+              },
+              "to": {
+                "type": "string"
+              },
+              "nodes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "support": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "granularity_reviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "finding_id",
+              "decision",
+              "reason"
+            ],
+            "properties": {
+              "finding_id": {
+                "type": "string"
+              },
+              "decision": {
+                "enum": [
+                  "merge",
+                  "retain"
+                ]
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "mode",
+        "spine",
+        "branches",
+        "support",
+        "examples",
+        "granularity_reviews",
+        "language"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "slug",
+    "theorem",
+    "context",
+    "symbols",
+    "nodes",
+    "edges",
+    "target_id",
+    "scopes",
+    "proof_flow",
+    "presentation"
+  ],
+  "additionalProperties": false
+}

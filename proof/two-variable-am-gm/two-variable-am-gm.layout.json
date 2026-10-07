@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "nodes": {
+    "UIHeader": {
+      "x": -732,
+      "y": -424,
+      "width": 1000,
+      "height": 320,
+      "extra": {}
+    },
+    "A1": {
+      "x": -432,
+      "y": 16,
+      "width": 400,
+      "height": 296,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "ASSUMPTION",
+          "proofResult": "false",
+          "shape": "rectangle",
+          "textAlign": "left",
+          "border": "solid",
+          "proofColorRole": "given",
+          "proofPaletteDefault": "true"
+        }
+      }
+    },
+    "K1": {
+      "x": -896,
+      "y": 0,
+      "width": 400,
+      "height": 312,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "KNOWN_RESULT",
+          "proofResult": "false",
+          "shape": "rectangle",
+          "textAlign": "left",
+          "border": "solid",
+          "proofColorRole": "external",
+          "proofPaletteDefault": "true"
+        }
+      }
+    },
+    "C1": {
+      "x": -554,
+      "y": 472,
+      "width": 180,
+      "height": 180,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "COMBINE",
+          "proofResult": "false",
+          "shape": "circle",
+          "textAlign": "center",
+          "border": "solid",
+          "proofColorRole": "combine",
+          "proofPaletteDefault": "true"
+        }
+      }
+    },
+    "R1": {
+      "x": -664,
+      "y": 812,
+      "width": 400,
+      "height": 344,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "BOUND",
+          "proofResult": "true",
+          "shape": "rectangle",
+          "textAlign": "left",
+          "border": "solid",
+          "proofColorRole": "result",
+          "proofPaletteDefault": "true"
+        }
+      }
+    },
+    "K2": {
+      "x": -200,
+      "y": 812,
+      "width": 400,
+      "height": 424,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "KNOWN_RESULT",
+          "proofResult": "false",
+          "shape": "rectangle",
+          "textAlign": "left",
+          "border": "solid",
+          "proofColorRole": "external",
+          "proofPaletteDefault": "true"
+        }
+      }
+    },
+    "C2": {
+      "x": -322,
+      "y": 1396,
+      "width": 180,
+      "height": 180,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "COMBINE",
+          "proofResult": "false",
+          "shape": "circle",
+          "textAlign": "center",
+          "border": "solid",
+          "proofColorRole": "combine",
+          "proofPaletteDefault": "true"
+        }
+      }
+    },
+    "T1": {
+      "x": -432,
+      "y": 1736,
+      "width": 400,
+      "height": 344,
+      "extra": {
+        "styleAttributes": {
+          "proofRole": "TARGET",
+          "proofResult": "false",
+          "shape": "rectangle",
+          "textAlign": "left",
+          "border": "solid",
+          "proofColorRole": "target",
+          "proofPaletteDefault": "true"
+        }
+      }
+    }
+  },
+  "groups": {},
+  "imported_canvas_hash": "8ee6ea1485a2731eb4917b09c0db4988c8cbdc4a58e5dc5ada6c5ad5392d1475"
+}

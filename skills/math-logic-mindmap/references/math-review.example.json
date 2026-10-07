@@ -1,0 +1,8 @@
+{
+  "status": "UNKNOWN",
+  "model_hash": "Enter the current model hash returned by validate-model",
+  "reviewer": "Enter the actual reviewer or agent identity",
+  "summary": "Complete after reviewing the argument, applicability conditions, proof standard, and known gaps",
+  "node_audits": {"A1": "Record semantic atomicity and mathematical validity for each node; keys must cover every node"},
+  "edge_audits": {"E1": "Record source contribution, target gain, and derivation validity for each edge; keys must cover every edge"}
+}

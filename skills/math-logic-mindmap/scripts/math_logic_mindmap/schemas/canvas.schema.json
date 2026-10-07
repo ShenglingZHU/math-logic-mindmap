@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Advanced Canvas structural subset",
+  "type": "object",
+  "required": ["metadata", "nodes", "edges"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["version", "proofRouting"],
+      "properties": {
+        "version": {"const": "1.0-1.0"},
+        "proofRouting": {
+          "type": "object",
+          "required": ["profile"],
+          "properties": {"profile": {"const": "downward-orthogonal"}}
+        }
+      }
+    },
+    "nodes": {"type": "array", "minItems": 1, "items": {
+      "type": "object", "required": ["id", "type", "x", "y", "width", "height"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {"enum": ["text", "group"]},
+        "x": {"type": "integer"}, "y": {"type": "integer"},
+        "width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1},
+        "text": {"type": "string"}, "label": {"type": "string"},
+        "color": {"type": "string", "pattern": "^(#[0-9A-Fa-f]{6}|[1-6])$"},
+        "styleAttributes": {"type": "object"}
+      },
+      "allOf": [{"if": {"properties": {"type": {"const": "text"}}}, "then": {"required": ["text"]}, "else": {"required": ["label"]}}]
+    }},
+    "edges": {"type": "array", "items": {
+      "type": "object", "required": ["id", "fromNode", "toNode", "fromSide", "toSide", "proofRoute"],
+      "not": {"required": ["proofGeometry"]},
+      "properties": {
+        "id": {"type": "string", "minLength": 1}, "fromNode": {"type": "string"}, "toNode": {"type": "string"},
+        "fromSide": {"enum": ["top", "right", "bottom", "left"]}, "toSide": {"enum": ["top", "right", "bottom", "left"]},
+        "fromEnd": {"const": "none"}, "toEnd": {"const": "arrow"}, "label": {"type": "string", "minLength": 1},
+        "color": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}$"}, "styleAttributes": {"type": "object"},
+        "proofRoute": {
+          "type": "object",
+          "required": ["fromOffset", "toOffset", "midOffset"],
+          "properties": {
+            "fromOffset": {"type": "number"},
+            "toOffset": {"type": "number"},
+            "midOffset": {"type": "number"}
+          }
+        }
+      }
+    }}
+  }
+}

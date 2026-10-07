@@ -1,0 +1,50 @@
+[
+  {
+    "case_id": "W01",
+    "latex": "I\\subseteq\\mathbb R\\text{ 为区间},\\quad f:I\\to\\mathbb R\\text{ 为凸函数}",
+    "measured_width": 282,
+    "expected_card_width": 400
+  },
+  {
+    "case_id": "W02",
+    "latex": "\\lambda_i\\ge0,\\quad\\sum_{i=1}^{n}\\lambda_i=1",
+    "measured_width": 167,
+    "expected_card_width": 400
+  },
+  {
+    "case_id": "W03",
+    "latex": "f((1-s)x+sy)\\le(1-s)f(x)+sf(y)\\quad(x,y\\in I,\\ 0\\le s\\le1)",
+    "measured_width": 520,
+    "expected_card_width": 640
+  },
+  {
+    "case_id": "W04",
+    "latex": "\\sum_{i=1}^{n}\\lambda_ix_i=\\sum_{j=1}^{r}p_jy_j,\\quad\\sum_{i=1}^{n}\\lambda_if(x_i)=\\sum_{j=1}^{r}p_jf(y_j),\\quad p_j>0,\\ \\sum_{j=1}^{r}p_j=1",
+    "measured_width": 580,
+    "expected_card_width": 720
+  },
+  {
+    "case_id": "W05",
+    "latex": "t=p_m,\\quad q_j=\\frac{p_j}{1-t},\\quad z=\\sum_{j=1}^{m-1}q_jy_j\\in I,\\quad\\sum_{j=1}^{m}p_jy_j=(1-t)z+ty_m",
+    "measured_width": 579,
+    "expected_card_width": 720
+  },
+  {
+    "case_id": "W06",
+    "latex": "x,y\\in I,\\ 0\\le s\\le1\\Rightarrow (1-s)x+sy\\in I\\ \\text{且}\\ f((1-s)x+sy)\\le(1-s)f(x)+sf(y)",
+    "measured_width": 687,
+    "expected_card_width": 800
+  },
+  {
+    "case_id": "W07",
+    "latex": "\\forall r\\ge1,\\ p_j>0,\\ \\sum_{j=1}^{r}p_j=1\\Rightarrow f\\!\\left(\\sum_{j=1}^{r}p_jy_j\\right)\\le\\sum_{j=1}^{r}p_jf(y_j)",
+    "measured_width": 479,
+    "expected_card_width": 640
+  },
+  {
+    "case_id": "W08",
+    "latex": "f\\!\\left(\\sum_{i=1}^{n}\\lambda_ix_i\\right)\\le\\sum_{i=1}^{n}\\lambda_if(x_i)",
+    "measured_width": 227,
+    "expected_card_width": 400
+  }
+]

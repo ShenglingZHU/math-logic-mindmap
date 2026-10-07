@@ -1,0 +1,986 @@
+{
+  "slug": "nested-quantifier-smoke",
+  "theorem": {
+    "title": "任取对象后的内层反证",
+    "statement_latex": "\\forall x\\in X\\,P(x)",
+    "assumptions": [
+      "$X$ 非空。",
+      "已知 $\\forall u\\in X\\,P(u)$。"
+    ],
+    "proof_standard": "strict",
+    "status": "proved"
+  },
+  "context": {
+    "领域": "数理逻辑",
+    "背景": "任取论域中的对象后，在该对象的上下文内使用局部假设。",
+    "角色 / 重要性": "展示嵌套假设根与外层全称推广的关系。",
+    "作用": "明确两次作用域关闭各自使用的逻辑规则。",
+    "证明思路/策略": "先解除内层假设，再对外层任取对象作全称推广。",
+    "证明工具": "全称实例化、反证或条件证明、全称引入。"
+  },
+  "symbols": [
+    {
+      "symbol_latex": "X",
+      "definition_role": "非空论域",
+      "range_unit": "集合",
+      "interpretation": "任取对象的范围"
+    },
+    {
+      "symbol_latex": "P",
+      "definition_role": "论域上的命题性质",
+      "range_unit": "论域上的命题函数",
+      "interpretation": "对任取对象核验的命题"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "A1",
+      "type": "ASSUMPTION",
+      "title": "论域非空",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "X\\ne\\varnothing",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "X\\ne\\varnothing",
+              "symbols": [
+                {
+                  "symbol_latex": "X",
+                  "definition_role": "非空论域",
+                  "range_unit": "集合",
+                  "interpretation": "任取对象的范围"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "A2",
+      "type": "KNOWN_RESULT",
+      "title": "已知全称结论",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "\\forall u\\in X\\,P(u)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\forall u\\in X\\,P(u)",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "论域上的命题性质",
+                  "range_unit": "论域上的命题函数",
+                  "interpretation": "对任取对象核验的命题"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "I",
+      "type": "LOCAL_INTRODUCTION",
+      "title": "任取对象",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "x\\in X",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "x\\in X",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象",
+                  "binding_ref": "x"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "introduction_mode": "arbitrary",
+      "bindings": [
+        {
+          "id": "x",
+          "symbol_latex": "x",
+          "domain_latex": "X",
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "type": "DERIVATION",
+      "title": "记录对象范围",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "x\\in X\\land X\\ne\\varnothing",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "x\\in X\\land X\\ne\\varnothing",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象",
+                  "binding_ref": "x"
+                },
+                {
+                  "symbol_latex": "X",
+                  "definition_role": "非空论域",
+                  "range_unit": "集合",
+                  "interpretation": "任取对象的范围"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Outer",
+      "input_context": [
+        {
+          "edge_id": "EIF",
+          "contribution": "在局部作用域中使用任取对象。"
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "type": "HYPOTHESIS_LOCAL",
+      "title": "内层否定假设",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "\\neg P(x)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\neg P(x)",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象",
+                  "binding_ref": "x"
+                },
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "论域上的命题性质",
+                  "range_unit": "论域上的命题函数",
+                  "interpretation": "对任取对象核验的命题"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Inner"
+    },
+    {
+      "id": "CI",
+      "type": "COMBINE",
+      "title": "汇合局部前提",
+      "short_role": "汇合",
+      "formula_latex": null,
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "操作说明",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "把已知全称事实与局部否定假设合并，得到矛盾。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "汇合两个必要前提。",
+        "motivation": "形成下一步结论。"
+      },
+      "input_review": [
+        {
+          "node": "A2",
+          "formula_ref": "core",
+          "contribution": "提供第一项前提"
+        },
+        {
+          "node": "H",
+          "formula_ref": "core",
+          "contribution": "提供第二项前提"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "A2",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "H",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "id": "input1",
+          "latex": "\\forall u\\in X\\,P(u)",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "论域上的命题性质",
+              "range_unit": "论域上的命题函数",
+              "interpretation": "对任取对象核验的命题"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "input2",
+          "latex": "\\neg P(x)",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "任取的论域元素",
+              "range_unit": "$X$",
+              "interpretation": "局部作用域中的任意对象",
+              "binding_ref": "x"
+            },
+            {
+              "symbol_latex": "P",
+              "definition_role": "论域上的命题性质",
+              "range_unit": "论域上的命题函数",
+              "interpretation": "对任取对象核验的命题"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "result",
+          "latex": "\\bot",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "任取的论域元素",
+              "range_unit": "$X$",
+              "interpretation": "局部作用域中的任意对象",
+              "binding_ref": "x"
+            }
+          ]
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "H",
+              "formula_ref": "core"
+            },
+            "name": "结合第二项前提",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "x",
+            "definition_role": "任取的论域元素",
+            "range_unit": "$X$",
+            "interpretation": "局部作用域中的任意对象",
+            "binding_ref": "x"
+          },
+          {
+            "symbol_latex": "P",
+            "definition_role": "论域上的命题性质",
+            "range_unit": "论域上的命题函数",
+            "interpretation": "对任取对象核验的命题"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式作为独立后继节点的核心公式。",
+        "downstream_use": "后继节点承接该结果继续证明。"
+      },
+      "combine_inputs": [
+        "A2",
+        "H"
+      ],
+      "start_input": "A2",
+      "combine_output_latex": "\\bot",
+      "combine_motivation": "把已知全称事实与局部否定假设合并，得到矛盾。",
+      "combine_method": "全称实例化后核对矛盾。",
+      "combine_reason": "premise_synthesis",
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Inner"
+    },
+    {
+      "id": "X",
+      "type": "CONTRADICTION",
+      "title": "得到矛盾",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "\\bot",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\bot",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象",
+                  "binding_ref": "x"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Inner",
+      "result": true
+    },
+    {
+      "id": "R",
+      "type": "LEMMA",
+      "title": "解除否定假设",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "P(x)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P(x)",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象",
+                  "binding_ref": "x"
+                },
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "论域上的命题性质",
+                  "range_unit": "论域上的命题函数",
+                  "interpretation": "对任取对象核验的命题"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Outer",
+      "result": true
+    },
+    {
+      "id": "C1",
+      "type": "COMBINE",
+      "title": "汇合局部前提",
+      "short_role": "汇合",
+      "formula_latex": null,
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "操作说明",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "把任取对象的范围与已得结论合并。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "汇合两个必要前提。",
+        "motivation": "形成下一步结论。"
+      },
+      "input_review": [
+        {
+          "node": "F",
+          "formula_ref": "core",
+          "contribution": "提供第一项前提"
+        },
+        {
+          "node": "R",
+          "formula_ref": "core",
+          "contribution": "提供第二项前提"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "F",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "R",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "id": "input1",
+          "latex": "x\\in X\\land X\\ne\\varnothing",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "任取的论域元素",
+              "range_unit": "$X$",
+              "interpretation": "局部作用域中的任意对象",
+              "binding_ref": "x"
+            },
+            {
+              "symbol_latex": "X",
+              "definition_role": "非空论域",
+              "range_unit": "集合",
+              "interpretation": "任取对象的范围"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "input2",
+          "latex": "P(x)",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "任取的论域元素",
+              "range_unit": "$X$",
+              "interpretation": "局部作用域中的任意对象",
+              "binding_ref": "x"
+            },
+            {
+              "symbol_latex": "P",
+              "definition_role": "论域上的命题性质",
+              "range_unit": "论域上的命题函数",
+              "interpretation": "对任取对象核验的命题"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "id": "result",
+          "latex": "x\\in X\\land P(x)",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "任取的论域元素",
+              "range_unit": "$X$",
+              "interpretation": "局部作用域中的任意对象",
+              "binding_ref": "x"
+            },
+            {
+              "symbol_latex": "P",
+              "definition_role": "论域上的命题性质",
+              "range_unit": "论域上的命题函数",
+              "interpretation": "对任取对象核验的命题"
+            }
+          ]
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "R",
+              "formula_ref": "core"
+            },
+            "name": "结合第二项前提",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "x",
+            "definition_role": "任取的论域元素",
+            "range_unit": "$X$",
+            "interpretation": "局部作用域中的任意对象",
+            "binding_ref": "x"
+          },
+          {
+            "symbol_latex": "X",
+            "definition_role": "非空论域",
+            "range_unit": "集合",
+            "interpretation": "任取对象的范围"
+          },
+          {
+            "symbol_latex": "P",
+            "definition_role": "论域上的命题性质",
+            "range_unit": "论域上的命题函数",
+            "interpretation": "对任取对象核验的命题"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式作为独立后继节点的核心公式。",
+        "downstream_use": "后继节点承接该结果继续证明。"
+      },
+      "combine_inputs": [
+        "F",
+        "R"
+      ],
+      "start_input": "F",
+      "combine_output_latex": "x\\in X\\land P(x)",
+      "combine_motivation": "把任取对象的范围与已得结论合并。",
+      "combine_method": "并列核对范围与结论。",
+      "combine_reason": "premise_synthesis",
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Outer"
+    },
+    {
+      "id": "N1",
+      "type": "LEMMA",
+      "title": "一般对象满足命题",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "x\\in X\\land P(x)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "x\\in X\\land P(x)",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象",
+                  "binding_ref": "x"
+                },
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "论域上的命题性质",
+                  "range_unit": "论域上的命题函数",
+                  "interpretation": "对任取对象核验的命题"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "scope": "Outer",
+      "result": true
+    },
+    {
+      "id": "T1",
+      "type": "TARGET",
+      "title": "全称目标",
+      "short_role": "陈述当前逻辑步骤。",
+      "formula_latex": "\\forall x\\in X\\,P(x)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\forall x\\in X\\,P(x)",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "任取的论域元素",
+                  "range_unit": "$X$",
+                  "interpretation": "局部作用域中的任意对象"
+                },
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "论域上的命题性质",
+                  "range_unit": "论域上的命题函数",
+                  "interpretation": "对任取对象核验的命题"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "记录证明步骤。",
+        "motivation": "使推导依赖清晰。"
+      },
+      "uses_symbols": [],
+      "result": true
+    }
+  ],
+  "edges": [
+    {
+      "id": "EA1I",
+      "source": "A1",
+      "target": "I",
+      "relation": "REQUIRED_FOR",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "说明推导步骤",
+      "label_latex": null,
+      "detail": {
+        "summary": "明确来源与目标之间的推导。",
+        "source_contribution": "源节点提供所需前提。",
+        "transition_steps": [
+          "应用当前逻辑规则。"
+        ],
+        "target_gain": "得到目标节点的结论。",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "推进证明。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "EIF",
+      "source": "I",
+      "target": "F",
+      "relation": "OPENS_SCOPE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EA2CI",
+      "source": "A2",
+      "target": "CI",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EHCI",
+      "source": "H",
+      "target": "CI",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "ECIX",
+      "source": "CI",
+      "target": "X",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EXR",
+      "source": "X",
+      "target": "R",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "说明推导步骤",
+      "label_latex": null,
+      "detail": {
+        "summary": "明确来源与目标之间的推导。",
+        "source_contribution": "源节点提供所需前提。",
+        "transition_steps": [
+          "应用当前逻辑规则。"
+        ],
+        "target_gain": "得到目标节点的结论。",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "推进证明。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "closes_scope": "Inner",
+      "discharge_rule": "reductio",
+      "discharges": [
+        "H"
+      ],
+      "generalizes": []
+    },
+    {
+      "id": "EFC1",
+      "source": "F",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "ERC1",
+      "source": "R",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EC1N1",
+      "source": "C1",
+      "target": "N1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EN1T1",
+      "source": "N1",
+      "target": "T1",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "说明推导步骤",
+      "label_latex": null,
+      "detail": {
+        "summary": "明确来源与目标之间的推导。",
+        "source_contribution": "源节点提供所需前提。",
+        "transition_steps": [
+          "应用当前逻辑规则。"
+        ],
+        "target_gain": "得到目标节点的结论。",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "推进证明。"
+      },
+      "uses_symbols": [
+        "x"
+      ],
+      "closes_scope": "Outer",
+      "discharge_rule": "universal_generalization",
+      "discharges": [],
+      "generalizes": [
+        "x"
+      ]
+    }
+  ],
+  "target_id": "T1",
+  "scopes": [
+    {
+      "id": "Outer",
+      "title": "任取对象",
+      "kind": "local",
+      "opened_by": "I",
+      "opening_edge": "EIF",
+      "closed_by": "EN1T1"
+    },
+    {
+      "id": "Inner",
+      "title": "反证假设",
+      "kind": "local",
+      "parent_scope": "Outer",
+      "opened_by": "H",
+      "closed_by": "EXR"
+    }
+  ],
+  "proof_flow": [
+    {
+      "id": "S1",
+      "title": "逐层解除",
+      "summary": "任取对象、内层反证、最后全称推广。",
+      "nodes": [
+        "A1",
+        "A2",
+        "I",
+        "F",
+        "H",
+        "CI",
+        "X",
+        "R",
+        "C1",
+        "N1",
+        "T1"
+      ]
+    }
+  ],
+  "presentation": {
+    "mode": "human-first",
+    "spine": [
+      "A1",
+      "I",
+      "F",
+      "C1",
+      "N1",
+      "T1"
+    ],
+    "branches": [],
+    "support": [
+      "A2",
+      "H",
+      "CI",
+      "X",
+      "R"
+    ],
+    "examples": [],
+    "granularity_reviews": [],
+    "language": "zh-CN"
+  }
+}

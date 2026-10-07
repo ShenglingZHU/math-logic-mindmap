@@ -1,0 +1,999 @@
+{
+  "slug": "case-nested-smoke",
+  "theorem": {
+    "title": "分类讨论的条件命题",
+    "statement_latex": "(P\\lor\\neg P)\\Rightarrow(P\\lor\\neg P)",
+    "assumptions": [
+      "$u\\le v$",
+      "$c>0$"
+    ],
+    "proof_standard": "strict",
+    "status": "proved"
+  },
+  "context": {
+    "领域": "实分析与凸性",
+    "背景": "用可见的多根依赖和分级汇合组织有限加权证明。",
+    "角色 / 重要性": "展示当前正式模型的倒树状证明结构。",
+    "作用": "把题设、定义和外部定理逐级汇合到唯一结论。",
+    "证明思路/策略": "先准备条件与工具，再通过操作节点形成关键各级结论。",
+    "证明工具": "定义、初等代数、两点凸性与数学归纳法。"
+  },
+  "symbols": [
+    {
+      "symbol_latex": "P",
+      "definition_role": "待讨论的命题",
+      "range_unit": "命题",
+      "interpretation": "分类讨论的共同目标"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "H1",
+      "type": "HYPOTHESIS_LOCAL",
+      "title": "排中划分",
+      "short_role": "排中划分。",
+      "formula_latex": "P\\lor\\neg P",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P\\lor\\neg P",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "排中划分。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": [],
+      "scope": "Outer"
+    },
+    {
+      "id": "K1",
+      "type": "CASE",
+      "title": "按命题真假分类",
+      "short_role": "按命题真假分类。",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "分类依据",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "依据排中律，将命题成立与不成立分别讨论。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "按命题真假分类。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": [],
+      "case_mode": "finite",
+      "case_input_review": "依据排中划分分别讨论。",
+      "split_reason": "两个情况覆盖全部可能。",
+      "exhaustiveness": "排中律保证穷尽。",
+      "case_branches": [
+        {
+          "edge_id": "EKD1",
+          "condition_latex": "P",
+          "goal_latex": "P\\lor\\neg P"
+        },
+        {
+          "edge_id": "EKD2",
+          "condition_latex": "\\neg P",
+          "goal_latex": "P\\lor\\neg P"
+        }
+      ],
+      "input_context": [
+        {
+          "edge_id": "EH1K1",
+          "contribution": "排中结论给出穷尽的分类依据。"
+        }
+      ],
+      "scope": "Outer"
+    },
+    {
+      "id": "D1",
+      "type": "DERIVATION",
+      "title": "命题成立时的结论",
+      "short_role": "命题成立时的结论。",
+      "formula_latex": "P",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "命题成立时的结论。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": [],
+      "branch_condition_latex": "P",
+      "scope": "Outer"
+    },
+    {
+      "id": "D2",
+      "type": "DERIVATION",
+      "title": "命题不成立时的结论",
+      "short_role": "命题不成立时的结论。",
+      "formula_latex": "P\\lor\\neg P",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P\\lor\\neg P",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "命题不成立时的结论。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": [],
+      "branch_condition_latex": "\\neg P",
+      "scope": "Outer"
+    },
+    {
+      "id": "C1",
+      "type": "COMBINE",
+      "title": "分类汇合",
+      "short_role": "汇合两个情况。",
+      "formula_latex": null,
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "分类结果",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P\\lor\\neg P",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "合并两个分支。",
+        "motivation": "两种情况均达到共同结论。"
+      },
+      "input_review": [
+        {
+          "node": "R1",
+          "formula_ref": "core",
+          "contribution": "待除不等式"
+        },
+        {
+          "node": "D2",
+          "formula_ref": "core",
+          "contribution": "正数条件"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R1",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "D2",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "P\\lor\\neg P",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "待讨论的命题",
+              "range_unit": "命题",
+              "interpretation": "分类讨论的共同目标"
+            }
+          ],
+          "id": "input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "P\\lor\\neg P",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "待讨论的命题",
+              "range_unit": "命题",
+              "interpretation": "分类讨论的共同目标"
+            }
+          ],
+          "id": "input2"
+        },
+        {
+          "kind": "formula",
+          "latex": "P\\lor\\neg P",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "待讨论的命题",
+              "range_unit": "命题",
+              "interpretation": "分类讨论的共同目标"
+            }
+          ],
+          "id": "result"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "D2",
+              "formula_ref": "core"
+            },
+            "name": "正数条件",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "P",
+            "definition_role": "待讨论的命题",
+            "range_unit": "命题",
+            "interpretation": "分类讨论的共同目标"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式作为独立后继节点的核心公式。",
+        "downstream_use": "后继节点承接该结果继续证明。"
+      },
+      "combine_inputs": [
+        "R1",
+        "D2"
+      ],
+      "start_input": "R1",
+      "combine_output_latex": "P\\lor\\neg P",
+      "combine_motivation": "把不等式和正除数汇成条件齐备的对象。",
+      "combine_method": "并列核对两个独立前提。",
+      "combine_reason": "case_reconciliation",
+      "uses_symbols": [],
+      "paired_case": "K1",
+      "case_closures": [
+        {
+          "branch_edge": "EKD1",
+          "generalizes": [],
+          "discharges": [
+            "EKD1"
+          ],
+          "rule": "case_reconciliation"
+        },
+        {
+          "branch_edge": "EKD2",
+          "generalizes": [],
+          "discharges": [
+            "EKD2"
+          ],
+          "rule": "case_reconciliation"
+        }
+      ],
+      "scope": "Outer"
+    },
+    {
+      "id": "N1",
+      "type": "LEMMA",
+      "title": "分类后共同结论",
+      "short_role": "分类后共同结论。",
+      "formula_latex": "P\\lor\\neg P",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P\\lor\\neg P",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "分类后共同结论。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "result": true,
+      "uses_symbols": [],
+      "scope": "Outer"
+    },
+    {
+      "id": "T1",
+      "type": "TARGET",
+      "title": "目标条件命题",
+      "short_role": "目标条件命题。",
+      "formula_latex": "(P\\lor\\neg P)\\Rightarrow(P\\lor\\neg P)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "(P\\lor\\neg P)\\Rightarrow(P\\lor\\neg P)",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "目标条件命题。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "U1",
+      "type": "INTUITION",
+      "title": "直观理解",
+      "short_role": "说明两个情况的图形直觉。",
+      "strict": false,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "直观理解",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "排中划分覆盖命题的两种可能状态。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "命题成立时的结论。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "H2",
+      "type": "HYPOTHESIS_LOCAL",
+      "title": "内层反证假设",
+      "short_role": "排中划分。",
+      "formula_latex": "\\neg(P\\lor\\neg P)",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\neg(P\\lor\\neg P)",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "排中划分。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": [],
+      "scope": "Inner"
+    },
+    {
+      "id": "CI",
+      "type": "COMBINE",
+      "title": "合成矛盾",
+      "short_role": "汇合两个情况。",
+      "formula_latex": null,
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "分类结果",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\bot",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "合并两个分支。",
+        "motivation": "两种情况均达到共同结论。"
+      },
+      "input_review": [
+        {
+          "node": "D1",
+          "formula_ref": "core",
+          "contribution": "待除不等式"
+        },
+        {
+          "node": "H2",
+          "formula_ref": "core",
+          "contribution": "正数条件"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "D1",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "H2",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "P",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "待讨论的命题",
+              "range_unit": "命题",
+              "interpretation": "分类讨论的共同目标"
+            }
+          ],
+          "id": "input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\neg(P\\lor\\neg P)",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "待讨论的命题",
+              "range_unit": "命题",
+              "interpretation": "分类讨论的共同目标"
+            }
+          ],
+          "id": "input2"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\bot",
+          "symbols": [
+            {
+              "symbol_latex": "P",
+              "definition_role": "待讨论的命题",
+              "range_unit": "命题",
+              "interpretation": "分类讨论的共同目标"
+            }
+          ],
+          "id": "result"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "H2",
+              "formula_ref": "core"
+            },
+            "name": "正数条件",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "P",
+            "definition_role": "待讨论的命题",
+            "range_unit": "命题",
+            "interpretation": "分类讨论的共同目标"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式作为独立后继节点的核心公式。",
+        "downstream_use": "后继节点承接该结果继续证明。"
+      },
+      "combine_inputs": [
+        "D1",
+        "H2"
+      ],
+      "start_input": "D1",
+      "combine_output_latex": "\\bot",
+      "combine_motivation": "把不等式和正除数汇成条件齐备的对象。",
+      "combine_method": "并列核对两个独立前提。",
+      "combine_reason": "premise_synthesis",
+      "uses_symbols": [],
+      "scope": "Inner"
+    },
+    {
+      "id": "X1",
+      "type": "CONTRADICTION",
+      "title": "得到矛盾",
+      "short_role": "命题成立时的结论。",
+      "formula_latex": "\\bot",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\bot",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "命题成立时的结论。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "uses_symbols": [],
+      "scope": "Inner",
+      "result": true
+    },
+    {
+      "id": "R1",
+      "type": "LEMMA",
+      "title": "第一分支的结论",
+      "short_role": "分类后共同结论。",
+      "formula_latex": "P\\lor\\neg P",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "P\\lor\\neg P",
+              "symbols": [
+                {
+                  "symbol_latex": "P",
+                  "definition_role": "待讨论的命题",
+                  "range_unit": "命题",
+                  "interpretation": "分类讨论的共同目标"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "分类后共同结论。",
+        "motivation": "明确分类讨论的逻辑位置。"
+      },
+      "result": true,
+      "uses_symbols": [],
+      "scope": "Outer"
+    }
+  ],
+  "edges": [
+    {
+      "id": "EH1K1",
+      "source": "H1",
+      "target": "K1",
+      "relation": "FEEDS_CASE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EKD1",
+      "source": "K1",
+      "target": "D1",
+      "relation": "CASE_BRANCH",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "命题成立",
+      "detail": {
+        "summary": "局部假设包含 $x\\le y$，从而获得第一段次序。",
+        "source_contribution": "局部假设包含 $x\\le y$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第一段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": [],
+      "label_latex": null,
+      "case_condition_latex": "P"
+    },
+    {
+      "id": "EKD2",
+      "source": "K1",
+      "target": "D2",
+      "relation": "CASE_BRANCH",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "命题不成立",
+      "detail": {
+        "summary": "局部假设包含 $x\\le y$，从而获得第一段次序。",
+        "source_contribution": "局部假设包含 $x\\le y$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第一段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": [],
+      "label_latex": null,
+      "case_condition_latex": "\\neg P"
+    },
+    {
+      "id": "ED2C1",
+      "source": "D2",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EC1N1",
+      "source": "C1",
+      "target": "N1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EN1T1",
+      "source": "N1",
+      "target": "T1",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "形成条件命题",
+      "detail": {
+        "summary": "局部假设包含 $x\\le y$，从而获得第一段次序。",
+        "source_contribution": "局部假设包含 $x\\le y$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第一段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": [],
+      "label_latex": null,
+      "closes_scope": "Outer",
+      "discharge_rule": "conditional_proof",
+      "discharges": [
+        "H1"
+      ],
+      "generalizes": []
+    },
+    {
+      "id": "ED1U1",
+      "source": "D1",
+      "target": "U1",
+      "relation": "REQUIRED_FOR",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "直观说明",
+      "detail": {
+        "summary": "局部假设包含 $x\\le y$，从而获得第一段次序。",
+        "source_contribution": "局部假设包含 $x\\le y$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第一段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": [],
+      "label_latex": null
+    },
+    {
+      "id": "ED1CI",
+      "source": "D1",
+      "target": "CI",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EH2CI",
+      "source": "H2",
+      "target": "CI",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "ECIX1",
+      "source": "CI",
+      "target": "X1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    },
+    {
+      "id": "EX1R1",
+      "source": "X1",
+      "target": "R1",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "反证结论",
+      "detail": {
+        "summary": "局部假设包含 $x\\le y$，从而获得第一段次序。",
+        "source_contribution": "局部假设包含 $x\\le y$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第一段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": [],
+      "label_latex": null,
+      "closes_scope": "Inner",
+      "discharge_rule": "reductio",
+      "discharges": [
+        "H2"
+      ],
+      "generalizes": []
+    },
+    {
+      "id": "ER1C1",
+      "source": "R1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null,
+      "uses_symbols": []
+    }
+  ],
+  "target_id": "T1",
+  "scopes": [
+    {
+      "id": "Outer",
+      "title": "条件证明",
+      "kind": "local",
+      "opened_by": "H1",
+      "closed_by": "EN1T1"
+    },
+    {
+      "id": "Inner",
+      "title": "内层反证",
+      "kind": "local",
+      "parent_scope": "Outer",
+      "opened_by": "H2",
+      "closed_by": "EX1R1"
+    }
+  ],
+  "proof_flow": [
+    {
+      "id": "S1",
+      "title": "分类证明",
+      "summary": "排中划分后在两个情况中取得同一结论。",
+      "nodes": [
+        "H1",
+        "K1",
+        "D1",
+        "D2",
+        "C1",
+        "N1",
+        "T1",
+        "U1",
+        "H2",
+        "CI",
+        "X1",
+        "R1"
+      ]
+    }
+  ],
+  "presentation": {
+    "mode": "human-first",
+    "language": "zh-CN",
+    "spine": [
+      "H1",
+      "K1",
+      "D1",
+      "H2",
+      "CI",
+      "X1",
+      "R1",
+      "C1",
+      "N1",
+      "T1"
+    ],
+    "branches": [
+      {
+        "id": "B1",
+        "title": "第二种情况",
+        "from": "K1",
+        "to": "C1",
+        "nodes": [
+          "D2"
+        ]
+      }
+    ],
+    "support": [],
+    "examples": [
+      "U1"
+    ],
+    "granularity_reviews": []
+  }
+}

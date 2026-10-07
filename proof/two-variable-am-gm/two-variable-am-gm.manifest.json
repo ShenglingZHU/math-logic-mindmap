@@ -1,0 +1,207 @@
+{
+  "slug": "two-variable-am-gm",
+  "title": "Two-variable arithmetic-geometric mean inequality",
+  "source": "proof/two-variable-am-gm/two-variable-am-gm.proof.json",
+  "model_hash": "ddb8f1fd4b6c5b3f387cf1b37509676b6bb3c74ddf3eb940a698893ba10f5684",
+  "machine": {
+    "machine": "PASS",
+    "visual": "UNREVIEWED",
+    "warnings": [
+      "COMPACTION E4: vertical clearance 1084px; inspect long-range reuse and grouping needs"
+    ],
+    "counts": {
+      "model_nodes": 7,
+      "model_edges": 7,
+      "visible_nodes": 7,
+      "visible_edges": 7,
+      "notes": 8
+    },
+    "reports": {
+      "reports/diagnostics.json": "175c55eaf3faeea9390184f8a03051612a09a1762016d509b7a57c4eee91bf81",
+      "reports/granularity.json": "2564688746fcbbfc9a8cbd6d8c7fac4e0342e3c3909a26f6e82d27062ff6222f",
+      "reports/routing.json": "5c25405ea8edd416186dd7a48a9abfadc3a3ad9752ffdd2fac608cb5e634199b"
+    }
+  },
+  "mathematical_review": null,
+  "visual": {
+    "status": "UNREVIEWED"
+  },
+  "artifacts": {
+    "mindmap/two-variable-am-gm.canvas": "23ad4ef310e98555da4296e29a378fb9623bd23b0b77231e3d34cf61a8e41600",
+    "note/two-variable-am-gm/A1.md": "de8a775c022c388598032c012240132e3ebe7ba6bff9bb266a3ae734dd2fb642",
+    "note/two-variable-am-gm/C1.md": "1dc3ac493851f5bfc3ebf10020ef3627067f50b1678ebc69c4f2dca0e545fc31",
+    "note/two-variable-am-gm/C2.md": "74a9e777e7077b27cf8293f29e62ba8c47ebc88513e28bcf524183431d90c237",
+    "note/two-variable-am-gm/K1.md": "08141665d0560bad15662e19a0efef2557c619a37e193a9cdeb5b1243a541712",
+    "note/two-variable-am-gm/K2.md": "0612af0abeb5063e2073cffa01b62d960b7c8b2bb4d7d62e8651f2ba637ca805",
+    "note/two-variable-am-gm/R1.md": "9fff890492d92fd1d008ecbf71b424bfe35be5f93f1c7c31333e7cca0ca9807a",
+    "note/two-variable-am-gm/T1.md": "3ad5354dc6fc1f078a89957788d9296fca69d9bb9dabd15b3958f6ad8448c936",
+    "note/two-variable-am-gm/index.md": "762a2e15b08f0d6cefd2b511601d3502d4077cd2f9815121f0f4d88ac7fb5c37"
+  },
+  "render_config": {
+    "language": "en",
+    "node_colors": {
+      "external": "#B39DDB",
+      "combine": "#E5C85B",
+      "transform": "#D9DEE7",
+      "result": "#CFE8CC",
+      "target": "#E69A9A",
+      "given": "#88BBDD"
+    }
+  },
+  "render_config_hash": "d2642442d48c7040c10c52e160d9cc66c151910b085b9e871f521e284ec97f16",
+  "presentation_hash": {
+    "files": {
+      ".obsidian/plugins/proof-routing/geometry-core.cjs": "4584680f9c0f6950253355e108ecf8d67a8ea8618f978adff907fd89604f4e29",
+      ".obsidian/plugins/proof-routing/main.js": "6b0278630867e669de3bc269b43bd08ac8ea05923cf07921aefaae977e250b1a",
+      ".obsidian/plugins/proof-routing/manifest.json": "9ecd2bc7b8620b7fa5f63d8d6b047ad0e7ba083d2f58e540eae01525a9cd8ad3",
+      ".obsidian/snippets/math-logic-mindmap.css": "8601b8c5006d70e5994ad191c6b232b33ac435727256ef926edf79a1899fd3c6",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/__init__.py": "d8fcea45e20ac06e3cef7b0c17a6f4314dd79fcd5dcbe8a38979f2696c657fbf",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/bundle.py": "626b0fe03acf5a455594a537867e013723642d3c680beffab19e2c419f4550c5",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/chains.py": "be32f17c9df079ecec6d060d2007323f74b9247c3800d4a1c5be5d46ea8b0e17",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/cli.py": "1f6bcd75a87a41bb3293fff4e7a14060ae712e53a2a590d0f6f88e796941f2ea",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/common.py": "b51962c73b85acb3d5536a94ee26ab818427ab7b1f31bd2d543f57b8250fe2cc",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/config.py": "88d5d4a6b7369ae0e90c4e475d520ae9c932ecc17bfb60d0f4186b8c60aaceb6",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/diagnostics.py": "15db78150de95e996fcd354b8fc33ebf81eb20ee21e4659ae94fa51b97886408",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/human.py": "5bb9390c81354afda65512f591f74242be5c328b4178eaba66d7cffbff01ff63",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/i18n.py": "50fda2f2dc38ac7e7104fc3303b913493e3c148481c8e27d6aae9e890b443d57",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/layout.py": "8ca9d02a04878d533c53f9a14d051e47863fee15394b53bd77610c287beff068",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/model.py": "4d3619ebc9954d6d86e39424ebd00f6933e2f9995479f6fb7fafd4584f62275c",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/readability.py": "cd49a4f487002511db356197ec635620f2573af3b651d0f3fde3a9b66766ae49",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/render.py": "6345af504a7f1a5116f8a194967186e799484a46f20e85f5702d305a85db4420",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/routing.py": "f1c17bc8c223fbb820650fc31d549b2839628315c22ad3ea4bd0d3594db75ac9",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/schemas/canvas.schema.json": "c68279ddc26ced9b291d9803eebcfb8ed4c4c72b6dd9ab63bbb20ac96a52131b",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/schemas/proof-model.schema.json": "22befe389d0dbb5e78cef66ec4eab3dd905e35630486b8cb95f2bfd7b5a1e4d7",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/scope_semantics.py": "52873d7caabfb06f5eae9a9e0c55fe06a1b5acba6b5f32f12e408386227cce49"
+    },
+    "digest": "7ec485bb7279d5efb8905c22c6b4931814049a126a12db8e10c6bd340f386cce"
+  },
+  "managed_hashes": {
+    "mindmap/two-variable-am-gm.canvas": "23ad4ef310e98555da4296e29a378fb9623bd23b0b77231e3d34cf61a8e41600",
+    "note/two-variable-am-gm/A1.md": "e50c8d26d40ba422f16b72c9705be4210ab93317ac19d86142941d7ba3fd4338",
+    "note/two-variable-am-gm/C1.md": "2382ede0858541d0f8ea28546becec08ec1fd0f9ceeea349f85510038dc83e41",
+    "note/two-variable-am-gm/C2.md": "da52f7a6335f398e02ef5c361b69798a0c76b8ebfc1ce2346b131402bada620e",
+    "note/two-variable-am-gm/index.md": "393a421e081c8df13fc92b21b7e47d71526b85ed5b5dfc0a9227aa5f502f1727",
+    "note/two-variable-am-gm/K1.md": "af21279749fbda6588d4bb6ec96e0625c1ad188ff68bf3899f6fa4d7459a6de6",
+    "note/two-variable-am-gm/K2.md": "9647f1534455da9ea987560c39c922700960f81fe75897e844d1b766b47cc193",
+    "note/two-variable-am-gm/R1.md": "eaf80afab498a98246baa0caf26fdc197baf4ef5fa2dd622e9d35169c4d59f55",
+    "note/two-variable-am-gm/T1.md": "1511583e6bbbb4eaee0418ab668db98cad716d725ba134aad66da737a75ee1b7"
+  },
+  "model_nodes": 7,
+  "model_edges": 7,
+  "visible_nodes": 7,
+  "visible_edges": 7,
+  "canvas_semantic": {
+    "nodes": {
+      "UIHeader": {
+        "id": "UIHeader",
+        "type": "text",
+        "text": "# Two-variable arithmetic-geometric mean inequality\n\n**Assumptions**\n\n- $a,b$ are nonnegative real numbers.\n\n**Statement / basic definitions**\n\n$$\n\\forall a,b\\in[0,\\infty),\\quad\\frac{a+b}{2}\\ge\\sqrt{ab}\n$$\n\n[[note/two-variable-am-gm/index|Overview and background]] · Proved (mathematical conclusion)",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "A1": {
+        "id": "A1",
+        "type": "text",
+        "text": "| A1 | ASSUMPTION |\n| :--- | ---: |\n\n### Nonnegative inputs\n\n$$\na,b\\in[0,\\infty)\n$$\n\nAssume $a,b\\ge0$.\n\n---\n\n[[note/two-variable-am-gm/A1|Details]] · [[note/two-variable-am-gm/A1#Incoming relations|Incoming]] · [[note/two-variable-am-gm/A1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "K1": {
+        "id": "K1",
+        "type": "text",
+        "text": "| K1 | KNOWN_RESULT |\n| :--- | ---: |\n\n### Square nonnegativity\n\n$$\n\\forall t\\in\\mathbb R,\\quad t^2\\ge0\n$$\n\nEvery real square is nonnegative.\n\n---\n\n[[note/two-variable-am-gm/K1|Details]] · [[note/two-variable-am-gm/K1#Incoming relations|Incoming]] · [[note/two-variable-am-gm/K1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C1": {
+        "id": "C1",
+        "type": "text",
+        "text": "**C1**\n\nCOMBINE\n\nMerge\n\n[[note/two-variable-am-gm/C1|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R1": {
+        "id": "R1",
+        "type": "text",
+        "text": "| R1 | BOUND |\n| :--- | ---: |\n\n### Squared comparison\n\n$$\n(a+b)^2\\ge 4ab\n$$\n\nThe squared arithmetic sum bounds the product.\n\n---\n\n[[note/two-variable-am-gm/R1|Details]] · [[note/two-variable-am-gm/R1#Incoming relations|Incoming]] · [[note/two-variable-am-gm/R1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "K2": {
+        "id": "K2",
+        "type": "text",
+        "text": "| K2 | KNOWN_RESULT |\n| :--- | ---: |\n\n### Square-root monotonicity\n\n$$\n\\begin{aligned}&\\forall u,v\\in[0,\\infty),\\\\&\\quad u\\le v\\\\&\\qquad\\Rightarrow\\sqrt u\\le\\sqrt v\\end{aligned}\n$$\n\nSquare roots preserve order on nonnegative reals.\n\n---\n\n[[note/two-variable-am-gm/K2|Details]] · [[note/two-variable-am-gm/K2#Incoming relations|Incoming]] · [[note/two-variable-am-gm/K2#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C2": {
+        "id": "C2",
+        "type": "text",
+        "text": "**C2**\n\nCOMBINE\n\nMerge\n\n[[note/two-variable-am-gm/C2|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "T1": {
+        "id": "T1",
+        "type": "text",
+        "text": "| T1 | TARGET |\n| :--- | ---: |\n\n### Arithmetic-geometric mean\n\n$$\n\\frac{a+b}{2}\\ge\\sqrt{ab}\n$$\n\nThe arithmetic mean is at least the geometric mean.\n\n---\n\n[[note/two-variable-am-gm/T1|Details]] · [[note/two-variable-am-gm/T1#Incoming relations|Incoming]] · [[note/two-variable-am-gm/T1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      }
+    },
+    "edges": {
+      "E1": {
+        "id": "E1",
+        "fromNode": "A1",
+        "toNode": "C1",
+        "label": null
+      },
+      "E2": {
+        "id": "E2",
+        "fromNode": "K1",
+        "toNode": "C1",
+        "label": null
+      },
+      "E3": {
+        "id": "E3",
+        "fromNode": "C1",
+        "toNode": "R1",
+        "label": null
+      },
+      "E4": {
+        "id": "E4",
+        "fromNode": "A1",
+        "toNode": "C2",
+        "label": null
+      },
+      "E5": {
+        "id": "E5",
+        "fromNode": "R1",
+        "toNode": "C2",
+        "label": null
+      },
+      "E6": {
+        "id": "E6",
+        "fromNode": "K2",
+        "toNode": "C2",
+        "label": null
+      },
+      "E7": {
+        "id": "E7",
+        "fromNode": "C2",
+        "toNode": "T1",
+        "label": null
+      }
+    }
+  },
+  "canvas_persisted_hash": "c8101c944bb6adaaf26405644aea82fd1032b3f78c238d857d975efbd66c9169",
+  "released_at": "20260917T172452601669Z"
+}

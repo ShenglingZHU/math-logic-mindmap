@@ -1,0 +1,458 @@
+{
+  "slug": "sqrt-2-irrationality",
+  "title": "The irrationality of $\\sqrt{2}$",
+  "source": "proof/sqrt-2-irrationality/sqrt-2-irrationality.proof.json",
+  "model_hash": "094302a48f3883347c7b267aa1257aa511090a831a64d58de9537be353728486",
+  "machine": {
+    "machine": "PASS",
+    "visual": "UNREVIEWED",
+    "warnings": [
+      "COMPACTION E12: vertical clearance 1020px; inspect long-range reuse and grouping needs",
+      "COMPACTION E16: vertical clearance 1768px; inspect long-range reuse and grouping needs",
+      "COMPACTION E18: vertical clearance 3472px; inspect long-range reuse and grouping needs",
+      "COMPACTION E19: vertical clearance 1768px; inspect long-range reuse and grouping needs"
+    ],
+    "counts": {
+      "model_nodes": 20,
+      "model_edges": 23,
+      "visible_nodes": 20,
+      "visible_edges": 23,
+      "notes": 24
+    },
+    "reports": {
+      "reports/diagnostics.json": "b1c51b041c08586cb715811ff8a99ae62bb6604f979e708b9429e63ae6467a83",
+      "reports/granularity.json": "0a21722446c3da197f62a298a7ca7833c67518aef341d05103fd5369bee56124",
+      "reports/routing.json": "51c1840ecb5dfbb47e2961d28b7944aada1fc9aa09773365cb0edafb6190b96f"
+    }
+  },
+  "mathematical_review": null,
+  "visual": {
+    "status": "UNREVIEWED"
+  },
+  "artifacts": {
+    "mindmap/sqrt-2-irrationality.canvas": "06d4c09d9dff0d420125ce208c1ad8fe58b271f1743149b7c31930a4871d5e45",
+    "note/sqrt-2-irrationality/C1.md": "675ab261b94764ab1f8b8778730b1eba8d8a6d89f45ee255ec29fd783ece2e14",
+    "note/sqrt-2-irrationality/C2.md": "ad2f5948ac867d4729d845becbb34fbb7c1a8a4a66c3f610f9db079e7a976a2b",
+    "note/sqrt-2-irrationality/C3.md": "4b783b755229d51f20c750f1324e89de720dd6e366f42a91a739b2ccae6648ec",
+    "note/sqrt-2-irrationality/C4.md": "97030c072d619df9c4ed70d2b48d4ec6392e8ba0a1f7abcc87f0cc95251d4f3d",
+    "note/sqrt-2-irrationality/C5.md": "0ac2d4f2a8d182ec174ffd435c27d976d6749fd1f452c4b59f3c52dc34f8d427",
+    "note/sqrt-2-irrationality/C6.md": "97f229ff89239996224fd3753da7b2b4a42686e9b8d625052b1b59b46b6f1038",
+    "note/sqrt-2-irrationality/D1.md": "c885ab0819b09133288cf287f001cfc1e3e3f387f00a3bc8418410c4dc02e598",
+    "note/sqrt-2-irrationality/E22.md": "7ab1c9d208bed1923393b808c7532dbadf12bb11292e0ea1e89b8a7e57339978",
+    "note/sqrt-2-irrationality/E23.md": "0ecc0f98b39400324103d0b8d1bd0f5024db26e8f0d4bf297c36fcf2674ae9cb",
+    "note/sqrt-2-irrationality/E4.md": "043093f88f43b29d8e64cbbd7289372e8eeaecadfc0c9544301fbfc043ed7816",
+    "note/sqrt-2-irrationality/H1.md": "b4636dc3a85c4bcddfa81cc7f49cf85b7410ddf6b50d2badf3a85802d857574f",
+    "note/sqrt-2-irrationality/K1.md": "b22ccf247ad7e774436c64cb64818b6b90fa6f97c7549b2b9ccc15b827896596",
+    "note/sqrt-2-irrationality/K2.md": "ca4ffba496b0c4fa462ca12ca47ca41051cc04c495b47d1c65657d1ae08dba87",
+    "note/sqrt-2-irrationality/L1.md": "04d42aaf2e759ef888117e229372f85af5f22c43ca2882e5f37a5a39f83f2ddc",
+    "note/sqrt-2-irrationality/R1.md": "74de44866e7bf8023632057965be5db37727975bb8bcdafb491972809d936fe0",
+    "note/sqrt-2-irrationality/R2.md": "1412201629c8c312569eafdc59613f33671a926980a6209e79f9f35ed1ac3cc9",
+    "note/sqrt-2-irrationality/R3.md": "cbe7aa020d90a620500f49f11e862c4ebd25069605b06324dfa8eda9187e1ddc",
+    "note/sqrt-2-irrationality/R4.md": "7e67b211af2347fb2e8b5b9e183dfe627ef895591a46890146213cf396dc4a1d",
+    "note/sqrt-2-irrationality/R5.md": "9f16c03cc9944b3c589b6bea759b6856090c0f31b2d46eaacb9d4faef519b820",
+    "note/sqrt-2-irrationality/R6.md": "8d009c80cc0c98bc298de6aadb92b1da5a6052a70f3ef7481ee3670ba68482a9",
+    "note/sqrt-2-irrationality/T1.md": "e96dc14024485a78b1596dea101bdb19d7d6f04507546f1ab0433f1d9ae30e6d",
+    "note/sqrt-2-irrationality/X1.md": "5335df0becf7237edcbfa3c59c91e8e42e173f71504b5d57efd866c0f4097dbd",
+    "note/sqrt-2-irrationality/X2.md": "6558dfb0df91cb0e794e4d2dc67a3738aad275015d43ceadd1514d83abf6ef4e",
+    "note/sqrt-2-irrationality/index.md": "dd2e9c8533f8cdc24e723213a0243c80ac6d99f941143799f5ec8a28854f2a1e"
+  },
+  "render_config": {
+    "language": "en",
+    "node_colors": {
+      "external": "#B39DDB",
+      "combine": "#E5C85B",
+      "transform": "#D9DEE7",
+      "result": "#CFE8CC",
+      "target": "#E69A9A",
+      "given": "#88BBDD"
+    }
+  },
+  "render_config_hash": "d2642442d48c7040c10c52e160d9cc66c151910b085b9e871f521e284ec97f16",
+  "presentation_hash": {
+    "files": {
+      ".obsidian/plugins/proof-routing/geometry-core.cjs": "4584680f9c0f6950253355e108ecf8d67a8ea8618f978adff907fd89604f4e29",
+      ".obsidian/plugins/proof-routing/main.js": "6b0278630867e669de3bc269b43bd08ac8ea05923cf07921aefaae977e250b1a",
+      ".obsidian/plugins/proof-routing/manifest.json": "9ecd2bc7b8620b7fa5f63d8d6b047ad0e7ba083d2f58e540eae01525a9cd8ad3",
+      ".obsidian/snippets/math-logic-mindmap.css": "8601b8c5006d70e5994ad191c6b232b33ac435727256ef926edf79a1899fd3c6",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/__init__.py": "d8fcea45e20ac06e3cef7b0c17a6f4314dd79fcd5dcbe8a38979f2696c657fbf",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/bundle.py": "626b0fe03acf5a455594a537867e013723642d3c680beffab19e2c419f4550c5",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/chains.py": "be32f17c9df079ecec6d060d2007323f74b9247c3800d4a1c5be5d46ea8b0e17",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/cli.py": "1f6bcd75a87a41bb3293fff4e7a14060ae712e53a2a590d0f6f88e796941f2ea",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/common.py": "b51962c73b85acb3d5536a94ee26ab818427ab7b1f31bd2d543f57b8250fe2cc",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/config.py": "88d5d4a6b7369ae0e90c4e475d520ae9c932ecc17bfb60d0f4186b8c60aaceb6",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/diagnostics.py": "15db78150de95e996fcd354b8fc33ebf81eb20ee21e4659ae94fa51b97886408",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/human.py": "5bb9390c81354afda65512f591f74242be5c328b4178eaba66d7cffbff01ff63",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/i18n.py": "50fda2f2dc38ac7e7104fc3303b913493e3c148481c8e27d6aae9e890b443d57",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/layout.py": "8ca9d02a04878d533c53f9a14d051e47863fee15394b53bd77610c287beff068",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/model.py": "4d3619ebc9954d6d86e39424ebd00f6933e2f9995479f6fb7fafd4584f62275c",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/readability.py": "cd49a4f487002511db356197ec635620f2573af3b651d0f3fde3a9b66766ae49",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/render.py": "6345af504a7f1a5116f8a194967186e799484a46f20e85f5702d305a85db4420",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/routing.py": "f1c17bc8c223fbb820650fc31d549b2839628315c22ad3ea4bd0d3594db75ac9",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/schemas/canvas.schema.json": "c68279ddc26ced9b291d9803eebcfb8ed4c4c72b6dd9ab63bbb20ac96a52131b",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/schemas/proof-model.schema.json": "22befe389d0dbb5e78cef66ec4eab3dd905e35630486b8cb95f2bfd7b5a1e4d7",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/scope_semantics.py": "52873d7caabfb06f5eae9a9e0c55fe06a1b5acba6b5f32f12e408386227cce49"
+    },
+    "digest": "7ec485bb7279d5efb8905c22c6b4931814049a126a12db8e10c6bd340f386cce"
+  },
+  "managed_hashes": {
+    "mindmap/sqrt-2-irrationality.canvas": "06d4c09d9dff0d420125ce208c1ad8fe58b271f1743149b7c31930a4871d5e45",
+    "note/sqrt-2-irrationality/C1.md": "8720954bbd9988a68a5cd3847e39a109b0a8079198b6102fe17cfd9fe47dc5d6",
+    "note/sqrt-2-irrationality/C2.md": "b2308d51426e4fc29c85be22aac66d3fbfea87895076d7fe0a337131e44f7885",
+    "note/sqrt-2-irrationality/C3.md": "72e79c406b42b1399c30fc128f600da1ac4208721016a9a915430c047a8e74fe",
+    "note/sqrt-2-irrationality/C4.md": "5e1e4d002f0f5467f460ea0f82726b8ab68568772fd0f0d2cb69760ebf969c4d",
+    "note/sqrt-2-irrationality/C5.md": "a0bcce3f9a3f9346b014b8dae84a880341d4521484a5fbf11bdc59fd1a9d0c36",
+    "note/sqrt-2-irrationality/C6.md": "dbd78fe047180ba1c103bfd92e1548e82d689540bc8cfabc19a4c5585e33bfb5",
+    "note/sqrt-2-irrationality/D1.md": "01eafc0dd931aaf4b42d813c95700e51f4b1e78e535f430a91fea1bd2d142a0f",
+    "note/sqrt-2-irrationality/E22.md": "64a491e0b048c54c1d8191dac09031e046159e7ae6363ff2226b1106d8bf944a",
+    "note/sqrt-2-irrationality/E23.md": "3ab9cafe9ad53025969c5cd3075309b858dc69cb8be7130b96bf65610bfa5fe9",
+    "note/sqrt-2-irrationality/E4.md": "84ed5baf654b855db895dbe773140ecb60957f0ac24909e8340709dc5454e429",
+    "note/sqrt-2-irrationality/H1.md": "80ed97985e91c231b5ccce2fb68fcc1ba1582d4e852432176207dae5cc01a42b",
+    "note/sqrt-2-irrationality/index.md": "2631c0578f30585e991a89043034ca689a71ed500cc5cfede56daee8175d603c",
+    "note/sqrt-2-irrationality/K1.md": "1972f9a972c5dfa8ebed28f0da6f44b1136ffc9533f58ce20d267b06e3fa64cd",
+    "note/sqrt-2-irrationality/K2.md": "497fa7c64ace687b669e02abfbc1fa28faaf969612636b4573d114c41136028f",
+    "note/sqrt-2-irrationality/L1.md": "43507841223b7d20cd6f5890e65568f15d69eb2c4bb375fb612e5ab5ba3a6f8f",
+    "note/sqrt-2-irrationality/R1.md": "8e69e8cb1aacd1e93d64a796e24e3c71b8848382e4dc2219fe7e9eea209cc436",
+    "note/sqrt-2-irrationality/R2.md": "6867f459bcc8a0807b058680c01f30f95e320192728f10251e95ac77e7d191d2",
+    "note/sqrt-2-irrationality/R3.md": "05add51e9bbe0dbb2a17705b72178854e98741331b1fa2de7207662659cb276d",
+    "note/sqrt-2-irrationality/R4.md": "a9864c8d879c1056893660e5227509a976ff18e9c7b172ad46cf9ee764d6a363",
+    "note/sqrt-2-irrationality/R5.md": "24e1d2aacdd6bed27a515d226aff72dc93d611ac6a80825e381135a0f1858c63",
+    "note/sqrt-2-irrationality/R6.md": "54e7fa8f5541b6a351cd26b87c56efa57c4f149c11b6556c6422dee9d745d53b",
+    "note/sqrt-2-irrationality/T1.md": "ef1cbdc23194023deb497fa7053b65a485e9aa8288677adabb53fe7c5234b4cd",
+    "note/sqrt-2-irrationality/X1.md": "b9637bff12e3528dc6f1bcd546e9bc0aaa36d9ab63a2c939520543a180f7e2d7",
+    "note/sqrt-2-irrationality/X2.md": "5f5e5e4ca139bd8fcd1cb904617e5136b7d7a34670d32301730d31f47b0abf61"
+  },
+  "model_nodes": 20,
+  "model_edges": 23,
+  "visible_nodes": 20,
+  "visible_edges": 23,
+  "canvas_semantic": {
+    "nodes": {
+      "GOuter": {
+        "id": "GOuter",
+        "type": "group",
+        "text": null,
+        "label": "Assumed rationality",
+        "file": null,
+        "subpath": null
+      },
+      "GInner": {
+        "id": "GInner",
+        "type": "group",
+        "text": null,
+        "label": "Reduced fraction witnesses",
+        "file": null,
+        "subpath": null
+      },
+      "UIHeader": {
+        "id": "UIHeader",
+        "type": "text",
+        "text": "# The irrationality of $\\sqrt{2}$\n\n**Assumptions**\n\n- No additional assumptions are required.\n\n**Statement / basic definitions**\n\n$$\n\\sqrt{2}\\notin\\mathbb{Q}\n$$\n\n[[note/sqrt-2-irrationality/index|Overview and background]] · Proved (mathematical conclusion)",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "H1": {
+        "id": "H1",
+        "type": "text",
+        "text": "| H1 | HYPOTHESIS_LOCAL |\n| :--- | ---: |\n\n### Assume rationality\n\n$$\n\\sqrt{2}\\in\\mathbb{Q}\n$$\n\nSuppose $\\sqrt{2}\\in\\mathbb{Q}$ for contradiction.\n\n---\n\n[[note/sqrt-2-irrationality/H1|Details]] · [[note/sqrt-2-irrationality/H1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/H1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "K1": {
+        "id": "K1",
+        "type": "text",
+        "text": "| K1 | KNOWN_RESULT |\n| :--- | ---: |\n\n### Reduced fraction theorem\n\nA rational number has a reduced integer fraction.\n\n---\n\n[[note/sqrt-2-irrationality/K1|Details]] · [[note/sqrt-2-irrationality/K1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/K1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "K2": {
+        "id": "K2",
+        "type": "text",
+        "text": "| K2 | KNOWN_RESULT |\n| :--- | ---: |\n\n### Parity of squares\n\n$$\n\\begin{aligned}\n&\\forall z\\in\\mathbb{Z},\\\\\n&\\quad 2\\mid z^2\\\\\n&\\qquad\\Rightarrow 2\\mid z\n\\end{aligned}\n$$\n\nAn integer with an even square is even.\n\n---\n\n[[note/sqrt-2-irrationality/K2|Details]] · [[note/sqrt-2-irrationality/K2#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/K2#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "D1": {
+        "id": "D1",
+        "type": "text",
+        "text": "| D1 | DEFINITION |\n| :--- | ---: |\n\n### Square root property\n\n$$\n(\\sqrt{2})^2=2\n$$\n\nThe positive square root has square equal to two.\n\n---\n\n[[note/sqrt-2-irrationality/D1|Details]] · [[note/sqrt-2-irrationality/D1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/D1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R1": {
+        "id": "R1",
+        "type": "text",
+        "text": "| R1 | DERIVATION |\n| :--- | ---: |\n\n### Reduced representation exists\n\n$$\n\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}\n$$\n\nA reduced fraction represents $\\sqrt{2}$.\n\n---\n\n[[note/sqrt-2-irrationality/R1|Details]] · [[note/sqrt-2-irrationality/R1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/R1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "L1": {
+        "id": "L1",
+        "type": "text",
+        "text": "| L1 | LOCAL_INTRODUCTION |\n| :--- | ---: |\n\n### Choose reduced witnesses\n\n$$\na,b\\in\\mathbb{Z}\n$$\n\nSelect a reduced numerator and denominator.\n\n---\n\n[[note/sqrt-2-irrationality/L1|Details]] · [[note/sqrt-2-irrationality/L1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/L1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R2": {
+        "id": "R2",
+        "type": "text",
+        "text": "| R2 | DERIVATION |\n| :--- | ---: |\n\n### Witness conditions\n\n$$\n\\left\\{\\begin{aligned}\n&a,b\\in\\mathbb{Z}\\\\\n&b>0\\\\\n&\\gcd(a,b)=1\\\\\n&\\sqrt{2}=a/b\n\\end{aligned}\\right.\n$$\n\nThe chosen fraction is reduced and represents $\\sqrt{2}$.\n\n---\n\n[[note/sqrt-2-irrationality/R2|Details]] · [[note/sqrt-2-irrationality/R2#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/R2#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R3": {
+        "id": "R3",
+        "type": "text",
+        "text": "| R3 | DERIVATION |\n| :--- | ---: |\n\n### Square relation\n\n$$\na^2=2b^2\n$$\n\nThe numerator square equals twice the denominator square.\n\n---\n\n[[note/sqrt-2-irrationality/R3|Details]] · [[note/sqrt-2-irrationality/R3#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/R3#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R4": {
+        "id": "R4",
+        "type": "text",
+        "text": "| R4 | DERIVATION |\n| :--- | ---: |\n\n### Even numerator\n\n$$\n2\\mid a\n$$\n\nThe chosen numerator is divisible by two.\n\n---\n\n[[note/sqrt-2-irrationality/R4|Details]] · [[note/sqrt-2-irrationality/R4#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/R4#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R5": {
+        "id": "R5",
+        "type": "text",
+        "text": "| R5 | DERIVATION |\n| :--- | ---: |\n\n### Even denominator square\n\n$$\n2\\mid b^2\n$$\n\nThe denominator square is divisible by two.\n\n---\n\n[[note/sqrt-2-irrationality/R5|Details]] · [[note/sqrt-2-irrationality/R5#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/R5#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "R6": {
+        "id": "R6",
+        "type": "text",
+        "text": "| R6 | DERIVATION |\n| :--- | ---: |\n\n### Even denominator\n\n$$\n2\\mid b\n$$\n\nThe chosen denominator is divisible by two.\n\n---\n\n[[note/sqrt-2-irrationality/R6|Details]] · [[note/sqrt-2-irrationality/R6#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/R6#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "X1": {
+        "id": "X1",
+        "type": "text",
+        "text": "| X1 | CONTRADICTION |\n| :--- | ---: |\n\n### Coprimality contradiction\n\n$$\n\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.\n$$\n\nThe greatest common divisor is both one and at least two.\n\n---\n\n[[note/sqrt-2-irrationality/X1|Details]] · [[note/sqrt-2-irrationality/X1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/X1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "X2": {
+        "id": "X2",
+        "type": "text",
+        "text": "| X2 | CONTRADICTION |\n| :--- | ---: |\n\n### Witness-free contradiction\n\n$$\n\\bot\n$$\n\nThe contradiction no longer depends on particular witnesses.\n\n---\n\n[[note/sqrt-2-irrationality/X2|Details]] · [[note/sqrt-2-irrationality/X2#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/X2#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "T1": {
+        "id": "T1",
+        "type": "text",
+        "text": "| T1 | TARGET |\n| :--- | ---: |\n\n### Irrationality established\n\n$$\n\\sqrt{2}\\notin\\mathbb{Q}\n$$\n\nThe temporary rationality assumption is false.\n\n---\n\n[[note/sqrt-2-irrationality/T1|Details]] · [[note/sqrt-2-irrationality/T1#Incoming relations|Incoming]] · [[note/sqrt-2-irrationality/T1#Outgoing relations|Outgoing]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C1": {
+        "id": "C1",
+        "type": "text",
+        "text": "**C1**\n\nCOMBINE\n\nMerge\n\n[[note/sqrt-2-irrationality/C1|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C2": {
+        "id": "C2",
+        "type": "text",
+        "text": "**C2**\n\nCOMBINE\n\nMerge\n\n[[note/sqrt-2-irrationality/C2|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C3": {
+        "id": "C3",
+        "type": "text",
+        "text": "**C3**\n\nCOMBINE\n\nMerge\n\n[[note/sqrt-2-irrationality/C3|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C4": {
+        "id": "C4",
+        "type": "text",
+        "text": "**C4**\n\nCOMBINE\n\nMerge\n\n[[note/sqrt-2-irrationality/C4|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C5": {
+        "id": "C5",
+        "type": "text",
+        "text": "**C5**\n\nCOMBINE\n\nMerge\n\n[[note/sqrt-2-irrationality/C5|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      },
+      "C6": {
+        "id": "C6",
+        "type": "text",
+        "text": "**C6**\n\nCOMBINE\n\nMerge\n\n[[note/sqrt-2-irrationality/C6|Details]]",
+        "label": null,
+        "file": null,
+        "subpath": null
+      }
+    },
+    "edges": {
+      "E1": {
+        "id": "E1",
+        "fromNode": "H1",
+        "toNode": "C1",
+        "label": null
+      },
+      "E2": {
+        "id": "E2",
+        "fromNode": "K1",
+        "toNode": "C1",
+        "label": null
+      },
+      "E3": {
+        "id": "E3",
+        "fromNode": "C1",
+        "toNode": "R1",
+        "label": null
+      },
+      "E4": {
+        "id": "E4",
+        "fromNode": "R1",
+        "toNode": "L1",
+        "label": "Choose reduced witnesses"
+      },
+      "E5": {
+        "id": "E5",
+        "fromNode": "L1",
+        "toNode": "R2",
+        "label": null
+      },
+      "E6": {
+        "id": "E6",
+        "fromNode": "R2",
+        "toNode": "C2",
+        "label": null
+      },
+      "E7": {
+        "id": "E7",
+        "fromNode": "D1",
+        "toNode": "C2",
+        "label": null
+      },
+      "E8": {
+        "id": "E8",
+        "fromNode": "C2",
+        "toNode": "R3",
+        "label": null
+      },
+      "E9": {
+        "id": "E9",
+        "fromNode": "R3",
+        "toNode": "C3",
+        "label": null
+      },
+      "E10": {
+        "id": "E10",
+        "fromNode": "K2",
+        "toNode": "C3",
+        "label": null
+      },
+      "E11": {
+        "id": "E11",
+        "fromNode": "C3",
+        "toNode": "R4",
+        "label": null
+      },
+      "E12": {
+        "id": "E12",
+        "fromNode": "R3",
+        "toNode": "C4",
+        "label": null
+      },
+      "E13": {
+        "id": "E13",
+        "fromNode": "R4",
+        "toNode": "C4",
+        "label": null
+      },
+      "E14": {
+        "id": "E14",
+        "fromNode": "C4",
+        "toNode": "R5",
+        "label": null
+      },
+      "E15": {
+        "id": "E15",
+        "fromNode": "R5",
+        "toNode": "C5",
+        "label": null
+      },
+      "E16": {
+        "id": "E16",
+        "fromNode": "K2",
+        "toNode": "C5",
+        "label": null
+      },
+      "E17": {
+        "id": "E17",
+        "fromNode": "C5",
+        "toNode": "R6",
+        "label": null
+      },
+      "E18": {
+        "id": "E18",
+        "fromNode": "R2",
+        "toNode": "C6",
+        "label": null
+      },
+      "E19": {
+        "id": "E19",
+        "fromNode": "R4",
+        "toNode": "C6",
+        "label": null
+      },
+      "E20": {
+        "id": "E20",
+        "fromNode": "R6",
+        "toNode": "C6",
+        "label": null
+      },
+      "E21": {
+        "id": "E21",
+        "fromNode": "C6",
+        "toNode": "X1",
+        "label": null
+      },
+      "E22": {
+        "id": "E22",
+        "fromNode": "X1",
+        "toNode": "X2",
+        "label": "Close witness scope"
+      },
+      "E23": {
+        "id": "E23",
+        "fromNode": "X2",
+        "toNode": "T1",
+        "label": "Discharge rationality"
+      }
+    }
+  },
+  "canvas_persisted_hash": "16686898ec5d37585ad284817da5d6476dbf0d235017a3fbb8b7d71ebac78b81",
+  "released_at": "20260917T172459707275Z"
+}

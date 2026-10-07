@@ -1,0 +1,2917 @@
+{
+  "slug": "sqrt-2-irrationality",
+  "theorem": {
+    "title": "The irrationality of $\\sqrt{2}$",
+    "statement_latex": "\\sqrt{2}\\notin\\mathbb{Q}",
+    "assumptions": [
+      "No additional assumptions are required."
+    ],
+    "proof_standard": "strict",
+    "status": "proved"
+  },
+  "context": {
+    "领域": "Elementary number theory and proof methods.",
+    "背景": "A reduced fraction provides a finite arithmetic witness to test a rationality assumption.",
+    "角色 / 重要性": "A compact example that makes a contradiction and two nested scope closures visible.",
+    "作用": "Demonstrate that the proof model can express reductio with a scoped existential witness.",
+    "证明思路/策略": "Use the classical reduced-fraction contradiction presented by Harvey Mudd College (https://math.hmc.edu/funfacts/square-root-of-two-is-irrational/). It matches the unconditional claim and needs only integer parity. This model expands the source's reduced-fraction choice into a visible existential-witness scope, reuses one parity theorem node twice, and closes that scope before reductio.",
+    "证明工具": "Reduced fractions, parity of squares, existential elimination, and reductio."
+  },
+  "symbols": [
+    {
+      "symbol_latex": "\\sqrt{2}",
+      "definition_role": "The positive square root of two",
+      "range_unit": "Positive real",
+      "interpretation": "The number under study"
+    },
+    {
+      "symbol_latex": "\\mathbb{Q}",
+      "definition_role": "Set of rational numbers",
+      "range_unit": "Set",
+      "interpretation": "The set whose membership is denied"
+    },
+    {
+      "symbol_latex": "\\mathbb{Z}",
+      "definition_role": "Set of integers",
+      "range_unit": "Set",
+      "interpretation": "Domain of numerator and denominator"
+    },
+    {
+      "symbol_latex": "\\gcd",
+      "definition_role": "Greatest common divisor",
+      "range_unit": "Positive integer on nonzero pairs",
+      "interpretation": "Tests whether a fraction is reduced"
+    },
+    {
+      "symbol_latex": "\\mid",
+      "definition_role": "Integer divisibility relation",
+      "range_unit": "Not applicable",
+      "interpretation": "Records evenness through divisibility by two"
+    },
+    {
+      "symbol_latex": "\\bot",
+      "definition_role": "Contradiction",
+      "range_unit": "Not applicable",
+      "interpretation": "An impossible conclusion under the local assumption"
+    }
+  ],
+  "scopes": [
+    {
+      "id": "Outer",
+      "title": "Assumed rationality",
+      "kind": "local",
+      "opened_by": "H1",
+      "closed_by": "E23"
+    },
+    {
+      "id": "Inner",
+      "title": "Reduced fraction witnesses",
+      "kind": "local",
+      "parent_scope": "Outer",
+      "opened_by": "L1",
+      "opening_edge": "E5",
+      "closed_by": "E22"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "H1",
+      "type": "HYPOTHESIS_LOCAL",
+      "title": "Assume rationality",
+      "short_role": "Suppose $\\sqrt{2}\\in\\mathbb{Q}$ for contradiction.",
+      "formula_latex": "\\sqrt{2}\\in\\mathbb{Q}",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\sqrt{2}\\in\\mathbb{Q}",
+              "symbols": [
+                {
+                  "symbol_latex": "\\sqrt{2}",
+                  "definition_role": "The positive square root of two",
+                  "range_unit": "Positive real",
+                  "interpretation": "The number under study"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Q}",
+                  "definition_role": "Set of rational numbers",
+                  "range_unit": "Set",
+                  "interpretation": "The set whose membership is denied"
+                }
+              ],
+              "id": "h1core"
+            },
+            {
+              "kind": "prose",
+              "text": "This temporary assumption opens the outer contradiction scope."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "Suppose $\\sqrt{2}\\in\\mathbb{Q}$ for contradiction.",
+        "motivation": "This temporary assumption opens the outer contradiction scope."
+      },
+      "scope": "Outer"
+    },
+    {
+      "id": "K1",
+      "type": "KNOWN_RESULT",
+      "title": "Reduced fraction theorem",
+      "short_role": "A rational number has a reduced integer fraction.",
+      "formula_latex": "\\begin{aligned}\n&x\\in\\mathbb{Q}\\\\\n&\\quad\\Rightarrow\\quad\\exists m,n\\in\\mathbb{Z}\\\\\n&\\qquad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&x=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\begin{aligned}\n&x\\in\\mathbb{Q}\\\\\n&\\quad\\Rightarrow\\quad\\exists m,n\\in\\mathbb{Z}\\\\\n&\\qquad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&x=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "Arbitrary rational number in the reduction theorem",
+                  "range_unit": "Rational number",
+                  "interpretation": "Input to the general theorem"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Q}",
+                  "definition_role": "Set of rational numbers",
+                  "range_unit": "Set",
+                  "interpretation": "The set whose membership is denied"
+                },
+                {
+                  "symbol_latex": "m",
+                  "definition_role": "Numerator bound by the existence statement",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator before a witness is selected"
+                },
+                {
+                  "symbol_latex": "n",
+                  "definition_role": "Positive denominator bound by the existence statement",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator before a witness is selected"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Z}",
+                  "definition_role": "Set of integers",
+                  "range_unit": "Set",
+                  "interpretation": "Domain of numerator and denominator"
+                },
+                {
+                  "symbol_latex": "\\gcd",
+                  "definition_role": "Greatest common divisor",
+                  "range_unit": "Positive integer on nonzero pairs",
+                  "interpretation": "Tests whether a fraction is reduced"
+                }
+              ],
+              "id": "k1core"
+            },
+            {
+              "kind": "prose",
+              "text": "This standard reduction theorem converts the rationality hypothesis into a reduced fraction. Its condition is $x\\in\\mathbb{Q}$; here $x=\\sqrt{2}$. Native integer reduction gives a positive denominator and coprime numerator and denominator."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "A rational number has a reduced integer fraction.",
+        "motivation": "This standard reduction theorem converts the rationality hypothesis into a reduced fraction. Its condition is $x\\in\\mathbb{Q}$; here $x=\\sqrt{2}$. Native integer reduction gives a positive denominator and coprime numerator and denominator."
+      },
+      "external": true,
+      "conditions": [
+        "$x\\in\\mathbb{Q}$"
+      ],
+      "condition_checks": [
+        "The application uses $x=\\sqrt{2}$, supplied by the temporary hypothesis."
+      ],
+      "card_formula_display": "summary"
+    },
+    {
+      "id": "K2",
+      "type": "KNOWN_RESULT",
+      "title": "Parity of squares",
+      "short_role": "An integer with an even square is even.",
+      "formula_latex": "\\begin{aligned}\n&\\forall z\\in\\mathbb{Z},\\\\\n&\\quad 2\\mid z^2\\\\\n&\\qquad\\Rightarrow 2\\mid z\n\\end{aligned}",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\begin{aligned}\n&\\forall z\\in\\mathbb{Z},\\\\\n&\\quad 2\\mid z^2\\\\\n&\\qquad\\Rightarrow 2\\mid z\n\\end{aligned}",
+              "symbols": [
+                {
+                  "symbol_latex": "z",
+                  "definition_role": "Arbitrary integer in the parity theorem",
+                  "range_unit": "Integer",
+                  "interpretation": "Input to the reusable parity implication"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Z}",
+                  "definition_role": "Set of integers",
+                  "range_unit": "Set",
+                  "interpretation": "Domain of numerator and denominator"
+                },
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                }
+              ],
+              "id": "k2core"
+            },
+            {
+              "kind": "prose",
+              "text": "The implication follows because an odd integer has an odd square. It is applied separately to the numerator and denominator after each is known to be an integer with an even square."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "An integer with an even square is even.",
+        "motivation": "The implication follows because an odd integer has an odd square. It is applied separately to the numerator and denominator after each is known to be an integer with an even square."
+      },
+      "external": true,
+      "conditions": [
+        "$z\\in\\mathbb{Z}$",
+        "$2\\mid z^2$"
+      ],
+      "condition_checks": [
+        "The selected witness is integral.",
+        "The required square divisibility is derived before either application."
+      ]
+    },
+    {
+      "id": "D1",
+      "type": "DEFINITION",
+      "title": "Square root property",
+      "short_role": "The positive square root has square equal to two.",
+      "formula_latex": "(\\sqrt{2})^2=2",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "(\\sqrt{2})^2=2",
+              "symbols": [
+                {
+                  "symbol_latex": "\\sqrt{2}",
+                  "definition_role": "The positive square root of two",
+                  "range_unit": "Positive real",
+                  "interpretation": "The number under study"
+                }
+              ],
+              "id": "d1core"
+            },
+            {
+              "kind": "prose",
+              "text": "The defining property of the positive square root is used when the reduced representation is squared."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "The positive square root has square equal to two.",
+        "motivation": "The defining property of the positive square root is used when the reduced representation is squared."
+      }
+    },
+    {
+      "id": "R1",
+      "type": "DERIVATION",
+      "title": "Reduced representation exists",
+      "short_role": "A reduced fraction represents $\\sqrt{2}$.",
+      "formula_latex": "\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+              "symbols": [
+                {
+                  "symbol_latex": "m",
+                  "definition_role": "Numerator bound by the existence statement",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator before a witness is selected"
+                },
+                {
+                  "symbol_latex": "n",
+                  "definition_role": "Positive denominator bound by the existence statement",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator before a witness is selected"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Z}",
+                  "definition_role": "Set of integers",
+                  "range_unit": "Set",
+                  "interpretation": "Domain of numerator and denominator"
+                },
+                {
+                  "symbol_latex": "\\gcd",
+                  "definition_role": "Greatest common divisor",
+                  "range_unit": "Positive integer on nonzero pairs",
+                  "interpretation": "Tests whether a fraction is reduced"
+                },
+                {
+                  "symbol_latex": "\\sqrt{2}",
+                  "definition_role": "The positive square root of two",
+                  "range_unit": "Positive real",
+                  "interpretation": "The number under study"
+                }
+              ],
+              "id": "r1core"
+            },
+            {
+              "kind": "prose",
+              "text": "Apply the reduction theorem to $\\sqrt{2}$ while the rationality assumption is active. The quantified numerator and denominator have not yet been chosen."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "A reduced fraction represents $\\sqrt{2}$.",
+        "motivation": "Apply the reduction theorem to $\\sqrt{2}$ while the rationality assumption is active. The quantified numerator and denominator have not yet been chosen."
+      },
+      "scope": "Outer",
+      "result": true
+    },
+    {
+      "id": "L1",
+      "type": "LOCAL_INTRODUCTION",
+      "title": "Choose reduced witnesses",
+      "short_role": "Select a reduced numerator and denominator.",
+      "formula_latex": "a,b\\in\\mathbb{Z}",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "a,b\\in\\mathbb{Z}",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Z}",
+                  "definition_role": "Set of integers",
+                  "range_unit": "Set",
+                  "interpretation": "Domain of numerator and denominator"
+                }
+              ],
+              "id": "l1core"
+            },
+            {
+              "kind": "prose",
+              "text": "Existential elimination selects fresh witnesses $a$ and $b$ for the reduced representation. Their scope ends before reductio."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "Select a reduced numerator and denominator.",
+        "motivation": "Existential elimination selects fresh witnesses $a$ and $b$ for the reduced representation. Their scope ends before reductio."
+      },
+      "scope": "Outer",
+      "introduction_mode": "witness",
+      "bindings": [
+        {
+          "id": "a",
+          "symbol_latex": "a",
+          "domain_latex": "\\mathbb{Z}",
+          "depends_on": []
+        },
+        {
+          "id": "b",
+          "symbol_latex": "b",
+          "domain_latex": "\\mathbb{Z}_{>0}",
+          "depends_on": []
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "type": "DERIVATION",
+      "title": "Witness conditions",
+      "short_role": "The chosen fraction is reduced and represents $\\sqrt{2}$.",
+      "formula_latex": "\\left\\{\\begin{aligned}\n&a,b\\in\\mathbb{Z}\\\\\n&b>0\\\\\n&\\gcd(a,b)=1\\\\\n&\\sqrt{2}=a/b\n\\end{aligned}\\right.",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\left\\{\\begin{aligned}\n&a,b\\in\\mathbb{Z}\\\\\n&b>0\\\\\n&\\gcd(a,b)=1\\\\\n&\\sqrt{2}=a/b\n\\end{aligned}\\right.",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Z}",
+                  "definition_role": "Set of integers",
+                  "range_unit": "Set",
+                  "interpretation": "Domain of numerator and denominator"
+                },
+                {
+                  "symbol_latex": "\\gcd",
+                  "definition_role": "Greatest common divisor",
+                  "range_unit": "Positive integer on nonzero pairs",
+                  "interpretation": "Tests whether a fraction is reduced"
+                },
+                {
+                  "symbol_latex": "\\sqrt{2}",
+                  "definition_role": "The positive square root of two",
+                  "range_unit": "Positive real",
+                  "interpretation": "The number under study"
+                }
+              ],
+              "id": "r2core"
+            },
+            {
+              "kind": "prose",
+              "text": "The witness statement records $a,b\\in\\mathbb{Z}$, $b>0$, $\\gcd(a,b)=1$, and $\\sqrt{2}=a/b$. Positivity gives $b\\ne0$, so the quotient and the squaring step are legitimate."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "The chosen fraction is reduced and represents $\\sqrt{2}$.",
+        "motivation": "The witness statement records $a,b\\in\\mathbb{Z}$, $b>0$, $\\gcd(a,b)=1$, and $\\sqrt{2}=a/b$. Positivity gives $b\\ne0$, so the quotient and the squaring step are legitimate."
+      },
+      "scope": "Inner",
+      "result": true,
+      "conditions": [
+        "$a,b\\in\\mathbb{Z}$",
+        "$b>0$",
+        "$\\gcd(a,b)=1$"
+      ],
+      "condition_checks": [
+        "Both variables are bound by the witness introduction.",
+        "The reduced fraction theorem supplies a positive denominator.",
+        "The reduced fraction theorem supplies coprimality."
+      ],
+      "input_context": [
+        {
+          "edge_id": "E5",
+          "contribution": "The witnesses chosen from the established reduced representation are integral $a$ and positive integral $b$; they satisfy $\\gcd(a,b)=1$ and $\\sqrt{2}=a/b$ inside this scope."
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "type": "DERIVATION",
+      "title": "Square relation",
+      "short_role": "The numerator square equals twice the denominator square.",
+      "formula_latex": "a^2=2b^2",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "a^2=2b^2",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "r3core"
+            },
+            {
+              "kind": "prose",
+              "text": "Square $\\sqrt{2}=a/b$ using $b>0$ and substitute $(\\sqrt{2})^2=2$ to obtain $a^2=2b^2$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "The numerator square equals twice the denominator square.",
+        "motivation": "Square $\\sqrt{2}=a/b$ using $b>0$ and substitute $(\\sqrt{2})^2=2$ to obtain $a^2=2b^2$."
+      },
+      "scope": "Inner",
+      "result": true,
+      "conditions": [
+        "$b\\ne0$"
+      ],
+      "condition_checks": [
+        "The witness has $b>0$."
+      ]
+    },
+    {
+      "id": "R4",
+      "type": "DERIVATION",
+      "title": "Even numerator",
+      "short_role": "The chosen numerator is divisible by two.",
+      "formula_latex": "2\\mid a",
+      "uses_symbols": [
+        "a"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "2\\mid a",
+              "symbols": [
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                },
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                }
+              ],
+              "id": "r4core"
+            },
+            {
+              "kind": "prose",
+              "text": "The square relation makes $a^2$ even. Since $a\\in\\mathbb{Z}$, the parity theorem gives $2\\mid a$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "The chosen numerator is divisible by two.",
+        "motivation": "The square relation makes $a^2$ even. Since $a\\in\\mathbb{Z}$, the parity theorem gives $2\\mid a$."
+      },
+      "scope": "Inner",
+      "result": true,
+      "conditions": [
+        "$a\\in\\mathbb{Z}$",
+        "$2\\mid a^2$"
+      ],
+      "condition_checks": [
+        "The witness is integral.",
+        "The square relation states $a^2=2b^2$."
+      ]
+    },
+    {
+      "id": "R5",
+      "type": "DERIVATION",
+      "title": "Even denominator square",
+      "short_role": "The denominator square is divisible by two.",
+      "formula_latex": "2\\mid b^2",
+      "uses_symbols": [
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "2\\mid b^2",
+              "symbols": [
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "r5core"
+            },
+            {
+              "kind": "prose",
+              "text": "Because $a$ is even, its square is divisible by four. The equality $a^2=2b^2$ therefore implies $2\\mid b^2$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S4",
+        "role": "The denominator square is divisible by two.",
+        "motivation": "Because $a$ is even, its square is divisible by four. The equality $a^2=2b^2$ therefore implies $2\\mid b^2$."
+      },
+      "scope": "Inner",
+      "result": true,
+      "conditions": [
+        "$2\\mid a$",
+        "$a^2=2b^2$"
+      ],
+      "condition_checks": [
+        "The even-numerator result supplies the first condition.",
+        "The square-relation result supplies the second condition."
+      ]
+    },
+    {
+      "id": "R6",
+      "type": "DERIVATION",
+      "title": "Even denominator",
+      "short_role": "The chosen denominator is divisible by two.",
+      "formula_latex": "2\\mid b",
+      "uses_symbols": [
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "2\\mid b",
+              "symbols": [
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "r6core"
+            },
+            {
+              "kind": "prose",
+              "text": "The denominator is an integer and its square is even, so the same parity theorem gives $2\\mid b$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S4",
+        "role": "The chosen denominator is divisible by two.",
+        "motivation": "The denominator is an integer and its square is even, so the same parity theorem gives $2\\mid b$."
+      },
+      "scope": "Inner",
+      "result": true,
+      "conditions": [
+        "$b\\in\\mathbb{Z}$",
+        "$2\\mid b^2$"
+      ],
+      "condition_checks": [
+        "The witness is integral.",
+        "The preceding result establishes square divisibility."
+      ]
+    },
+    {
+      "id": "X1",
+      "type": "CONTRADICTION",
+      "title": "Coprimality contradiction",
+      "short_role": "The greatest common divisor is both one and at least two.",
+      "formula_latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.",
+              "symbols": [
+                {
+                  "symbol_latex": "\\gcd",
+                  "definition_role": "Greatest common divisor",
+                  "range_unit": "Positive integer on nonzero pairs",
+                  "interpretation": "Tests whether a fraction is reduced"
+                },
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "x1core"
+            },
+            {
+              "kind": "prose",
+              "text": "The witness is coprime, yet $2\\mid a$ and $2\\mid b$ make two a common divisor, forcing $\\gcd(a,b)\\ge2$. This directly contradicts $\\gcd(a,b)=1$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S5",
+        "role": "The greatest common divisor is both one and at least two.",
+        "motivation": "The witness is coprime, yet $2\\mid a$ and $2\\mid b$ make two a common divisor, forcing $\\gcd(a,b)\\ge2$. This directly contradicts $\\gcd(a,b)=1$."
+      },
+      "scope": "Inner",
+      "result": true
+    },
+    {
+      "id": "X2",
+      "type": "CONTRADICTION",
+      "title": "Witness-free contradiction",
+      "short_role": "The contradiction no longer depends on particular witnesses.",
+      "formula_latex": "\\bot",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\bot",
+              "symbols": [
+                {
+                  "symbol_latex": "\\bot",
+                  "definition_role": "Contradiction",
+                  "range_unit": "Not applicable",
+                  "interpretation": "An impossible conclusion under the local assumption"
+                }
+              ],
+              "id": "x2core"
+            },
+            {
+              "kind": "prose",
+              "text": "Existential elimination closes the witness scope. The conclusion is an outright contradiction under the remaining assumption that $\\sqrt{2}$ is rational; it contains no free $a$ or $b$."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S5",
+        "role": "The contradiction no longer depends on particular witnesses.",
+        "motivation": "Existential elimination closes the witness scope. The conclusion is an outright contradiction under the remaining assumption that $\\sqrt{2}$ is rational; it contains no free $a$ or $b$."
+      },
+      "scope": "Outer",
+      "result": true
+    },
+    {
+      "id": "T1",
+      "type": "TARGET",
+      "title": "Irrationality established",
+      "short_role": "The temporary rationality assumption is false.",
+      "formula_latex": "\\sqrt{2}\\notin\\mathbb{Q}",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\sqrt{2}\\notin\\mathbb{Q}",
+              "symbols": [
+                {
+                  "symbol_latex": "\\sqrt{2}",
+                  "definition_role": "The positive square root of two",
+                  "range_unit": "Positive real",
+                  "interpretation": "The number under study"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Q}",
+                  "definition_role": "Set of rational numbers",
+                  "range_unit": "Set",
+                  "interpretation": "The set whose membership is denied"
+                }
+              ],
+              "id": "t1core"
+            },
+            {
+              "kind": "prose",
+              "text": "Reductio discharges the assumption $\\sqrt{2}\\in\\mathbb{Q}$. The conclusion means exactly that $\\sqrt{2}$ is irrational."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S5",
+        "role": "The temporary rationality assumption is false.",
+        "motivation": "Reductio discharges the assumption $\\sqrt{2}\\in\\mathbb{Q}$. The conclusion means exactly that $\\sqrt{2}$ is irrational."
+      },
+      "result": true
+    },
+    {
+      "id": "C1",
+      "type": "COMBINE",
+      "title": "Normalize rationality",
+      "short_role": "Apply the reduced-fraction theorem to the assumed rational number.",
+      "formula_latex": "\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+      "uses_symbols": [],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+              "symbols": [
+                {
+                  "symbol_latex": "m",
+                  "definition_role": "Numerator bound by the existence statement",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator before a witness is selected"
+                },
+                {
+                  "symbol_latex": "n",
+                  "definition_role": "Positive denominator bound by the existence statement",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator before a witness is selected"
+                },
+                {
+                  "symbol_latex": "\\mathbb{Z}",
+                  "definition_role": "Set of integers",
+                  "range_unit": "Set",
+                  "interpretation": "Domain of numerator and denominator"
+                },
+                {
+                  "symbol_latex": "\\gcd",
+                  "definition_role": "Greatest common divisor",
+                  "range_unit": "Positive integer on nonzero pairs",
+                  "interpretation": "Tests whether a fraction is reduced"
+                },
+                {
+                  "symbol_latex": "\\sqrt{2}",
+                  "definition_role": "The positive square root of two",
+                  "range_unit": "Positive real",
+                  "interpretation": "The number under study"
+                }
+              ],
+              "id": "c1core"
+            },
+            {
+              "kind": "prose",
+              "text": "Use the temporary membership statement as the theorem premise."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "Apply the reduced-fraction theorem to the assumed rational number.",
+        "motivation": "Use the temporary membership statement as the theorem premise."
+      },
+      "scope": "Outer",
+      "combine_inputs": [
+        "H1",
+        "K1"
+      ],
+      "combine_output_latex": "\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+      "combine_reason": "theorem_application",
+      "combine_motivation": "Apply the reduced-fraction theorem to the assumed rational number.",
+      "combine_method": "Use the temporary membership statement as the theorem premise.",
+      "output_handoff": {
+        "explanation": "The existential reduced representation is the sole output.",
+        "downstream_use": "Apply the reduction theorem to $\\sqrt{2}$ while the rationality assumption is active. The quantified numerator and denominator have not yet been chosen."
+      },
+      "start_input": "H1",
+      "input_review": [
+        {
+          "node": "H1",
+          "formula_ref": "core",
+          "contribution": "The hypothesis supplies rationality."
+        },
+        {
+          "node": "K1",
+          "formula_ref": "core",
+          "contribution": "The theorem supplies reduced integer witnesses."
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "\\sqrt{2}\\in\\mathbb{Q}",
+          "symbols": [
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            },
+            {
+              "symbol_latex": "\\mathbb{Q}",
+              "definition_role": "Set of rational numbers",
+              "range_unit": "Set",
+              "interpretation": "The set whose membership is denied"
+            }
+          ],
+          "id": "c1input0"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\begin{aligned}\n&x\\in\\mathbb{Q}\\\\\n&\\quad\\Rightarrow\\quad\\exists m,n\\in\\mathbb{Z}\\\\\n&\\qquad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&x=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "Arbitrary rational number in the reduction theorem",
+              "range_unit": "Rational number",
+              "interpretation": "Input to the general theorem"
+            },
+            {
+              "symbol_latex": "\\mathbb{Q}",
+              "definition_role": "Set of rational numbers",
+              "range_unit": "Set",
+              "interpretation": "The set whose membership is denied"
+            },
+            {
+              "symbol_latex": "m",
+              "definition_role": "Numerator bound by the existence statement",
+              "range_unit": "Integer",
+              "interpretation": "Numerator before a witness is selected"
+            },
+            {
+              "symbol_latex": "n",
+              "definition_role": "Positive denominator bound by the existence statement",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator before a witness is selected"
+            },
+            {
+              "symbol_latex": "\\mathbb{Z}",
+              "definition_role": "Set of integers",
+              "range_unit": "Set",
+              "interpretation": "Domain of numerator and denominator"
+            },
+            {
+              "symbol_latex": "\\gcd",
+              "definition_role": "Greatest common divisor",
+              "range_unit": "Positive integer on nonzero pairs",
+              "interpretation": "Tests whether a fraction is reduced"
+            }
+          ],
+          "id": "c1input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\begin{aligned}\n&\\exists m,n\\in\\mathbb{Z}\\\\\n&\\quad\\text{such that}\\quad\\left\\{\\begin{aligned}\n&n>0\\\\\n&\\gcd(m,n)=1\\\\\n&\\sqrt{2}=m/n\n\\end{aligned}\\right.\n\\end{aligned}",
+          "symbols": [
+            {
+              "symbol_latex": "m",
+              "definition_role": "Numerator bound by the existence statement",
+              "range_unit": "Integer",
+              "interpretation": "Numerator before a witness is selected"
+            },
+            {
+              "symbol_latex": "n",
+              "definition_role": "Positive denominator bound by the existence statement",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator before a witness is selected"
+            },
+            {
+              "symbol_latex": "\\mathbb{Z}",
+              "definition_role": "Set of integers",
+              "range_unit": "Set",
+              "interpretation": "Domain of numerator and denominator"
+            },
+            {
+              "symbol_latex": "\\gcd",
+              "definition_role": "Greatest common divisor",
+              "range_unit": "Positive integer on nonzero pairs",
+              "interpretation": "Tests whether a fraction is reduced"
+            },
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            }
+          ],
+          "id": "c1final"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "H1",
+          "formula_ref": "core",
+          "step_id": "c1input0",
+          "mode": "start"
+        },
+        {
+          "node": "K1",
+          "formula_ref": "core",
+          "step_id": "c1input1",
+          "mode": "basis"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c1input0",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c1input1",
+            "next_step": "c1final",
+            "name": "Apply reduced fraction theorem",
+            "source": {
+              "node": "K1",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c1final",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "\\sqrt{2}",
+            "definition_role": "The positive square root of two",
+            "range_unit": "Positive real",
+            "interpretation": "The number under study"
+          },
+          {
+            "symbol_latex": "\\mathbb{Q}",
+            "definition_role": "Set of rational numbers",
+            "range_unit": "Set",
+            "interpretation": "The set whose membership is denied"
+          },
+          {
+            "symbol_latex": "x",
+            "definition_role": "Arbitrary rational number in the reduction theorem",
+            "range_unit": "Rational number",
+            "interpretation": "Input to the general theorem"
+          },
+          {
+            "symbol_latex": "m",
+            "definition_role": "Numerator bound by the existence statement",
+            "range_unit": "Integer",
+            "interpretation": "Numerator before a witness is selected"
+          },
+          {
+            "symbol_latex": "n",
+            "definition_role": "Positive denominator bound by the existence statement",
+            "range_unit": "Positive integer",
+            "interpretation": "Denominator before a witness is selected"
+          },
+          {
+            "symbol_latex": "\\mathbb{Z}",
+            "definition_role": "Set of integers",
+            "range_unit": "Set",
+            "interpretation": "Domain of numerator and denominator"
+          },
+          {
+            "symbol_latex": "\\gcd",
+            "definition_role": "Greatest common divisor",
+            "range_unit": "Positive integer on nonzero pairs",
+            "interpretation": "Tests whether a fraction is reduced"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C2",
+      "type": "COMBINE",
+      "title": "Square the representation",
+      "short_role": "Connect the witness equation with the defining square-root property.",
+      "formula_latex": "a^2=2b^2",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "a^2=2b^2",
+              "symbols": [
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "c2core"
+            },
+            {
+              "kind": "prose",
+              "text": "Square the quotient using its nonzero denominator and substitute the square-root value."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "Connect the witness equation with the defining square-root property.",
+        "motivation": "Square the quotient using its nonzero denominator and substitute the square-root value."
+      },
+      "scope": "Inner",
+      "combine_inputs": [
+        "R2",
+        "D1"
+      ],
+      "combine_output_latex": "a^2=2b^2",
+      "combine_reason": "premise_synthesis",
+      "combine_motivation": "Connect the witness equation with the defining square-root property.",
+      "combine_method": "Extract $\\sqrt{2}=a/b$ from the witness statement and square both sides. Apply the square-root definition to replace $(\\sqrt{2})^2$ by $2$. Finally multiply by $b^2$, which is allowed because $b>0$.",
+      "output_handoff": {
+        "explanation": "The resulting square equation is used in both parity deductions.",
+        "downstream_use": "Square $\\sqrt{2}=a/b$ using $b>0$ and substitute $(\\sqrt{2})^2=2$ to obtain $a^2=2b^2$."
+      },
+      "start_input": "R2",
+      "input_review": [
+        {
+          "node": "R2",
+          "formula_ref": "core",
+          "contribution": "The witness supplies the quotient and its denominator condition."
+        },
+        {
+          "node": "D1",
+          "formula_ref": "core",
+          "contribution": "The definition supplies the value of the square."
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "\\left\\{\\begin{aligned}\n&a,b\\in\\mathbb{Z}\\\\\n&b>0\\\\\n&\\gcd(a,b)=1\\\\\n&\\sqrt{2}=a/b\n\\end{aligned}\\right.",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            },
+            {
+              "symbol_latex": "\\mathbb{Z}",
+              "definition_role": "Set of integers",
+              "range_unit": "Set",
+              "interpretation": "Domain of numerator and denominator"
+            },
+            {
+              "symbol_latex": "\\gcd",
+              "definition_role": "Greatest common divisor",
+              "range_unit": "Positive integer on nonzero pairs",
+              "interpretation": "Tests whether a fraction is reduced"
+            },
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            }
+          ],
+          "id": "c2input0"
+        },
+        {
+          "id": "c2quotient",
+          "kind": "formula",
+          "latex": "\\sqrt{2}=a/b",
+          "symbols": [
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ]
+        },
+        {
+          "id": "c2squared",
+          "kind": "formula",
+          "latex": "(\\sqrt{2})^2=a^2/b^2",
+          "symbols": [
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "latex": "(\\sqrt{2})^2=2",
+          "symbols": [
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            }
+          ],
+          "id": "c2input1"
+        },
+        {
+          "id": "c2definition",
+          "kind": "formula",
+          "latex": "2=a^2/b^2",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "latex": "a^2=2b^2",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c2final"
+        },
+        {
+          "id": "c2explanation",
+          "kind": "prose",
+          "text": "Extracting the quotient and squaring it are elementary transformations. The boxed definition supplies $(\\sqrt{2})^2=2$; multiplying $2=a^2/b^2$ by $b^2$ uses the checked condition $b\\ne0$."
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R2",
+          "formula_ref": "core",
+          "step_id": "c2input0",
+          "mode": "start"
+        },
+        {
+          "node": "D1",
+          "formula_ref": "core",
+          "step_id": "c2input1",
+          "mode": "basis"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c2input0",
+            "split_at": 0
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2quotient",
+            "split_at": 0
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2squared",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c2input1",
+            "next_step": "c2definition",
+            "name": "Apply square root property",
+            "source": {
+              "node": "D1",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2definition",
+            "split_at": 0
+          },
+          {
+            "kind": "expression",
+            "step_id": "c2final",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "a",
+            "definition_role": "Chosen numerator",
+            "range_unit": "Integer",
+            "interpretation": "Numerator of the reduced witness",
+            "binding_ref": "a"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Chosen positive denominator",
+            "range_unit": "Positive integer",
+            "interpretation": "Denominator of the reduced witness",
+            "binding_ref": "b"
+          },
+          {
+            "symbol_latex": "\\mathbb{Z}",
+            "definition_role": "Set of integers",
+            "range_unit": "Set",
+            "interpretation": "Domain of numerator and denominator"
+          },
+          {
+            "symbol_latex": "\\gcd",
+            "definition_role": "Greatest common divisor",
+            "range_unit": "Positive integer on nonzero pairs",
+            "interpretation": "Tests whether a fraction is reduced"
+          },
+          {
+            "symbol_latex": "\\sqrt{2}",
+            "definition_role": "The positive square root of two",
+            "range_unit": "Positive real",
+            "interpretation": "The number under study"
+          }
+        ],
+        "explanations": [
+          "c2explanation"
+        ]
+      }
+    },
+    {
+      "id": "C3",
+      "type": "COMBINE",
+      "title": "Infer numerator parity",
+      "short_role": "Use the even square to infer an even numerator.",
+      "formula_latex": "2\\mid a",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "2\\mid a",
+              "symbols": [
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                },
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                }
+              ],
+              "id": "c3core"
+            },
+            {
+              "kind": "prose",
+              "text": "Use the numerator as the integer in the theorem."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "Use the even square to infer an even numerator.",
+        "motivation": "Use the numerator as the integer in the theorem."
+      },
+      "scope": "Inner",
+      "combine_inputs": [
+        "R3",
+        "K2"
+      ],
+      "combine_output_latex": "2\\mid a",
+      "combine_reason": "theorem_application",
+      "combine_motivation": "Apply the parity theorem after the square equation establishes an even square.",
+      "combine_method": "From $a^2=2b^2$ first infer $2\\mid a^2$. The chosen numerator is an integer, so the boxed parity theorem applies to $a$.",
+      "output_handoff": {
+        "explanation": "The even numerator is used in the denominator argument and final contradiction.",
+        "downstream_use": "The square relation makes $a^2$ even. Since $a\\in\\mathbb{Z}$, the parity theorem gives $2\\mid a$."
+      },
+      "start_input": "R3",
+      "input_review": [
+        {
+          "node": "R3",
+          "formula_ref": "core",
+          "contribution": "The square equation gives an even numerator square."
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "contribution": "The parity theorem converts even square to even integer."
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "a^2=2b^2",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c3input0"
+        },
+        {
+          "id": "c3evensquare",
+          "kind": "formula",
+          "latex": "2\\mid a^2",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "latex": "\\begin{aligned}\n&\\forall z\\in\\mathbb{Z},\\\\\n&\\quad 2\\mid z^2\\\\\n&\\qquad\\Rightarrow 2\\mid z\n\\end{aligned}",
+          "symbols": [
+            {
+              "symbol_latex": "z",
+              "definition_role": "Arbitrary integer in the parity theorem",
+              "range_unit": "Integer",
+              "interpretation": "Input to the reusable parity implication"
+            },
+            {
+              "symbol_latex": "\\mathbb{Z}",
+              "definition_role": "Set of integers",
+              "range_unit": "Set",
+              "interpretation": "Domain of numerator and denominator"
+            },
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            }
+          ],
+          "id": "c3input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\mid a",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            }
+          ],
+          "id": "c3final"
+        },
+        {
+          "id": "c3explanation",
+          "kind": "prose",
+          "text": "The factor $2$ in the square equation gives the required even-square condition. Only the final step uses the external parity theorem, with $z=a\\in\\mathbb{Z}$."
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R3",
+          "formula_ref": "core",
+          "step_id": "c3input0",
+          "mode": "start"
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "step_id": "c3input1",
+          "mode": "basis"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c3input0",
+            "split_at": 0
+          },
+          {
+            "kind": "expression",
+            "step_id": "c3evensquare",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c3input1",
+            "next_step": "c3final",
+            "name": "Apply parity of squares",
+            "source": {
+              "node": "K2",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c3final",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "a",
+            "definition_role": "Chosen numerator",
+            "range_unit": "Integer",
+            "interpretation": "Numerator of the reduced witness",
+            "binding_ref": "a"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Chosen positive denominator",
+            "range_unit": "Positive integer",
+            "interpretation": "Denominator of the reduced witness",
+            "binding_ref": "b"
+          },
+          {
+            "symbol_latex": "z",
+            "definition_role": "Arbitrary integer in the parity theorem",
+            "range_unit": "Integer",
+            "interpretation": "Input to the reusable parity implication"
+          },
+          {
+            "symbol_latex": "\\mathbb{Z}",
+            "definition_role": "Set of integers",
+            "range_unit": "Set",
+            "interpretation": "Domain of numerator and denominator"
+          },
+          {
+            "symbol_latex": "\\mid",
+            "definition_role": "Integer divisibility relation",
+            "range_unit": "Not applicable",
+            "interpretation": "Records evenness through divisibility by two"
+          }
+        ],
+        "explanations": [
+          "c3explanation"
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "type": "COMBINE",
+      "title": "Infer denominator square parity",
+      "short_role": "Combine the square equation with the numerator's evenness.",
+      "formula_latex": "2\\mid b^2",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "2\\mid b^2",
+              "symbols": [
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "c4core"
+            },
+            {
+              "kind": "prose",
+              "text": "An even numerator has square divisible by four; cancel the factor two in the square equation."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S4",
+        "role": "Combine the square equation with the numerator's evenness.",
+        "motivation": "An even numerator has square divisible by four; cancel the factor two in the square equation."
+      },
+      "scope": "Inner",
+      "combine_inputs": [
+        "R3",
+        "R4"
+      ],
+      "combine_output_latex": "2\\mid b^2",
+      "combine_reason": "premise_synthesis",
+      "combine_motivation": "Combine the square equation with the numerator's evenness.",
+      "combine_method": "An even numerator has a square divisible by four. Use $a^2=2b^2$ to transfer that divisibility to $2b^2$, then cancel one factor of two to obtain $2\\mid b^2$.",
+      "output_handoff": {
+        "explanation": "The denominator square is even, enabling the second parity-theorem application.",
+        "downstream_use": "Because $a$ is even, its square is divisible by four. The equality $a^2=2b^2$ therefore implies $2\\mid b^2$."
+      },
+      "start_input": "R3",
+      "input_review": [
+        {
+          "node": "R3",
+          "formula_ref": "core",
+          "contribution": "The square equation relates both squares."
+        },
+        {
+          "node": "R4",
+          "formula_ref": "core",
+          "contribution": "The even-numerator result makes its square divisible by four."
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "a^2=2b^2",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c4input0"
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\mid a",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            }
+          ],
+          "id": "c4input1"
+        },
+        {
+          "id": "c4fourdividesa",
+          "kind": "formula",
+          "latex": "\\left\\{\\begin{aligned}\n&a^2=2b^2\\\\\n&4\\mid a^2\n\\end{aligned}\\right.",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            },
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            }
+          ]
+        },
+        {
+          "id": "c4fourdividestwob",
+          "kind": "formula",
+          "latex": "4\\mid 2b^2",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ]
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\mid b^2",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c4final"
+        },
+        {
+          "id": "c4explanation",
+          "kind": "prose",
+          "text": "The boxed input establishes $2\\mid a$. Squaring an even integer gives $4\\mid a^2$; substitution into $a^2=2b^2$ gives $4\\mid 2b^2$, which is equivalent to $2\\mid b^2$ by integer divisibility."
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R3",
+          "formula_ref": "core",
+          "step_id": "c4input0",
+          "mode": "start"
+        },
+        {
+          "node": "R4",
+          "formula_ref": "core",
+          "step_id": "c4input1",
+          "mode": "basis"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c4input0",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c4input1",
+            "next_step": "c4fourdividesa",
+            "name": "Use even numerator",
+            "source": {
+              "node": "R4",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c4fourdividesa",
+            "split_at": 0
+          },
+          {
+            "kind": "expression",
+            "step_id": "c4fourdividestwob",
+            "split_at": 0
+          },
+          {
+            "kind": "expression",
+            "step_id": "c4final",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "a",
+            "definition_role": "Chosen numerator",
+            "range_unit": "Integer",
+            "interpretation": "Numerator of the reduced witness",
+            "binding_ref": "a"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Chosen positive denominator",
+            "range_unit": "Positive integer",
+            "interpretation": "Denominator of the reduced witness",
+            "binding_ref": "b"
+          },
+          {
+            "symbol_latex": "\\mid",
+            "definition_role": "Integer divisibility relation",
+            "range_unit": "Not applicable",
+            "interpretation": "Records evenness through divisibility by two"
+          }
+        ],
+        "explanations": [
+          "c4explanation"
+        ]
+      }
+    },
+    {
+      "id": "C5",
+      "type": "COMBINE",
+      "title": "Infer denominator parity",
+      "short_role": "Reuse the parity theorem for the denominator.",
+      "formula_latex": "2\\mid b",
+      "uses_symbols": [
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "2\\mid b",
+              "symbols": [
+                {
+                  "symbol_latex": "\\mid",
+                  "definition_role": "Integer divisibility relation",
+                  "range_unit": "Not applicable",
+                  "interpretation": "Records evenness through divisibility by two"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "c5core"
+            },
+            {
+              "kind": "prose",
+              "text": "Use the denominator as the theorem's integer, after its square was shown even."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S4",
+        "role": "Reuse the parity theorem for the denominator.",
+        "motivation": "Use the denominator as the theorem's integer, after its square was shown even."
+      },
+      "scope": "Inner",
+      "combine_inputs": [
+        "R5",
+        "K2"
+      ],
+      "combine_output_latex": "2\\mid b",
+      "combine_reason": "theorem_application",
+      "combine_motivation": "Reuse the parity theorem for the denominator.",
+      "combine_method": "Use the denominator as the theorem's integer, after its square was shown even.",
+      "output_handoff": {
+        "explanation": "The even denominator joins the even numerator in the contradiction.",
+        "downstream_use": "The denominator is an integer and its square is even, so the same parity theorem gives $2\\mid b$."
+      },
+      "start_input": "R5",
+      "input_review": [
+        {
+          "node": "R5",
+          "formula_ref": "core",
+          "contribution": "The denominator-square result supplies evenness."
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "contribution": "The parity theorem converts the even square to an even denominator."
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "2\\mid b^2",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c5input0"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\begin{aligned}\n&\\forall z\\in\\mathbb{Z},\\\\\n&\\quad 2\\mid z^2\\\\\n&\\qquad\\Rightarrow 2\\mid z\n\\end{aligned}",
+          "symbols": [
+            {
+              "symbol_latex": "z",
+              "definition_role": "Arbitrary integer in the parity theorem",
+              "range_unit": "Integer",
+              "interpretation": "Input to the reusable parity implication"
+            },
+            {
+              "symbol_latex": "\\mathbb{Z}",
+              "definition_role": "Set of integers",
+              "range_unit": "Set",
+              "interpretation": "Domain of numerator and denominator"
+            },
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            }
+          ],
+          "id": "c5input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\mid b",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c5final"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R5",
+          "formula_ref": "core",
+          "step_id": "c5input0",
+          "mode": "start"
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "step_id": "c5input1",
+          "mode": "basis"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c5input0",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c5input1",
+            "next_step": "c5final",
+            "name": "Apply parity of squares",
+            "source": {
+              "node": "K2",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c5final",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "\\mid",
+            "definition_role": "Integer divisibility relation",
+            "range_unit": "Not applicable",
+            "interpretation": "Records evenness through divisibility by two"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Chosen positive denominator",
+            "range_unit": "Positive integer",
+            "interpretation": "Denominator of the reduced witness",
+            "binding_ref": "b"
+          },
+          {
+            "symbol_latex": "z",
+            "definition_role": "Arbitrary integer in the parity theorem",
+            "range_unit": "Integer",
+            "interpretation": "Input to the reusable parity implication"
+          },
+          {
+            "symbol_latex": "\\mathbb{Z}",
+            "definition_role": "Set of integers",
+            "range_unit": "Set",
+            "interpretation": "Domain of numerator and denominator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "C6",
+      "type": "COMBINE",
+      "title": "Expose the contradiction",
+      "short_role": "Compare parity with coprimality.",
+      "formula_latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "sections": [
+        {
+          "heading": "Mathematical content",
+          "blocks": [
+            {
+              "kind": "formula",
+              "latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.",
+              "symbols": [
+                {
+                  "symbol_latex": "\\gcd",
+                  "definition_role": "Greatest common divisor",
+                  "range_unit": "Positive integer on nonzero pairs",
+                  "interpretation": "Tests whether a fraction is reduced"
+                },
+                {
+                  "symbol_latex": "a",
+                  "definition_role": "Chosen numerator",
+                  "range_unit": "Integer",
+                  "interpretation": "Numerator of the reduced witness",
+                  "binding_ref": "a"
+                },
+                {
+                  "symbol_latex": "b",
+                  "definition_role": "Chosen positive denominator",
+                  "range_unit": "Positive integer",
+                  "interpretation": "Denominator of the reduced witness",
+                  "binding_ref": "b"
+                }
+              ],
+              "id": "c6core"
+            },
+            {
+              "kind": "prose",
+              "text": "A common factor of two forces the greatest common divisor to be at least two."
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S5",
+        "role": "Compare parity with coprimality.",
+        "motivation": "A common factor of two forces the greatest common divisor to be at least two."
+      },
+      "scope": "Inner",
+      "combine_inputs": [
+        "R2",
+        "R4",
+        "R6"
+      ],
+      "combine_output_latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.",
+      "combine_reason": "premise_synthesis",
+      "combine_motivation": "Compare both parity conclusions with the witness's coprimality condition.",
+      "combine_method": "A common factor of two forces the greatest common divisor to be at least two.",
+      "output_handoff": {
+        "explanation": "The explicit incompatibility closes the witness scope.",
+        "downstream_use": "The witness is coprime, yet $2\\mid a$ and $2\\mid b$ make two a common divisor, forcing $\\gcd(a,b)\\ge2$. This directly contradicts $\\gcd(a,b)=1$."
+      },
+      "start_input": "R2",
+      "input_review": [
+        {
+          "node": "R2",
+          "formula_ref": "core",
+          "contribution": "The witness gives greatest common divisor one."
+        },
+        {
+          "node": "R4",
+          "formula_ref": "core",
+          "contribution": "The numerator is divisible by two."
+        },
+        {
+          "node": "R6",
+          "formula_ref": "core",
+          "contribution": "The denominator is divisible by two."
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "\\left\\{\\begin{aligned}\n&a,b\\in\\mathbb{Z}\\\\\n&b>0\\\\\n&\\gcd(a,b)=1\\\\\n&\\sqrt{2}=a/b\n\\end{aligned}\\right.",
+          "symbols": [
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            },
+            {
+              "symbol_latex": "\\mathbb{Z}",
+              "definition_role": "Set of integers",
+              "range_unit": "Set",
+              "interpretation": "Domain of numerator and denominator"
+            },
+            {
+              "symbol_latex": "\\gcd",
+              "definition_role": "Greatest common divisor",
+              "range_unit": "Positive integer on nonzero pairs",
+              "interpretation": "Tests whether a fraction is reduced"
+            },
+            {
+              "symbol_latex": "\\sqrt{2}",
+              "definition_role": "The positive square root of two",
+              "range_unit": "Positive real",
+              "interpretation": "The number under study"
+            }
+          ],
+          "id": "c6input0"
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\mid a",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            }
+          ],
+          "id": "c6input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&2\\mid a\n\\end{aligned}\\right.",
+          "symbols": [
+            {
+              "symbol_latex": "\\gcd",
+              "definition_role": "Greatest common divisor",
+              "range_unit": "Positive integer on nonzero pairs",
+              "interpretation": "Tests whether a fraction is reduced"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            },
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            }
+          ],
+          "id": "c6mid1"
+        },
+        {
+          "kind": "formula",
+          "latex": "2\\mid b",
+          "symbols": [
+            {
+              "symbol_latex": "\\mid",
+              "definition_role": "Integer divisibility relation",
+              "range_unit": "Not applicable",
+              "interpretation": "Records evenness through divisibility by two"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c6input2"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\left\\{\\begin{aligned}\n&\\gcd(a,b)=1\\\\\n&\\gcd(a,b)\\ge 2\n\\end{aligned}\\right.",
+          "symbols": [
+            {
+              "symbol_latex": "\\gcd",
+              "definition_role": "Greatest common divisor",
+              "range_unit": "Positive integer on nonzero pairs",
+              "interpretation": "Tests whether a fraction is reduced"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "Chosen numerator",
+              "range_unit": "Integer",
+              "interpretation": "Numerator of the reduced witness",
+              "binding_ref": "a"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "Chosen positive denominator",
+              "range_unit": "Positive integer",
+              "interpretation": "Denominator of the reduced witness",
+              "binding_ref": "b"
+            }
+          ],
+          "id": "c6final"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "R2",
+          "formula_ref": "core",
+          "step_id": "c6input0",
+          "mode": "start"
+        },
+        {
+          "node": "R4",
+          "formula_ref": "core",
+          "step_id": "c6input1",
+          "mode": "basis"
+        },
+        {
+          "node": "R6",
+          "formula_ref": "core",
+          "step_id": "c6input2",
+          "mode": "basis"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "c6input0",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c6input1",
+            "next_step": "c6mid1",
+            "name": "Use even numerator",
+            "source": {
+              "node": "R4",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c6mid1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "c6input2",
+            "next_step": "c6final",
+            "name": "Use even denominator",
+            "source": {
+              "node": "R6",
+              "formula_ref": "core"
+            }
+          },
+          {
+            "kind": "expression",
+            "step_id": "c6final",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "a",
+            "definition_role": "Chosen numerator",
+            "range_unit": "Integer",
+            "interpretation": "Numerator of the reduced witness",
+            "binding_ref": "a"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "Chosen positive denominator",
+            "range_unit": "Positive integer",
+            "interpretation": "Denominator of the reduced witness",
+            "binding_ref": "b"
+          },
+          {
+            "symbol_latex": "\\mathbb{Z}",
+            "definition_role": "Set of integers",
+            "range_unit": "Set",
+            "interpretation": "Domain of numerator and denominator"
+          },
+          {
+            "symbol_latex": "\\gcd",
+            "definition_role": "Greatest common divisor",
+            "range_unit": "Positive integer on nonzero pairs",
+            "interpretation": "Tests whether a fraction is reduced"
+          },
+          {
+            "symbol_latex": "\\sqrt{2}",
+            "definition_role": "The positive square root of two",
+            "range_unit": "Positive real",
+            "interpretation": "The number under study"
+          },
+          {
+            "symbol_latex": "\\mid",
+            "definition_role": "Integer divisibility relation",
+            "range_unit": "Not applicable",
+            "interpretation": "Records evenness through divisibility by two"
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "E1",
+      "source": "H1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": []
+    },
+    {
+      "id": "E2",
+      "source": "K1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": []
+    },
+    {
+      "id": "E3",
+      "source": "C1",
+      "target": "R1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": []
+    },
+    {
+      "id": "E4",
+      "source": "R1",
+      "target": "L1",
+      "relation": "REQUIRED_FOR",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "uses_symbols": [],
+      "label_text": "Choose reduced witnesses",
+      "detail": {
+        "summary": "Select witnesses from the proved existential representation.",
+        "source_contribution": "A reduced fraction represents $\\sqrt{2}$.",
+        "transition_steps": [
+          "Existential elimination assigns fresh integers to the numerator and denominator.",
+          "Retain positivity, coprimality, and the quotient equation inside the witness scope."
+        ],
+        "target_gain": "A locally bound reduced numerator and denominator are available.",
+        "conditions": [
+          "The existential representation has been established."
+        ],
+        "condition_checks": [
+          "The preceding result explicitly asserts such a representation."
+        ],
+        "role_in_proof": "Select fresh integer witnesses for the reduced representation; their properties are used only after the witness scope opens."
+      }
+    },
+    {
+      "id": "E5",
+      "source": "L1",
+      "target": "R2",
+      "relation": "OPENS_SCOPE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E6",
+      "source": "R2",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E7",
+      "source": "D1",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": []
+    },
+    {
+      "id": "E8",
+      "source": "C2",
+      "target": "R3",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E9",
+      "source": "R3",
+      "target": "C3",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E10",
+      "source": "K2",
+      "target": "C3",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": []
+    },
+    {
+      "id": "E11",
+      "source": "C3",
+      "target": "R4",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E12",
+      "source": "R3",
+      "target": "C4",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E13",
+      "source": "R4",
+      "target": "C4",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a"
+      ]
+    },
+    {
+      "id": "E14",
+      "source": "C4",
+      "target": "R5",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E15",
+      "source": "R5",
+      "target": "C5",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "b"
+      ]
+    },
+    {
+      "id": "E16",
+      "source": "K2",
+      "target": "C5",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": []
+    },
+    {
+      "id": "E17",
+      "source": "C5",
+      "target": "R6",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "b"
+      ]
+    },
+    {
+      "id": "E18",
+      "source": "R2",
+      "target": "C6",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E19",
+      "source": "R4",
+      "target": "C6",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a"
+      ]
+    },
+    {
+      "id": "E20",
+      "source": "R6",
+      "target": "C6",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "b"
+      ]
+    },
+    {
+      "id": "E21",
+      "source": "C6",
+      "target": "X1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "id": "E22",
+      "source": "X1",
+      "target": "X2",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "uses_symbols": [
+        "a",
+        "b"
+      ],
+      "label_text": "Close witness scope",
+      "detail": {
+        "summary": "The contradiction is independent of which reduced witnesses were selected.",
+        "source_contribution": "The greatest common divisor is both one and at least two.",
+        "transition_steps": [
+          "The chosen witnesses were fresh and came solely from the established existential statement.",
+          "The contradiction has no free witness variables, so existential elimination transfers it to the outer scope."
+        ],
+        "target_gain": "An unconditional contradiction remains under the rationality assumption.",
+        "conditions": [
+          "The output contains no free numerator or denominator."
+        ],
+        "condition_checks": [
+          "The conclusion is $\\bot$, which has no free witness variables."
+        ],
+        "role_in_proof": "Eliminate the selected witnesses and carry the witness-independent contradiction into the still-open rationality scope."
+      },
+      "closes_scope": "Inner",
+      "discharge_rule": "existential_elimination",
+      "discharges": [],
+      "generalizes": []
+    },
+    {
+      "id": "E23",
+      "source": "X2",
+      "target": "T1",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "uses_symbols": [],
+      "label_text": "Discharge rationality",
+      "detail": {
+        "summary": "A contradiction under the rationality hypothesis proves its negation.",
+        "source_contribution": "The contradiction no longer depends on particular witnesses.",
+        "transition_steps": [
+          "The outer hypothesis states $\\sqrt{2}\\in\\mathbb{Q}$.",
+          "The witness-free contradiction closes that hypothesis by reductio."
+        ],
+        "target_gain": "The target $\\sqrt{2}\\notin\\mathbb{Q}$ follows.",
+        "conditions": [
+          "The source is a contradiction in the outer scope."
+        ],
+        "condition_checks": [
+          "The preceding result is explicitly $\\bot$."
+        ],
+        "role_in_proof": "Discharge the temporary rationality hypothesis by reductio, yielding the requested irrationality claim."
+      },
+      "closes_scope": "Outer",
+      "discharge_rule": "reductio",
+      "discharges": [
+        "H1"
+      ],
+      "generalizes": []
+    }
+  ],
+  "target_id": "T1",
+  "proof_flow": [
+    {
+      "id": "S1",
+      "title": "Rationality and reduction",
+      "summary": "The temporary hypothesis and reduced-fraction theorem yield a reduced representation.",
+      "nodes": [
+        "H1",
+        "K1",
+        "K2",
+        "D1",
+        "C1",
+        "R1"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "Choose the fraction",
+      "summary": "Take fresh integral witnesses and record the positive denominator and coprimality.",
+      "nodes": [
+        "L1",
+        "R2"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "Numerator parity",
+      "summary": "The square equation and the parity theorem make the numerator even.",
+      "nodes": [
+        "C2",
+        "R3",
+        "C3",
+        "R4"
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "Denominator parity",
+      "summary": "The even numerator makes the denominator square, then the denominator, even.",
+      "nodes": [
+        "C4",
+        "R5",
+        "C5",
+        "R6"
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "Contradiction and discharge",
+      "summary": "Both witnesses are even despite being coprime; close the witness and rationality scopes in order.",
+      "nodes": [
+        "C6",
+        "X1",
+        "X2",
+        "T1"
+      ]
+    }
+  ],
+  "presentation": {
+    "mode": "human-first",
+    "language": "en",
+    "spine": [
+      "H1",
+      "C1",
+      "R1",
+      "L1",
+      "R2",
+      "C2",
+      "R3",
+      "C4",
+      "R5",
+      "C5",
+      "R6",
+      "C6",
+      "X1",
+      "X2",
+      "T1"
+    ],
+    "branches": [
+      {
+        "id": "B1",
+        "title": "Numerator parity",
+        "from": "R3",
+        "to": "C4",
+        "nodes": [
+          "C3",
+          "R4"
+        ]
+      }
+    ],
+    "support": [
+      "K1",
+      "K2",
+      "D1"
+    ],
+    "examples": [],
+    "granularity_reviews": [
+      {
+        "finding_id": "operation-result-operation-C4",
+        "decision": "retain",
+        "reason": "The even-denominator-square result is the explicit applicability condition for the next parity-theorem application."
+      },
+      {
+        "finding_id": "operation-result-operation-C5",
+        "decision": "retain",
+        "reason": "The even-denominator result is a distinct milestone used with the even numerator and coprimality in the final contradiction."
+      }
+    ]
+  }
+}

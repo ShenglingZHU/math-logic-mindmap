@@ -1,0 +1,1408 @@
+{
+  "slug": "feature-coverage",
+  "theorem": {
+    "title": "正数缩放保持链式次序",
+    "statement_latex": "\\forall x,y,z,r\\in\\mathbb R,\\ (x\\le y\\land y\\le z\\land r>0)\\Rightarrow rx\\le ry\\le rz",
+    "assumptions": [
+      "$x,y,z,r\\in\\mathbb R$"
+    ],
+    "proof_standard": "strict",
+    "status": "proved"
+  },
+  "context": {
+    "领域": "初等实数次序",
+    "背景": "用于中性系统回归的合成证明，不对应任何正式主题。",
+    "角色 / 重要性": "覆盖局部作用域、解释边和多输入汇合。",
+    "作用": "验证复杂 Proof DAG 可独立于活动主题构建。",
+    "证明思路/策略": "在局部假设中提取条件，先形成次序链，再应用正比例保序，最后解除假设。",
+    "证明工具": "实数次序传递性与正数乘法保序性。"
+  },
+  "symbols": [
+    {
+      "symbol_latex": "x",
+      "definition_role": "链式次序中的第一项",
+      "range_unit": "实数",
+      "interpretation": "链式次序中的第一项"
+    },
+    {
+      "symbol_latex": "y",
+      "definition_role": "链式次序中的中间项",
+      "range_unit": "实数",
+      "interpretation": "链式次序中的中间项"
+    },
+    {
+      "symbol_latex": "z",
+      "definition_role": "链式次序中的末项",
+      "range_unit": "实数",
+      "interpretation": "链式次序中的末项"
+    },
+    {
+      "symbol_latex": "r",
+      "definition_role": "正缩放因子",
+      "range_unit": "$r>0$",
+      "interpretation": "保持不等号方向的正数"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "H1",
+      "type": "HYPOTHESIS_LOCAL",
+      "title": "临时次序条件",
+      "short_role": "开启待解除的局部假设。",
+      "formula_latex": "x\\le y\\land y\\le z\\land r>0",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "为证明条件命题，暂时假设两个次序条件和缩放正性。"
+            },
+            {
+              "kind": "formula",
+              "latex": "x\\le y\\land y\\le z\\land r>0",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "链式次序中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的第一项"
+                },
+                {
+                  "symbol_latex": "y",
+                  "definition_role": "链式次序中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的中间项"
+                },
+                {
+                  "symbol_latex": "z",
+                  "definition_role": "链式次序中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的末项"
+                },
+                {
+                  "symbol_latex": "r",
+                  "definition_role": "正缩放因子",
+                  "range_unit": "$r>0$",
+                  "interpretation": "保持不等号方向的正数"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "开启待解除的局部假设。",
+        "motivation": "为证明条件命题，暂时假设两个次序条件和缩放正性。"
+      },
+      "scope": "L1",
+      "uses_symbols": []
+    },
+    {
+      "id": "D1",
+      "type": "DERIVATION",
+      "title": "首段次序",
+      "short_role": "提取第一段不等式。",
+      "formula_latex": "x\\le y",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "从局部合取假设提取第一段次序。"
+            },
+            {
+              "kind": "formula",
+              "latex": "x\\le y",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "链式次序中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的第一项"
+                },
+                {
+                  "symbol_latex": "y",
+                  "definition_role": "链式次序中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的中间项"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "提取第一段不等式。",
+        "motivation": "从局部合取假设提取第一段次序。"
+      },
+      "scope": "L1",
+      "uses_symbols": []
+    },
+    {
+      "id": "D2",
+      "type": "DERIVATION",
+      "title": "末段次序",
+      "short_role": "提取第二段不等式。",
+      "formula_latex": "y\\le z",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "从局部合取假设提取第二段次序。"
+            },
+            {
+              "kind": "formula",
+              "latex": "y\\le z",
+              "symbols": [
+                {
+                  "symbol_latex": "y",
+                  "definition_role": "链式次序中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的中间项"
+                },
+                {
+                  "symbol_latex": "z",
+                  "definition_role": "链式次序中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的末项"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "提取第二段不等式。",
+        "motivation": "从局部合取假设提取第二段次序。"
+      },
+      "scope": "L1",
+      "uses_symbols": []
+    },
+    {
+      "id": "D3",
+      "type": "DERIVATION",
+      "title": "缩放正性",
+      "short_role": "提取正缩放条件。",
+      "formula_latex": "r>0",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "从局部合取假设提取缩放因子的正性。"
+            },
+            {
+              "kind": "formula",
+              "latex": "r>0",
+              "symbols": [
+                {
+                  "symbol_latex": "r",
+                  "definition_role": "正缩放因子",
+                  "range_unit": "$r>0$",
+                  "interpretation": "保持不等号方向的正数"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "提取正缩放条件。",
+        "motivation": "从局部合取假设提取缩放因子的正性。"
+      },
+      "scope": "L1",
+      "uses_symbols": []
+    },
+    {
+      "id": "K1",
+      "type": "KNOWN_RESULT",
+      "title": "链式次序规则",
+      "short_role": "提供实数次序的传递规则。",
+      "formula_latex": "\\alpha\\le\\beta\\land\\beta\\le\\gamma\\Rightarrow\\alpha\\le\\beta\\le\\gamma",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "这是实数全序的基本传递性质。"
+            },
+            {
+              "kind": "formula",
+              "latex": "\\alpha\\le\\beta\\land\\beta\\le\\gamma\\Rightarrow\\alpha\\le\\beta\\le\\gamma",
+              "symbols": [
+                {
+                  "symbol_latex": "\\alpha",
+                  "definition_role": "外部定理中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "外部定理中的第一项"
+                },
+                {
+                  "symbol_latex": "\\beta",
+                  "definition_role": "外部定理中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "外部定理中的中间项"
+                },
+                {
+                  "symbol_latex": "\\gamma",
+                  "definition_role": "外部定理中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "外部定理中的末项"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "提供实数次序的传递规则。",
+        "motivation": "这是实数全序的基本传递性质。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "K2",
+      "type": "KNOWN_RESULT",
+      "title": "正比例保序",
+      "short_role": "提供正比例映射的链式保序性。",
+      "formula_latex": "\\forall \\alpha,\\beta,\\gamma,\\lambda\\in\\mathbb R,\\quad \\lambda>0\\Rightarrow (t\\to\\lambda t)\\text{单调递增},\\quad \\alpha\\le\\beta\\le\\gamma\\Rightarrow\\lambda\\alpha\\le\\lambda\\beta\\le\\lambda\\gamma",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "正数乘法保持实数的非严格次序。"
+            },
+            {
+              "kind": "formula",
+              "latex": "\\forall \\alpha,\\beta,\\gamma,\\lambda\\in\\mathbb R,\\quad \\lambda>0\\Rightarrow (t\\to\\lambda t)\\text{单调递增},\\quad \\alpha\\le\\beta\\le\\gamma\\Rightarrow\\lambda\\alpha\\le\\lambda\\beta\\le\\lambda\\gamma",
+              "symbols": [
+                {
+                  "symbol_latex": "\\alpha",
+                  "definition_role": "外部定理中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "外部定理中的第一项"
+                },
+                {
+                  "symbol_latex": "\\beta",
+                  "definition_role": "外部定理中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "外部定理中的中间项"
+                },
+                {
+                  "symbol_latex": "\\gamma",
+                  "definition_role": "外部定理中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "外部定理中的末项"
+                },
+                {
+                  "symbol_latex": "\\lambda",
+                  "definition_role": "外部定理中的正缩放因子",
+                  "range_unit": "$\\lambda>0$",
+                  "interpretation": "外部定理中的正缩放因子"
+                },
+                {
+                  "symbol_latex": "t",
+                  "definition_role": "正比例映射的自变量",
+                  "range_unit": "实数",
+                  "interpretation": "正比例映射的自变量"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "提供正比例映射的链式保序性。",
+        "motivation": "正数乘法保持实数的非严格次序。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "C1",
+      "type": "COMBINE",
+      "title": "形成链式次序",
+      "short_role": "汇合",
+      "formula_latex": null,
+      "strict": true,
+      "scope": "L1",
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "操作说明",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "把两段次序与传递规则汇合为一个链式次序。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S4",
+        "role": "汇合三个必要输入形成阶段结果。",
+        "motivation": "把两段次序与传递规则汇合为一个链式次序。"
+      },
+      "input_review": [
+        {
+          "node": "D1",
+          "formula_ref": "core",
+          "contribution": "提供D1所述条件"
+        },
+        {
+          "node": "D2",
+          "formula_ref": "core",
+          "contribution": "提供D2所述条件"
+        },
+        {
+          "node": "K1",
+          "formula_ref": "core",
+          "contribution": "提供K1所述条件"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "D1",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "D2",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        },
+        {
+          "node": "K1",
+          "formula_ref": "core",
+          "step_id": "input3",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "x\\le y",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "链式次序中的第一项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的第一项"
+            },
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            }
+          ],
+          "id": "input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "y\\le z",
+          "symbols": [
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            },
+            {
+              "symbol_latex": "z",
+              "definition_role": "链式次序中的末项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的末项"
+            }
+          ],
+          "id": "input2"
+        },
+        {
+          "kind": "formula",
+          "latex": "x\\le y\\land y\\le z",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "链式次序中的第一项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的第一项"
+            },
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            },
+            {
+              "symbol_latex": "z",
+              "definition_role": "链式次序中的末项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的末项"
+            }
+          ],
+          "id": "mid2"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\alpha\\le\\beta\\land\\beta\\le\\gamma\\Rightarrow\\alpha\\le\\beta\\le\\gamma",
+          "symbols": [
+            {
+              "symbol_latex": "\\alpha",
+              "definition_role": "外部定理中的第一项",
+              "range_unit": "实数",
+              "interpretation": "外部定理中的第一项"
+            },
+            {
+              "symbol_latex": "\\beta",
+              "definition_role": "外部定理中的中间项",
+              "range_unit": "实数",
+              "interpretation": "外部定理中的中间项"
+            },
+            {
+              "symbol_latex": "\\gamma",
+              "definition_role": "外部定理中的末项",
+              "range_unit": "实数",
+              "interpretation": "外部定理中的末项"
+            }
+          ],
+          "id": "input3"
+        },
+        {
+          "kind": "formula",
+          "latex": "x\\le y\\le z",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "链式次序中的第一项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的第一项"
+            },
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            },
+            {
+              "symbol_latex": "z",
+              "definition_role": "链式次序中的末项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的末项"
+            }
+          ],
+          "id": "result"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "D2",
+              "formula_ref": "core"
+            },
+            "name": "引入D2",
+            "next_step": "mid2"
+          },
+          {
+            "kind": "expression",
+            "step_id": "mid2",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input3",
+            "source": {
+              "node": "K1",
+              "formula_ref": "core"
+            },
+            "name": "引入K1",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "x",
+            "definition_role": "链式次序中的第一项",
+            "range_unit": "实数",
+            "interpretation": "链式次序中的第一项"
+          },
+          {
+            "symbol_latex": "y",
+            "definition_role": "链式次序中的中间项",
+            "range_unit": "实数",
+            "interpretation": "链式次序中的中间项"
+          },
+          {
+            "symbol_latex": "z",
+            "definition_role": "链式次序中的末项",
+            "range_unit": "实数",
+            "interpretation": "链式次序中的末项"
+          },
+          {
+            "symbol_latex": "\\alpha",
+            "definition_role": "外部定理中的第一项",
+            "range_unit": "实数",
+            "interpretation": "外部定理中的第一项"
+          },
+          {
+            "symbol_latex": "\\beta",
+            "definition_role": "外部定理中的中间项",
+            "range_unit": "实数",
+            "interpretation": "外部定理中的中间项"
+          },
+          {
+            "symbol_latex": "\\gamma",
+            "definition_role": "外部定理中的末项",
+            "range_unit": "实数",
+            "interpretation": "外部定理中的末项"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式交给独立结果节点。",
+        "downstream_use": "作为下一阶段的完整输入。"
+      },
+      "combine_inputs": [
+        "D1",
+        "D2",
+        "K1"
+      ],
+      "start_input": "D1",
+      "combine_output_latex": "x\\le y\\le z",
+      "combine_motivation": "把两段次序与传递规则汇合为一个链式次序。",
+      "combine_method": "逐项引入必要条件并核对外部定理的适用性。",
+      "combine_reason": "premise_synthesis",
+      "uses_symbols": []
+    },
+    {
+      "id": "N1",
+      "type": "LEMMA",
+      "title": "链式次序",
+      "short_role": "形成可复用的完整次序链。",
+      "formula_latex": "x\\le y\\le z",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "该结果把两个局部不等式组织为一个对象。"
+            },
+            {
+              "kind": "formula",
+              "latex": "x\\le y\\le z",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "链式次序中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的第一项"
+                },
+                {
+                  "symbol_latex": "y",
+                  "definition_role": "链式次序中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的中间项"
+                },
+                {
+                  "symbol_latex": "z",
+                  "definition_role": "链式次序中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的末项"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S4",
+        "role": "形成可复用的完整次序链。",
+        "motivation": "该结果把两个局部不等式组织为一个对象。"
+      },
+      "scope": "L1",
+      "result": true,
+      "uses_symbols": []
+    },
+    {
+      "id": "C2",
+      "type": "COMBINE",
+      "title": "执行正数缩放",
+      "short_role": "汇合",
+      "formula_latex": null,
+      "strict": true,
+      "scope": "L1",
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "操作说明",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "把链式次序、正性和正比例保序定理汇合。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S5",
+        "role": "汇合三个必要输入形成阶段结果。",
+        "motivation": "把链式次序、正性和正比例保序定理汇合。"
+      },
+      "input_review": [
+        {
+          "node": "N1",
+          "formula_ref": "core",
+          "contribution": "提供N1所述条件"
+        },
+        {
+          "node": "D3",
+          "formula_ref": "core",
+          "contribution": "提供D3所述条件"
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "contribution": "提供K2所述条件"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "N1",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "D3",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        },
+        {
+          "node": "K2",
+          "formula_ref": "core",
+          "step_id": "input3",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "x\\le y\\le z",
+          "symbols": [
+            {
+              "symbol_latex": "x",
+              "definition_role": "链式次序中的第一项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的第一项"
+            },
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            },
+            {
+              "symbol_latex": "z",
+              "definition_role": "链式次序中的末项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的末项"
+            }
+          ],
+          "id": "input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "r>0",
+          "symbols": [
+            {
+              "symbol_latex": "r",
+              "definition_role": "正缩放因子",
+              "range_unit": "$r>0$",
+              "interpretation": "保持不等号方向的正数"
+            }
+          ],
+          "id": "input2"
+        },
+        {
+          "kind": "formula",
+          "latex": "r>0\\land x\\le y\\le z",
+          "symbols": [
+            {
+              "symbol_latex": "r",
+              "definition_role": "正缩放因子",
+              "range_unit": "$r>0$",
+              "interpretation": "保持不等号方向的正数"
+            },
+            {
+              "symbol_latex": "x",
+              "definition_role": "链式次序中的第一项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的第一项"
+            },
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            },
+            {
+              "symbol_latex": "z",
+              "definition_role": "链式次序中的末项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的末项"
+            }
+          ],
+          "id": "mid2"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\forall \\alpha,\\beta,\\gamma,\\lambda\\in\\mathbb R,\\quad \\lambda>0\\Rightarrow (t\\to\\lambda t)\\text{单调递增},\\quad \\alpha\\le\\beta\\le\\gamma\\Rightarrow\\lambda\\alpha\\le\\lambda\\beta\\le\\lambda\\gamma",
+          "symbols": [
+            {
+              "symbol_latex": "\\alpha",
+              "definition_role": "外部定理中的第一项",
+              "range_unit": "实数",
+              "interpretation": "外部定理中的第一项"
+            },
+            {
+              "symbol_latex": "\\beta",
+              "definition_role": "外部定理中的中间项",
+              "range_unit": "实数",
+              "interpretation": "外部定理中的中间项"
+            },
+            {
+              "symbol_latex": "\\gamma",
+              "definition_role": "外部定理中的末项",
+              "range_unit": "实数",
+              "interpretation": "外部定理中的末项"
+            },
+            {
+              "symbol_latex": "\\lambda",
+              "definition_role": "外部定理中的正缩放因子",
+              "range_unit": "$\\lambda>0$",
+              "interpretation": "外部定理中的正缩放因子"
+            },
+            {
+              "symbol_latex": "t",
+              "definition_role": "正比例映射的自变量",
+              "range_unit": "实数",
+              "interpretation": "正比例映射的自变量"
+            }
+          ],
+          "id": "input3"
+        },
+        {
+          "kind": "formula",
+          "latex": "rx\\le ry\\le rz",
+          "symbols": [
+            {
+              "symbol_latex": "r",
+              "definition_role": "正缩放因子",
+              "range_unit": "$r>0$",
+              "interpretation": "保持不等号方向的正数"
+            },
+            {
+              "symbol_latex": "x",
+              "definition_role": "链式次序中的第一项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的第一项"
+            },
+            {
+              "symbol_latex": "y",
+              "definition_role": "链式次序中的中间项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的中间项"
+            },
+            {
+              "symbol_latex": "z",
+              "definition_role": "链式次序中的末项",
+              "range_unit": "实数",
+              "interpretation": "链式次序中的末项"
+            }
+          ],
+          "id": "result"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "D3",
+              "formula_ref": "core"
+            },
+            "name": "引入D3",
+            "next_step": "mid2"
+          },
+          {
+            "kind": "expression",
+            "step_id": "mid2",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input3",
+            "source": {
+              "node": "K2",
+              "formula_ref": "core"
+            },
+            "name": "引入K2",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "r",
+            "definition_role": "正缩放因子",
+            "range_unit": "$r>0$",
+            "interpretation": "保持不等号方向的正数"
+          },
+          {
+            "symbol_latex": "x",
+            "definition_role": "链式次序中的第一项",
+            "range_unit": "实数",
+            "interpretation": "链式次序中的第一项"
+          },
+          {
+            "symbol_latex": "y",
+            "definition_role": "链式次序中的中间项",
+            "range_unit": "实数",
+            "interpretation": "链式次序中的中间项"
+          },
+          {
+            "symbol_latex": "z",
+            "definition_role": "链式次序中的末项",
+            "range_unit": "实数",
+            "interpretation": "链式次序中的末项"
+          },
+          {
+            "symbol_latex": "\\alpha",
+            "definition_role": "外部定理中的第一项",
+            "range_unit": "实数",
+            "interpretation": "外部定理中的第一项"
+          },
+          {
+            "symbol_latex": "\\beta",
+            "definition_role": "外部定理中的中间项",
+            "range_unit": "实数",
+            "interpretation": "外部定理中的中间项"
+          },
+          {
+            "symbol_latex": "\\gamma",
+            "definition_role": "外部定理中的末项",
+            "range_unit": "实数",
+            "interpretation": "外部定理中的末项"
+          },
+          {
+            "symbol_latex": "\\lambda",
+            "definition_role": "外部定理中的正缩放因子",
+            "range_unit": "$\\lambda>0$",
+            "interpretation": "外部定理中的正缩放因子"
+          },
+          {
+            "symbol_latex": "t",
+            "definition_role": "正比例映射的自变量",
+            "range_unit": "实数",
+            "interpretation": "正比例映射的自变量"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式交给独立结果节点。",
+        "downstream_use": "作为下一阶段的完整输入。"
+      },
+      "combine_inputs": [
+        "N1",
+        "D3",
+        "K2"
+      ],
+      "start_input": "N1",
+      "combine_output_latex": "rx\\le ry\\le rz",
+      "combine_motivation": "把链式次序、正性和正比例保序定理汇合。",
+      "combine_method": "逐项引入必要条件并核对外部定理的适用性。",
+      "combine_reason": "premise_synthesis",
+      "uses_symbols": []
+    },
+    {
+      "id": "N2",
+      "type": "BOUND",
+      "title": "缩放后次序",
+      "short_role": "得到局部假设下的缩放结果。",
+      "formula_latex": "rx\\le ry\\le rz",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "正缩放后的三项继续保持原次序。"
+            },
+            {
+              "kind": "formula",
+              "latex": "rx\\le ry\\le rz",
+              "symbols": [
+                {
+                  "symbol_latex": "r",
+                  "definition_role": "正缩放因子",
+                  "range_unit": "$r>0$",
+                  "interpretation": "保持不等号方向的正数"
+                },
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "链式次序中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的第一项"
+                },
+                {
+                  "symbol_latex": "y",
+                  "definition_role": "链式次序中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的中间项"
+                },
+                {
+                  "symbol_latex": "z",
+                  "definition_role": "链式次序中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的末项"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S5",
+        "role": "得到局部假设下的缩放结果。",
+        "motivation": "正缩放后的三项继续保持原次序。"
+      },
+      "scope": "L1",
+      "result": true,
+      "uses_symbols": []
+    },
+    {
+      "id": "T1",
+      "type": "TARGET",
+      "title": "条件命题结论",
+      "short_role": "解除局部假设并得到最终结论。",
+      "formula_latex": "\\forall x,y,z,r\\in\\mathbb R,\\quad x\\le y,\\quad y\\le z,\\quad r>0\\quad\\Rightarrow\\quad rx\\le ry\\le rz\\quad",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "解除临时假设后得到对任意实数变量成立的条件命题。"
+            },
+            {
+              "kind": "formula",
+              "latex": "\\forall x,y,z,r\\in\\mathbb R,\\quad x\\le y,\\quad y\\le z,\\quad r>0\\quad\\Rightarrow\\quad rx\\le ry\\le rz\\quad",
+              "symbols": [
+                {
+                  "symbol_latex": "x",
+                  "definition_role": "链式次序中的第一项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的第一项"
+                },
+                {
+                  "symbol_latex": "y",
+                  "definition_role": "链式次序中的中间项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的中间项"
+                },
+                {
+                  "symbol_latex": "z",
+                  "definition_role": "链式次序中的末项",
+                  "range_unit": "实数",
+                  "interpretation": "链式次序中的末项"
+                },
+                {
+                  "symbol_latex": "r",
+                  "definition_role": "正缩放因子",
+                  "range_unit": "$r>0$",
+                  "interpretation": "保持不等号方向的正数"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S6",
+        "role": "解除局部假设并得到最终结论。",
+        "motivation": "解除临时假设后得到对任意实数变量成立的条件命题。"
+      },
+      "uses_symbols": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "EH1D1",
+      "source": "H1",
+      "target": "D1",
+      "relation": "REQUIRED_FOR",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "提取首段",
+      "detail": {
+        "summary": "局部假设包含 $x\\le y$，从而获得第一段次序。",
+        "source_contribution": "局部假设包含 $x\\le y$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第一段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "EH1D2",
+      "source": "H1",
+      "target": "D2",
+      "relation": "REQUIRED_FOR",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "提取末段",
+      "detail": {
+        "summary": "局部假设包含 $y\\le z$，从而获得第二段次序。",
+        "source_contribution": "局部假设包含 $y\\le z$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得第二段次序",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第一次汇合"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "EH1D3",
+      "source": "H1",
+      "target": "D3",
+      "relation": "REQUIRED_FOR",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "提取正性",
+      "detail": {
+        "summary": "局部假设包含 $r>0$，从而获得正缩放条件。",
+        "source_contribution": "局部假设包含 $r>0$",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "获得正缩放条件",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "准备第二次汇合"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "ED1C1",
+      "source": "D1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "ED2C1",
+      "source": "D2",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EK1C1",
+      "source": "K1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EC1N1",
+      "source": "C1",
+      "target": "N1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EN1C2",
+      "source": "N1",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "ED3C2",
+      "source": "D3",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EK2C2",
+      "source": "K2",
+      "target": "C2",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EC2N2",
+      "source": "C2",
+      "target": "N2",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EN2T1",
+      "source": "N2",
+      "target": "T1",
+      "relation": "DISCHARGES",
+      "detail_mode": "EDGE_DETAIL",
+      "display_mode": "FLOW",
+      "label_text": "解除假设",
+      "detail": {
+        "summary": "局部作用域内已经得到缩放链，从而得到不依赖临时假设的条件命题。",
+        "source_contribution": "局部作用域内已经得到缩放链",
+        "transition_steps": [
+          "读取源节点中的已知内容。",
+          "按目标节点所需形式提取或概括。"
+        ],
+        "target_gain": "得到不依赖临时假设的条件命题",
+        "conditions": [],
+        "condition_checks": [],
+        "role_in_proof": "关闭局部证明并建立唯一目标"
+      },
+      "discharges": [
+        "H1"
+      ],
+      "uses_symbols": [],
+      "closes_scope": "L1",
+      "discharge_rule": "conditional_proof",
+      "generalizes": []
+    }
+  ],
+  "target_id": "T1",
+  "scopes": [
+    {
+      "id": "L1",
+      "title": "局部条件证明",
+      "kind": "local",
+      "opened_by": "H1",
+      "closed_by": "EN2T1"
+    }
+  ],
+  "proof_flow": [
+    {
+      "id": "S1",
+      "title": "准备定义与工具",
+      "summary": "列出证明中使用的两个外部次序工具。",
+      "nodes": [
+        "K1",
+        "K2"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "开启局部假设",
+      "summary": "暂时引入条件命题的前件。",
+      "nodes": [
+        "H1"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "提取局部条件",
+      "summary": "分别提取两段次序和缩放正性。",
+      "nodes": [
+        "D1",
+        "D2",
+        "D3"
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "形成次序链",
+      "summary": "通过三输入汇合得到链式次序。",
+      "nodes": [
+        "C1",
+        "N1"
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "完成正数缩放",
+      "summary": "再次三输入汇合得到缩放后的链。",
+      "nodes": [
+        "C2",
+        "N2"
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "解除局部假设",
+      "summary": "关闭局部作用域并得到最终条件命题。",
+      "nodes": [
+        "T1"
+      ]
+    }
+  ],
+  "presentation": {
+    "mode": "human-first",
+    "spine": [
+      "H1",
+      "D1",
+      "C1",
+      "N1",
+      "C2",
+      "N2",
+      "T1"
+    ],
+    "branches": [
+      {
+        "id": "B1",
+        "title": "第二段次序",
+        "from": "H1",
+        "to": "C1",
+        "nodes": [
+          "D2"
+        ]
+      },
+      {
+        "id": "B2",
+        "title": "正性条件",
+        "from": "H1",
+        "to": "C2",
+        "nodes": [
+          "D3"
+        ]
+      }
+    ],
+    "support": [
+      "K1",
+      "K2"
+    ],
+    "examples": [],
+    "granularity_reviews": [
+      {
+        "finding_id": "operation-result-operation-C1",
+        "decision": "retain",
+        "reason": "N1 是被第二次汇合整体复用的链式次序对象，标志从次序传递转入正数缩放。"
+      }
+    ],
+    "language": "zh-CN"
+  }
+}

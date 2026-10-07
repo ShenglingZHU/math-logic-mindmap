@@ -1,0 +1,11 @@
+{
+  "language": "en",
+  "node_colors": {
+    "external": "#B39DDB",
+    "combine": "#E5C85B",
+    "transform": "#D9DEE7",
+    "result": "#CFE8CC",
+    "target": "#E69A9A",
+    "given": "#88BBDD"
+  }
+}

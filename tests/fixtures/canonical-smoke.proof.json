@@ -1,0 +1,702 @@
+{
+  "slug": "canonical-smoke",
+  "theorem": {
+    "title": "正数除法冒烟证明",
+    "statement_latex": "\\frac{u}{c}\\le\\frac{v}{c}",
+    "assumptions": [
+      "$u\\le v$",
+      "$c>0$"
+    ],
+    "proof_standard": "strict",
+    "status": "proved"
+  },
+  "context": {
+    "领域": "实分析与凸性",
+    "背景": "用可见的多根依赖和分级汇合组织有限加权证明。",
+    "角色 / 重要性": "展示当前正式模型的倒树状证明结构。",
+    "作用": "把题设、定义和外部定理逐级汇合到唯一结论。",
+    "证明思路/策略": "先准备条件与工具，再通过操作节点形成关键各级结论。",
+    "证明工具": "定义、初等代数、两点凸性与数学归纳法。"
+  },
+  "symbols": [
+    {
+      "symbol_latex": "u",
+      "definition_role": "不等式左侧实数",
+      "range_unit": "实数",
+      "interpretation": "被正数除法保持次序的左项"
+    },
+    {
+      "symbol_latex": "v",
+      "definition_role": "不等式右侧实数",
+      "range_unit": "实数",
+      "interpretation": "被正数除法保持次序的右项"
+    },
+    {
+      "symbol_latex": "c",
+      "definition_role": "正除数",
+      "range_unit": "$c>0$",
+      "interpretation": "保证除法保持不等号方向"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "A1",
+      "type": "ASSUMPTION",
+      "title": "待除不等式",
+      "short_role": "给出 $u$ 不超过 $v$。",
+      "formula_latex": "u\\le v",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "这是待变换的不等式。"
+            },
+            {
+              "kind": "formula",
+              "latex": "u\\le v",
+              "symbols": [
+                {
+                  "symbol_latex": "u",
+                  "definition_role": "不等式左侧实数",
+                  "range_unit": "实数",
+                  "interpretation": "被正数除法保持次序的左项"
+                },
+                {
+                  "symbol_latex": "v",
+                  "definition_role": "不等式右侧实数",
+                  "range_unit": "实数",
+                  "interpretation": "被正数除法保持次序的右项"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "给出 $u$ 不超过 $v$。",
+        "motivation": "这是待变换的不等式。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "A2",
+      "type": "ASSUMPTION",
+      "title": "正数条件",
+      "short_role": "给出除数为正。",
+      "formula_latex": "c>0",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "正性保证除法不改变不等号方向。"
+            },
+            {
+              "kind": "formula",
+              "latex": "c>0",
+              "symbols": [
+                {
+                  "symbol_latex": "c",
+                  "definition_role": "正除数",
+                  "range_unit": "$c>0$",
+                  "interpretation": "保证除法保持不等号方向"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S1",
+        "role": "给出除数为正。",
+        "motivation": "正性保证除法不改变不等号方向。"
+      },
+      "uses_symbols": []
+    },
+    {
+      "id": "C1",
+      "type": "COMBINE",
+      "title": "条件齐备",
+      "short_role": "汇合",
+      "formula_latex": null,
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "操作说明",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "把不等式和正除数汇成条件齐备的对象。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "把直接输入形成可审阅的连续推导。",
+        "motivation": "把不等式和正除数汇成条件齐备的对象。"
+      },
+      "input_review": [
+        {
+          "node": "A1",
+          "formula_ref": "core",
+          "contribution": "待除不等式"
+        },
+        {
+          "node": "A2",
+          "formula_ref": "core",
+          "contribution": "正数条件"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "A1",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        },
+        {
+          "node": "A2",
+          "formula_ref": "core",
+          "step_id": "input2",
+          "mode": "basis"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "u\\le v",
+          "symbols": [
+            {
+              "symbol_latex": "u",
+              "definition_role": "不等式左侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的左项"
+            },
+            {
+              "symbol_latex": "v",
+              "definition_role": "不等式右侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的右项"
+            }
+          ],
+          "id": "input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "c>0",
+          "symbols": [
+            {
+              "symbol_latex": "c",
+              "definition_role": "正除数",
+              "range_unit": "$c>0$",
+              "interpretation": "保证除法保持不等号方向"
+            }
+          ],
+          "id": "input2"
+        },
+        {
+          "kind": "formula",
+          "latex": "u\\le v\\quad\\text{且}\\quad c>0",
+          "symbols": [
+            {
+              "symbol_latex": "u",
+              "definition_role": "不等式左侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的左项"
+            },
+            {
+              "symbol_latex": "v",
+              "definition_role": "不等式右侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的右项"
+            },
+            {
+              "symbol_latex": "c",
+              "definition_role": "正除数",
+              "range_unit": "$c>0$",
+              "interpretation": "保证除法保持不等号方向"
+            }
+          ],
+          "id": "result"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "input2",
+            "source": {
+              "node": "A2",
+              "formula_ref": "core"
+            },
+            "name": "正数条件",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "u",
+            "definition_role": "不等式左侧实数",
+            "range_unit": "实数",
+            "interpretation": "被正数除法保持次序的左项"
+          },
+          {
+            "symbol_latex": "v",
+            "definition_role": "不等式右侧实数",
+            "range_unit": "实数",
+            "interpretation": "被正数除法保持次序的右项"
+          },
+          {
+            "symbol_latex": "c",
+            "definition_role": "正除数",
+            "range_unit": "$c>0$",
+            "interpretation": "保证除法保持不等号方向"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式作为独立后继节点的核心公式。",
+        "downstream_use": "后继节点承接该结果继续证明。"
+      },
+      "combine_inputs": [
+        "A1",
+        "A2"
+      ],
+      "start_input": "A1",
+      "combine_output_latex": "u\\le v\\quad\\text{且}\\quad c>0",
+      "combine_motivation": "把不等式和正除数汇成条件齐备的对象。",
+      "combine_method": "并列核对两个独立前提。",
+      "combine_reason": "premise_synthesis",
+      "uses_symbols": []
+    },
+    {
+      "id": "N1",
+      "type": "LEMMA",
+      "title": "除法条件齐备",
+      "short_role": "可安全执行正数除法。",
+      "formula_latex": "u\\le v\\quad\\text{且}\\quad c>0",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "对象及其适用条件已经齐备。"
+            },
+            {
+              "kind": "formula",
+              "latex": "u\\le v\\quad\\text{且}\\quad c>0",
+              "symbols": [
+                {
+                  "symbol_latex": "u",
+                  "definition_role": "不等式左侧实数",
+                  "range_unit": "实数",
+                  "interpretation": "被正数除法保持次序的左项"
+                },
+                {
+                  "symbol_latex": "v",
+                  "definition_role": "不等式右侧实数",
+                  "range_unit": "实数",
+                  "interpretation": "被正数除法保持次序的右项"
+                },
+                {
+                  "symbol_latex": "c",
+                  "definition_role": "正除数",
+                  "range_unit": "$c>0$",
+                  "interpretation": "保证除法保持不等号方向"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S2",
+        "role": "可安全执行正数除法。",
+        "motivation": "对象及其适用条件已经齐备。"
+      },
+      "result": true,
+      "uses_symbols": []
+    },
+    {
+      "id": "X1",
+      "type": "TRANSFORM",
+      "title": "除以正数",
+      "short_role": "除以正数",
+      "formula_latex": null,
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "操作说明",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "对条件齐备的不等式两边同除以 $c$。"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "把直接输入形成可审阅的连续推导。",
+        "motivation": "对条件齐备的不等式两边同除以 $c$。"
+      },
+      "input_review": [
+        {
+          "node": "N1",
+          "formula_ref": "core",
+          "contribution": "完整输入上下文"
+        }
+      ],
+      "input_usage": [
+        {
+          "node": "N1",
+          "formula_ref": "core",
+          "step_id": "input1",
+          "mode": "start"
+        }
+      ],
+      "derivation": [
+        {
+          "kind": "formula",
+          "latex": "u\\le v\\quad\\text{且}\\quad c>0",
+          "symbols": [
+            {
+              "symbol_latex": "u",
+              "definition_role": "不等式左侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的左项"
+            },
+            {
+              "symbol_latex": "v",
+              "definition_role": "不等式右侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的右项"
+            },
+            {
+              "symbol_latex": "c",
+              "definition_role": "正除数",
+              "range_unit": "$c>0$",
+              "interpretation": "保证除法保持不等号方向"
+            }
+          ],
+          "id": "input1"
+        },
+        {
+          "kind": "formula",
+          "latex": "c>0\\Longrightarrow(a\\le b\\Rightarrow a/c\\le b/c)",
+          "symbols": [
+            {
+              "symbol_latex": "c",
+              "definition_role": "正除数",
+              "range_unit": "$c>0$",
+              "interpretation": "保证除法保持不等号方向"
+            },
+            {
+              "symbol_latex": "a",
+              "definition_role": "除法规则中的左侧实数",
+              "range_unit": "实数",
+              "interpretation": "表示规则适用的任意左项"
+            },
+            {
+              "symbol_latex": "b",
+              "definition_role": "除法规则中的右侧实数",
+              "range_unit": "实数",
+              "interpretation": "表示规则适用的任意右项"
+            }
+          ],
+          "id": "rule"
+        },
+        {
+          "kind": "formula",
+          "latex": "\\frac{u}{c}\\le\\frac{v}{c}",
+          "symbols": [
+            {
+              "symbol_latex": "u",
+              "definition_role": "不等式左侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的左项"
+            },
+            {
+              "symbol_latex": "v",
+              "definition_role": "不等式右侧实数",
+              "range_unit": "实数",
+              "interpretation": "被正数除法保持次序的右项"
+            },
+            {
+              "symbol_latex": "c",
+              "definition_role": "正除数",
+              "range_unit": "$c>0$",
+              "interpretation": "保证除法保持不等号方向"
+            }
+          ],
+          "id": "result"
+        }
+      ],
+      "derivation_chain": {
+        "rows": [
+          {
+            "kind": "expression",
+            "step_id": "input1",
+            "split_at": 0
+          },
+          {
+            "kind": "apply",
+            "step_id": "rule",
+            "external": true,
+            "name": "正数除法保序",
+            "next_step": "result"
+          },
+          {
+            "kind": "expression",
+            "step_id": "result",
+            "split_at": 0
+          }
+        ],
+        "symbols": [
+          {
+            "symbol_latex": "u",
+            "definition_role": "不等式左侧实数",
+            "range_unit": "实数",
+            "interpretation": "被正数除法保持次序的左项"
+          },
+          {
+            "symbol_latex": "v",
+            "definition_role": "不等式右侧实数",
+            "range_unit": "实数",
+            "interpretation": "被正数除法保持次序的右项"
+          },
+          {
+            "symbol_latex": "c",
+            "definition_role": "正除数",
+            "range_unit": "$c>0$",
+            "interpretation": "保证除法保持不等号方向"
+          },
+          {
+            "symbol_latex": "a",
+            "definition_role": "除法规则中的左侧实数",
+            "range_unit": "实数",
+            "interpretation": "表示规则适用的任意左项"
+          },
+          {
+            "symbol_latex": "b",
+            "definition_role": "除法规则中的右侧实数",
+            "range_unit": "实数",
+            "interpretation": "表示规则适用的任意右项"
+          }
+        ]
+      },
+      "output_handoff": {
+        "explanation": "末式作为独立后继节点的核心公式。",
+        "downstream_use": "后继节点承接该结果继续证明。"
+      },
+      "transform_input": "N1",
+      "transform_output_latex": "\\frac{u}{c}\\le\\frac{v}{c}",
+      "transform_motivation": "对条件齐备的不等式两边同除以 $c$。",
+      "transform_method": "应用正数除法的保序性。",
+      "uses_symbols": []
+    },
+    {
+      "id": "T1",
+      "type": "TARGET",
+      "title": "除法后不等式",
+      "short_role": "唯一最终结论。",
+      "formula_latex": "\\frac{u}{c}\\le\\frac{v}{c}",
+      "strict": true,
+      "conditions": [],
+      "condition_checks": [],
+      "sections": [
+        {
+          "heading": "数学内容",
+          "blocks": [
+            {
+              "kind": "prose",
+              "text": "这是冒烟模型的目标。"
+            },
+            {
+              "kind": "formula",
+              "latex": "\\frac{u}{c}\\le\\frac{v}{c}",
+              "symbols": [
+                {
+                  "symbol_latex": "u",
+                  "definition_role": "不等式左侧实数",
+                  "range_unit": "实数",
+                  "interpretation": "被正数除法保持次序的左项"
+                },
+                {
+                  "symbol_latex": "v",
+                  "definition_role": "不等式右侧实数",
+                  "range_unit": "实数",
+                  "interpretation": "被正数除法保持次序的右项"
+                },
+                {
+                  "symbol_latex": "c",
+                  "definition_role": "正除数",
+                  "range_unit": "$c>0$",
+                  "interpretation": "保证除法保持不等号方向"
+                }
+              ],
+              "id": "statement"
+            }
+          ]
+        }
+      ],
+      "navigation": {
+        "stage": "S3",
+        "role": "唯一最终结论。",
+        "motivation": "这是冒烟模型的目标。"
+      },
+      "uses_symbols": []
+    }
+  ],
+  "edges": [
+    {
+      "id": "EA1C1",
+      "source": "A1",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EA2C1",
+      "source": "A2",
+      "target": "C1",
+      "relation": "FEEDS_COMBINE",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EC1N1",
+      "source": "C1",
+      "target": "N1",
+      "relation": "COMBINE_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EN1X1",
+      "source": "N1",
+      "target": "X1",
+      "relation": "FEEDS_TRANSFORM",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    },
+    {
+      "id": "EX1T1",
+      "source": "X1",
+      "target": "T1",
+      "relation": "TRANSFORM_PRODUCES",
+      "detail_mode": "STRUCTURAL_ONLY",
+      "display_mode": "FLOW",
+      "label_text": null,
+      "label_latex": null,
+      "detail": null
+    }
+  ],
+  "target_id": "T1",
+  "scopes": [],
+  "proof_flow": [
+    {
+      "id": "S1",
+      "title": "输入",
+      "summary": "两个独立根。",
+      "nodes": [
+        "A1",
+        "A2"
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "条件汇合",
+      "summary": "形成条件齐备的中间结论。",
+      "nodes": [
+        "C1",
+        "N1"
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "一元变换",
+      "summary": "执行正数除法并到达目标。",
+      "nodes": [
+        "X1",
+        "T1"
+      ]
+    }
+  ],
+  "presentation": {
+    "mode": "human-first",
+    "spine": [
+      "C1",
+      "N1",
+      "X1",
+      "T1"
+    ],
+    "branches": [
+      {
+        "id": "BInputs",
+        "title": "两个前提",
+        "from": "C1",
+        "to": "N1",
+        "nodes": [
+          "A1",
+          "A2"
+        ]
+      }
+    ],
+    "support": [],
+    "examples": [],
+    "granularity_reviews": [
+      {
+        "finding_id": "operation-result-operation-C1",
+        "decision": "retain",
+        "reason": "N1 明确形成对象与正性条件均齐备的可审阅输入，随后才允许执行一元除法。"
+      }
+    ],
+    "language": "zh-CN"
+  }
+}

@@ -1,0 +1,71 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event_name == 'pull_request' && github.ref || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  regression:
+    if: >-
+      github.event_name != 'push' ||
+      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    name: Regression (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - windows-latest
+          - ubuntu-latest
+          - macos-latest
+
+    env:
+      PYTHONIOENCODING: "utf-8"
+      MATH_LOGIC_MINDMAP_REQUIRE_NODE: "1"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Install runtime dependencies
+        shell: python
+        run: |
+          import subprocess
+          import sys
+          import tomllib
+
+          with open("pyproject.toml", "rb") as stream:
+              dependencies = tomllib.load(stream)["project"]["dependencies"]
+
+          subprocess.check_call(
+              [sys.executable, "-m", "pip", "install", *dependencies]
+          )
+
+      - name: Check Skill entry points
+        run: python -B skills/math-logic-mindmap/scripts/canvas_tool.py check-skill-sync
+
+      - name: Check Proof Routing installation
+        run: python -B skills/math-logic-mindmap/scripts/canvas_tool.py check-proof-routing-sync
+
+      - name: Run regression tests
+        run: python -X utf8=0 -B -m unittest discover -s tests -v

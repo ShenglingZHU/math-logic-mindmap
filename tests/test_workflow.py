@@ -561,18 +561,36 @@ class Workflow(unittest.TestCase):
     def test_release_rollback(self):
         self.publish()
         before = bundle.status(self.root, self.slug)['artifact_hashes']
+        manifest_path = self.proof_dir / f'{self.slug}.manifest.json'
+        manifest_before = manifest_path.read_bytes()
+        release_root = self.root / 'note' / '..'
+        self.assertEqual(release_root.resolve(), self.root.resolve())
+        self.assertNotEqual(release_root, release_root.resolve())
         changed = copy.deepcopy(self.model)
         changed['context']['背景'] += ' artifact rollback test.'
         write_json(self.path, changed)
         bundle.build(self.root, self.path)
         original = bundle.validate_bundle
+        received_roots = []
+        injected = False
+        injected_hashes = None
+
         def fail_final(root, model, config=None):
-            if Path(root) == self.root:
+            nonlocal injected, injected_hashes
+            received_roots.append(Path(root))
+            if Path(root).resolve() == release_root.resolve():
+                injected = True
+                injected_hashes = bundle.hashes(root, bundle.artifact_paths(root, self.slug))
                 raise Invalid('injected final verification failure')
             return original(root, model, config)
-        with patch.object(bundle, 'validate_bundle', side_effect=fail_final), self.assertRaises(Invalid):
-            bundle.release(self.root, self.slug)
+        with patch.object(bundle, 'validate_bundle', side_effect=fail_final), self.assertRaises(Invalid) as caught:
+            bundle.release(release_root, self.slug)
+        self.assertEqual(str(caught.exception), 'injected final verification failure')
+        self.assertTrue(injected)
+        self.assertEqual(received_roots[-1], release_root.resolve())
+        self.assertNotEqual(injected_hashes, before)
         self.assertEqual(before, bundle.status(self.root, self.slug)['artifact_hashes'])
+        self.assertEqual(manifest_path.read_bytes(), manifest_before)
 
     def test_entry_sync_and_canonical_plugin(self):
         self.assertEqual(sync_skills(ROOT, check=True)['skill_sync'], 'PASS')

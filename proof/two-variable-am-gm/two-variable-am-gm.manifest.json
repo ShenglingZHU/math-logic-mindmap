@@ -55,8 +55,8 @@
       ".obsidian/plugins/proof-routing/main.js": "6b0278630867e669de3bc269b43bd08ac8ea05923cf07921aefaae977e250b1a",
       ".obsidian/plugins/proof-routing/manifest.json": "9ecd2bc7b8620b7fa5f63d8d6b047ad0e7ba083d2f58e540eae01525a9cd8ad3",
       ".obsidian/snippets/math-logic-mindmap.css": "8601b8c5006d70e5994ad191c6b232b33ac435727256ef926edf79a1899fd3c6",
-      "skills/math-logic-mindmap/scripts/math_logic_mindmap/__init__.py": "d8fcea45e20ac06e3cef7b0c17a6f4314dd79fcd5dcbe8a38979f2696c657fbf",
-      "skills/math-logic-mindmap/scripts/math_logic_mindmap/bundle.py": "626b0fe03acf5a455594a537867e013723642d3c680beffab19e2c419f4550c5",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/__init__.py": "d8c25f02bdc457e5708d4568453311866a858a6767d14646c1965c3ef0782212",
+      "skills/math-logic-mindmap/scripts/math_logic_mindmap/bundle.py": "68b0641735f933a666174ed6c920a7d8c5ff48bc254de11deb6e5e4b0a7727b9",
       "skills/math-logic-mindmap/scripts/math_logic_mindmap/chains.py": "be32f17c9df079ecec6d060d2007323f74b9247c3800d4a1c5be5d46ea8b0e17",
       "skills/math-logic-mindmap/scripts/math_logic_mindmap/cli.py": "1f6bcd75a87a41bb3293fff4e7a14060ae712e53a2a590d0f6f88e796941f2ea",
       "skills/math-logic-mindmap/scripts/math_logic_mindmap/common.py": "b51962c73b85acb3d5536a94ee26ab818427ab7b1f31bd2d543f57b8250fe2cc",
@@ -73,7 +73,7 @@
       "skills/math-logic-mindmap/scripts/math_logic_mindmap/schemas/proof-model.schema.json": "22befe389d0dbb5e78cef66ec4eab3dd905e35630486b8cb95f2bfd7b5a1e4d7",
       "skills/math-logic-mindmap/scripts/math_logic_mindmap/scope_semantics.py": "52873d7caabfb06f5eae9a9e0c55fe06a1b5acba6b5f32f12e408386227cce49"
     },
-    "digest": "7ec485bb7279d5efb8905c22c6b4931814049a126a12db8e10c6bd340f386cce"
+    "digest": "f0d2d92e1fd486234430f8d97f5f4abef12a0bd10fdb3f82fa98e0c0b55dea21"
   },
   "managed_hashes": {
     "mindmap/two-variable-am-gm.canvas": "23ad4ef310e98555da4296e29a378fb9623bd23b0b77231e3d34cf61a8e41600",
@@ -203,5 +203,5 @@
     }
   },
   "canvas_persisted_hash": "c8101c944bb6adaaf26405644aea82fd1032b3f78c238d857d975efbd66c9169",
-  "released_at": "20260917T172452601669Z"
+  "released_at": "20261007T011713574409Z"
 }

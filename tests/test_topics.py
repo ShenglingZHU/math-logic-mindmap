@@ -142,17 +142,24 @@ class TopicRemovalTests(unittest.TestCase):
         write_text(stage / 'marker', 'stage')
         write_text(self.root / 'proof/foo/foo.proof.json', '{}')
         original = bundle.shutil.rmtree
+        injected = False
 
         def fail_stage(path):
-            if Path(path) == stage:
+            nonlocal injected
+            if Path(path).resolve() == stage.resolve():
+                injected = True
                 raise PermissionError('in use')
             return original(path)
 
         with patch('math_logic_mindmap.bundle.shutil.rmtree', side_effect=fail_stage):
             result = bundle.remove_topic(self.root, 'foo', 'foo')
+        self.assertTrue(injected)
         self.assertEqual(result['status'], 'FAIL')
         self.assertIn('.build/work/foo-aaaaaaaaaaaa', result['removed'])
+        self.assertNotIn('.build/staging/foo', result['removed'])
         self.assertEqual(result['failed_path'], '.build/staging/foo')
+        self.assertTrue(stage.is_dir())
+        self.assertEqual((stage / 'marker').read_text(encoding='utf-8'), 'stage\n')
         self.assertTrue((self.root / 'proof/foo/foo.proof.json').is_file())
 
     def test_release_remove_and_recreate_same_slug(self):

@@ -1,7 +1,9 @@
 """Regression tests use isolated vaults; review evidence here is synthetic only."""
 import copy
 import json
+import os
 from pathlib import Path
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -30,6 +32,63 @@ class Workflow(unittest.TestCase):
     def publish(self):
         bundle.build(self.root, self.path)
         return bundle.release(self.root, self.slug)
+
+    def test_root_alias_preserves_artifacts_identity_and_status(self):
+        self.publish()
+        root = self.root.resolve()
+        paths = bundle.artifact_paths(root, self.slug)
+        identity = bundle.presentation_identity(root)
+        state = bundle.status(root, self.slug)
+        self.assertEqual(state['machine'], 'PASS')
+        with tempfile.TemporaryDirectory() as directory:
+            aliases = [root / 'note' / '..']
+            if os.name == 'posix':
+                link = Path(directory) / 'vault'
+                link.symlink_to(root, target_is_directory=True)
+                aliases.append(link)
+            for alias in aliases:
+                with self.subTest(alias=str(alias)):
+                    self.assertEqual(alias.resolve(), root)
+                    actual = bundle.artifact_paths(alias, self.slug)
+                    self.assertEqual(actual, paths)
+                    self.assertTrue(all(not Path(p).is_absolute() and '..' not in Path(p).parts
+                                        for p in actual))
+                    self.assertEqual(bundle.presentation_identity(alias), identity)
+                    self.assertEqual(bundle.status(alias, self.slug), state)
+
+    def test_module_alias_preserves_source_presentation_identity(self):
+        script = (
+            'import json, sys; from pathlib import Path; '
+            'sys.path.insert(0, sys.argv[1]); '
+            'from math_logic_mindmap.bundle import presentation_identity; '
+            'print(json.dumps(presentation_identity(Path(sys.argv[2]))))'
+        )
+
+        def identity(scripts):
+            completed = subprocess.run(
+                [sys.executable, '-B', '-c', script, str(scripts), str(ROOT)],
+                cwd=ROOT, capture_output=True, text=True, encoding='utf-8', timeout=60,
+            )
+            self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+            return json.loads(completed.stdout)
+
+        scripts_relative = 'skills/math-logic-mindmap/scripts'
+        expected = identity(ROOT / scripts_relative)
+        with tempfile.TemporaryDirectory() as directory:
+            aliases = [ROOT / 'skills' / '..' / scripts_relative]
+            if os.name == 'posix':
+                link = Path(directory) / 'project'
+                link.symlink_to(ROOT, target_is_directory=True)
+                aliases.append(link / scripts_relative)
+            for scripts in [ROOT / scripts_relative, *aliases]:
+                with self.subTest(scripts=str(scripts)):
+                    actual = identity(scripts)
+                    self.assertIn(scripts_relative + '/math_logic_mindmap/bundle.py', actual['files'])
+                    for key in actual['files']:
+                        self.assertFalse(Path(key).is_absolute())
+                        self.assertNotIn('..', Path(key).parts)
+                        self.assertFalse(key.startswith('math_logic_mindmap/'))
+                    self.assertEqual(actual, expected)
 
     def backups(self):
         parent = self.root / '.build/backups' / self.slug

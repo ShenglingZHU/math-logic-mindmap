@@ -267,7 +267,7 @@ def bundle_config(root, slug):
 
 
 def artifact_paths(root, slug):
-    root = Path(root)
+    root = Path(root).resolve()
     paths = [f"mindmap/{slug}.canvas"]
     folder = safe(root, f"note/{slug}")
     if folder.exists():
@@ -280,7 +280,8 @@ def hashes(root, paths):
 
 
 def presentation_identity(root):
-    engine_root = Path(__file__).parent
+    root = Path(root).resolve()
+    engine_root = Path(__file__).resolve().parent
     paths = [p for p in engine_root.rglob("*.py") if "__pycache__" not in p.parts]
     paths += list((engine_root / "schemas").glob("*.json"))
     paths += [safe(root, ".obsidian/snippets/math-logic-mindmap.css"),
